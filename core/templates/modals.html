@@ -1,0 +1,164 @@
+ {% load static %}
+
+ <!-- Modal Section Start-->
+ <div class="modal fade" id="notEligibleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modals-title  mb-0" id="exampleModalLabel">
+                     Borrow Funds
+                 </h4>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                     <i class="icon-x"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <p class="mb-20">
+                     Funds borrowing has not been activated for your account. You are currently ineligible to borrow,
+                     please try again later.
+                 </p>
+
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Modal Section End-->
+
+ <!-- Modal Section Start-->
+ <div data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" class="modal fade" id="cookiePermissionModal" tabindex="-1" aria-labelledby="cookiePermissionModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modals-title  mb-0" id="cookiePermissionModalLabel">We Use Cookies
+                     &nbsp;<i style="font-size: 40px;" class="fa fa-cookie"></i>
+                 </h4>
+                 <button hidden type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                     <i class="icon-x"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <p style="font-size: 16px;">
+
+
+                     We may use cookies or any other tracking technologies when you visit our website, including any
+                     other media form, mobile website, or mobile application related or connected to help customize the
+                     Site and improve your experience.
+                     <a href="{% url 'cookie-policy' %}">learn more</a>
+                 </p>
+                 <p>
+                     By accepting our cookies, you agree to our
+                     <a href="{% url 'cookie-policy' %}">
+                         <span class="modal-title">Cookie Policy</span>
+                     </a>.
+
+                 </p>
+                 <div class="item-button">
+                     <button id="accept-cookies" type="submit" class="theme-btn blue" style="width: 100%;height:45px;margin-top:40px">
+                         <span>Accept Cookies</span>
+                         <div class="hover-shape1"></div>
+                         <div class="hover-shape2"></div>
+                         <div class="hover-shape3"></div>
+                     </button>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Modal Section End-->
+
+
+
+ <!-- Modal Section Start-->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modals-title  mb-0" id="exampleModalLabel">Connect Wallet</h4>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                     <i class="icon-x"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <p class="mb-20">Please select a wallet to connect to this marketplace</p>
+                 <div class="connect-section">
+                     <ul class="heading-list">
+                         <li>
+                             <a href="#" class="connect-meta">
+                                 <span>
+                                     <img src="{% static 'main/images/icons/meta-mask.png' %}">
+                                 </span>
+                                 MetaMask
+                             </a>
+                         </li>
+                         <li>
+                             <a href="#">
+                                 <span>
+                                     <img src="{% static 'main/images/icons/coinbase.png' %}">
+                                 </span>
+                                 Coinbase
+                             </a>
+                         </li>
+                         <li>
+                             <a href="#">
+                                 <span>
+                                     <img src="{% static 'main/images/icons/trust.png' %}">
+                                 </span>
+                                 Trust Wallet
+                             </a>
+                         </li>
+                         <li>
+                             <a href="#">
+                                 <span>
+                                     <img src="{% static 'main/images/icons/wallet.png' %}">
+                                 </span>
+                                 WalletConnect
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+                 <p>
+                     By connecting your wallet, you agree to our
+                     <a href="#">
+                         <span class="modal-title">Terms of Service </span>
+                     </a>
+                     and our
+                     <a href="#">
+                         <span class="modal-title"> Privacy Policy</span>
+                     </a>.
+                 </p>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Modal Section End-->
+
+ <!-- Modal Section Start-->
+ <div class="modal fade" id="download-metamask" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modals-title  mb-0" id="exampleModalLabel">Connect Wallet</h4>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                     <i class="icon-x"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <p class="mb-20">Please download & install metamask extension!</p>
+                 <div class="connect-section">
+                     <ul class="heading-list">
+                         <li>
+                             <a target="_blank" href="https://metamask.io/download/">
+                                 <span>
+                                     <img src="{% static 'main/images/icons/meta-mask.png' %}">
+                                 </span>
+                                 MetaMask
+                             </a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Modal Section End-->

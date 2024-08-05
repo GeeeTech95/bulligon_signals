@@ -1,0 +1,115 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load vocabulary %}
+
+
+
+{% block content %}
+<tr>
+  <td>
+    <h2 style="text-align:left"><b>Investment Proccessed Successfully</b></h2>
+    <strong>
+      <h4>Dear {{instance.user.name}},</h4>
+    </strong>
+
+
+
+    <p>
+      We are pleased to inform you that your recent investment on {{site_name}} has been successfully processed and
+      confirmed.
+
+    </p>
+    <p>
+
+    </p>
+
+    <p>
+      if you did not authorize this activity please contact
+      <a href="#">support</a> immediately.
+    </p>
+
+
+    <p>
+      Here are the details of your investment:
+    </p>
+
+    <h2 style="margin-top: 20px;font-size: 18px;">Investment Details</h2>
+
+
+
+    <table style="background-color: #090a1ade; margin-bottom:30px;padding:10px">
+      <tbody style="color: white;">
+
+
+        <tr>
+          <td>Investment Plan</td>
+          <td>{{instance.plan.name}} </td>
+        </tr>
+        <hr>
+
+        <tr>
+          <td>Investment Amount</td>
+          <td>USD {{instance.amount|intcomma}}</td>
+        </tr>
+        <hr>
+
+        <tr>
+          <td>Date Initiated</td>
+          <td>{{instance.date|date:"j M, Y"}} {{instance.date.time}}</td>
+        </tr>
+        <hr>
+
+
+
+
+        <tr>
+          <td>Start Date</td>
+          <td>{{instance.plan_start|date:"j M, Y"}} {{instance.plan_start.time}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Due Date</td>
+          <td>{{instance.plan_end|date:"j M, Y"}} {{instance.plan_end.time}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Expected Earning</td>
+          <td>USD {{instance.expected_earning|intcomma}}</td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+    <p><strong>What Happens Next:</strong></p>
+    <ol>
+      <li><strong>Investment Tracking:</strong> You can track the performance of your investment through your
+        {{site_name}} account dashboard.</li>
+      <li><strong>Earnings:</strong> Based on the plan you have selected, your earnings will be calculated and credited
+        to your account as per the specified intervals.</li>
+    </ol>
+
+
+
+    <a class="button-a button-a-primary" href="{{site_url}}{% url 'dashboard' %}" target="_blank"
+      style="background: #6d4afe; text-align: center; border: 2px solid #6d4afe; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 10px 20px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;margin: 20px 140px;">
+      Track Investment
+    </a>
+    <p><strong>Important Information:</strong></p>
+    <p>If you have any questions about your investment or need further assistance, please contact our support team at
+      [support email].</p>
+    <p>Please keep your account details secure and do not share your login credentials with anyone.</p>
+
+    <br>
+    <i>This is an automatically generated message, it does not accept replies.</i>
+
+
+
+
+
+  </td>
+</tr>
+{% endblock %}

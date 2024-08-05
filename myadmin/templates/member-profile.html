@@ -1,0 +1,118 @@
+{% extends 'admin-dashboard-base2.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block css %}
+{% endblock %}
+{% block content %}
+{% load humanize %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+            <div class="section-body">
+                <div class="row mt-sm-4">
+                    <div class="col-12 col-md-12 col-lg-5">
+                        <div class="card author-box">
+                            <div class="card-body">
+                                <div class="author-box-center">
+                                  {% if user.picture %}
+                                    <img style="width:80px;height:80px;border-radius: 50%;" alt="image" src="{{user.picture.url}}">
+                                  
+                                  {% endif %}
+                                    <div class="clearfix"></div><br>
+                                        <div class="author-box-name text-left">
+                                           useranme : {{member.username}}<br>
+                                           email : {{member.email}}<br>
+                                           country : {{member.country.name}}<br>
+                                           Phone number : {{member.phone_number}}
+                                        </div><br>
+                                        
+                                    </div>
+
+                                    <h5>Investments</h5>
+
+                                  {% if active_investments %}
+                                    <div class="table-responsive">
+                                      <table class="table table-striped">
+                                        <tr>
+                                         
+                                          
+                                          <th>plan </th>
+                                          <th>Start Date</th>
+                                          <th>End Date </th>
+                                          <th>Current Earning</th>
+                                          <th>Expected Earning</th>
+                                  
+                                        
+                                          
+                                        </tr>
+      
+                                        {% for invest in active_investments %}
+                                        <tr>
+                                          
+                                          
+                                          <td>{{invest.plan.name}}</td>
+                                        
+                                          <td>{{invest.plan_start}}</td>
+                                          <td>{{invest.plan_end}}</td>
+                                          <td>${{invest.current_earning|intcomma}}</td>
+                                          <td>${{invest.expected_earning|intcomma}}</td>
+                                          
+                                          
+      
+                                        </tr>
+      
+                                        {% endfor %}
+                                        
+                                      </table>
+                                    </div>
+                                  {% else %} 
+                                  <p>This user has no active investments</p>
+                                  {% endif %} 
+
+                                <div class="text-center">
+                                    <div class="author-box-description">
+                                        <p>
+                                           <b>Current Total Earning : ${{member.user_wallet.total_past_earning|intcomma}}</b> <br>
+                                           <b>Total balance : ${{member.user_wallet.current_balance|intcomma}}</b> <br>
+                                           <b>Available balance : ${{member.user_wallet.available_balance|intcomma}}</b> 
+                                        </p>
+                                    </div>
+                                </div>
+                           
+               
+                            </div>
+                        </div>
+                    </div>        
+              <div class="col-12 col-md-12 col-lg-7">
+                    <div class="card">
+                            <form style="margin:15px" action="" class="needs-validation"  method="POST">
+                             {% csrf_token %}
+                             {{form|crispy}}
+                              <div class="card-footer text-right">
+                                <button class="btn btn-primary">Update</button>
+                              </div>
+                            </form>
+                          </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        </div>
+        
+        {% endblock %}
+
+  {% block js %}
+  <!-- General JS Scripts -->
+  <script src="{% static 'dashboard/js/app.min.js' %}""></script>
+  <!-- JS Libraies -->
+  <script src="{% static 'dashboard/bundles/summernote/summernote-bs4.js' %}""></script>
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script src="{% static 'dashboard/js/scripts.js' %}""></script>
+  <!-- Custom JS File -->
+  <script src="{% static 'dashboard/js/custom.js' %}""></script>
+  {% endblock %}
+

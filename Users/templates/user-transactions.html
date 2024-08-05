@@ -1,0 +1,59 @@
+{% extends 'dashboard-base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+
+<div id="transactions">
+    <div class="breadcrumbs-area sec-heading">
+        <div class="sub-inner  mt-40">
+
+            <span class="sub-title">All Transaction</span>
+            <img class="heading-left-image" src="{% static 'main/images/icons/steps.png' %}" />
+        </div>
+
+    </div>
+
+    {% if not transactions %}
+    <center class="pt-40 pb-40">
+        You have no transactions yet, They will appear here.
+    </center>
+
+    {% else %}
+    <!-- Leaderboard List Start -->
+    <div class="leaderboard-table-list pb-140 md-pb-80 pt-20">
+        <div class="containe">
+            <table style="overflow-x: scroll;width: 100%;">
+                <tr>
+                    <th>TRX REF</th>
+                    <th>Amount</th>
+                    <th>TRX Type</th>
+                    <th>Chain</th>
+                    <th>Date</th>
+                </tr>
+
+
+
+                {% for tx in transactions %}
+                <tr>
+                    <td>{{tx.transaction_id}}</td>
+                    <td>${{tx.amount|intcomma}}</td>
+                    <td>{{tx.transaction_type}}</td>
+                    <td>{{tx.coin}}</td>
+                    <td><span>{{tx.date|date:"d/m/Y"}}</span></td>
+
+                </tr>
+                {% endfor %}
+
+
+            </table>
+
+        </div>
+    </div>
+    <!-- Leaderboard List End -->
+    {% endif %}
+
+</div>
+
+{% endblock %}

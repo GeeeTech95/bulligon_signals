@@ -1,0 +1,565 @@
+{% extends 'email/base-mail.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Email Body : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
+  <tr>
+    <td style="background-color: #ffffff;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <h1 style="padding-left: 20px;">Dear {{name}}</h1>
+          <td style="padding: 0 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+
+            <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">
+
+            </h1>
+            <p style="margin: 0 ;font-size: 18px;">
+              Welcome to {{site_name}}! We’re thrilled to have you on board as a valued
+              member of our growing community of crypto enthusiasts and investors.
+
+            </p>
+            <p style="font-size: 18px;">
+              At {{site_name}}, our mission is to provide you with a seamless and rewarding experience in the world of
+              cryptocurrency investment and staking. Here’s what you can expect:
+            </p>
+            <p hidden>
+              <h1 style="font-size: 19px;color: #000000;">1. User-Friendly Dashboard:</h1>
+              Manage your investments with ease using our intuitive platform. Track your portfolio, monitor market
+              trends, and make informed decisions effortlessly.
+
+              <h1 style="font-size: 19px;color: #000000;">2. Secure Staking Options:</h1>
+              Earn rewards by staking your crypto assets securely. Our platform offers competitive staking options to
+              help you maximize your earnings.
+
+              <h1 style="font-size: 19px;color: #000000;">3. 24/7 Customer Support:</h1>
+              Have questions or need assistance? Our dedicated support team is available around the clock to provide you
+              with the help you need.
+
+              <h1 style="font-size: 19px;color: #000000;">4. Educational Resources:</h1>
+              Whether you’re a beginner or a seasoned investor, our comprehensive resources and tutorials will guide you
+              through every step of your crypto journey.
+            </p>
+
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0 20px 20px;">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- 2 Even Columns : BEGIN -->
+  <tr>
+    <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td style="padding: 10px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                style="font-size: 14px; text-align: left;">
+                <tr>
+                  <td>
+                    <h1>Curious about other cryptocurrencies?</h1>
+                    <p>Convert any portion of your Bitcoin into other crypto in just a couple clicks.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 20px;">
+
+                    <!-- Button : BEGIN -->
+                    <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0"
+                      style="margin: auto;">
+                      <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 4px; background: #1652f0;">
+                          <a class="button-a button-a-primary" href="https://www.coinbase.com/signin" target="_blank"
+                            style="background: #1652f0; border: 2px solid #1652f0; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 20px 40px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;">Convert
+                            BTC</a>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- Button : END -->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td style="padding: 10px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                style="font-size: 14px;text-align: left;">
+                <tr>
+                  <td>
+                    <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/Coinbase-Cryptocurrencies.png"
+                      width="100%" height="" border="0" alt="Coinbase Cryptocurrencies"
+                      style="width: 100%; max-width: 250px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;"
+                      class="center-on-narrow">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- 2 Even Columns : END -->
+
+  <!-- Spacer : BEGIN -->
+  <tr>
+    <td style="text-align: center;">
+      <div style="border: solid 1px #c9c9c9; width: 95%;"></div>
+    </td>
+  </tr>
+  <!-- Spacer : END -->
+
+  <!-- 1 Column Text + Button : BEGIN -->
+  <tr>
+    <td style="background-color: #ffffff;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+            <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">
+              Convert Bitcoin into any of these popular assets</h1>
+            <p style="margin: 0 0 10px;">Easily, securely, and instantly convert any portion of your Bitcoin balance
+              into other crypto:</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0 20px 20px;">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- 1 Column Text + Button : END -->
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+
+                        <![endif]-->
+
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+          <tr>
+
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/XRP-Logo.png" width="100" height="" border="0"
+                alt="XRP Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+      <!--[if mso]>
+
+                        </td>
+
+                        <td valign="top" width="560" style="width: 560px;">
+
+                        <![endif]-->
+
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+          <tr>
+
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                XRP (XRP)</h2>
+
+              <p style="margin: 0 0 10px 0;">XRP is built for enterprise use and aims to be a fast, cost-efficient
+                cryptocurrency for cross-border payments.</p>
+
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+      <!--[if mso]>
+
+                        </td>
+
+                        </tr>
+
+                        </table>
+
+                        <![endif]-->
+
+    </td>
+
+  </tr>
+
+  <!-- Thumbnail Left, Text Right : END -->
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+
+                        <![endif]-->
+
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+          <tr>
+
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/BCH-Logo.png" width="100" height="" border="0"
+                alt="BCH Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="560" style="width: 560px;">
+                        <![endif]-->
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                Bitcoin Cash (BCH)</h2>
+              <p style="margin: 0 0 10px 0;">BCH seeks to add more transaction capacity to the network to be useful for
+                everyday transactions</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- Thumbnail Left, Text Right : END -->
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/LTC-Logo.png" width="100" height="" border="0"
+                alt="LTC Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="560" style="width: 560px;">
+                        <![endif]-->
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                Litecoin (LTC)</h2>
+              <p style="margin: 0 0 10px 0;">Litecoin is a cryptocurrency that uses a faster payment confirmation
+                schedule and a different cryptographic algorithm than Bitcoin.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- Thumbnail Left, Text Right : END -->
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/ETH-Logo.png" width="100" height="" border="0"
+                alt="ETH Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="560" style="width: 560px;">
+                        <![endif]-->
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                Ethereum (ETH)</h2>
+              <p style="margin: 0 0 10px 0;">ETH is a cryptocurrency and a decentralized computing platform.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- Thumbnail Left, Text Right : END -->
+
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/ETC-Logo.png" width="100" height="" border="0"
+                alt="ETC Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="440" style="width: 440px;">
+                        <![endif]-->
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                Ethereum Classic (ETC)</h2>
+              <p style="margin: 0 0 10px 0;">ETC is a cryptocurrency with a special focus on immutability, popularly
+                expressed as "code is law."</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- Thumbnail Left, Text Right : END -->
+
+
+  <!-- Thumbnail Left, Text Right : BEGIN -->
+  <tr>
+    <td dir="ltr" height="100%" valign="top" width="100%"
+      style="font-size:0; padding: 10px; background-color: #ffffff;">
+      <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                        <tr>
+                        <td valign="top" width="100" style="width: 100px;">
+                        <![endif]-->
+      <div
+        style="display:inline-block; margin: 0 -1px; max-width: 100px; min-width:100px; vertical-align:top; width:100%;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr" style="padding: 0 10px 10px 10px;">
+              <img src="http://www.amitsaoji.com/html/portfolio/Coinbase/ZRX-Logo.png" width="100" height="" border="0"
+                alt="ZRX Logo" class="center-on-narrow"
+                style="width: 100%; max-width: 100px; height: auto; background: #fff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        <td valign="top" width="560" style="width: 560px;">
+                        <![endif]-->
+      <div style="display:inline-block; margin: 0 -1px; max-width: 560px; min-width:280px; vertical-align:top;"
+        class="stack-column">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td dir="ltr"
+              style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 45px 0; text-align: left;"
+              class="center-on-narrow">
+              <h2
+                style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">
+                0x (ZRX)</h2>
+              <p style="margin: 0 0 10px 0;">ZRX is a token built on Ethereum that interacts with the 0x protocol.
+                Today, ZRX is used to pay fees to 0x relayers.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+    </td>
+  </tr>
+  <!-- Thumbnail Left, Text Right : END -->
+
+  <!-- 1 Column Text + Button : BEGIN -->
+  <tr>
+    <td style="background-color: #ffffff; padding-top: 30px;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td style="padding: 0 20px 20px;">
+            <!-- Button : BEGIN -->
+            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+              <tr>
+                <td class="button-td button-td-primary" style="border-radius: 4px; background: #1652f0;">
+                  <a class="button-a button-a-primary" href="https://www.coinbase.com/signin" target="_blank"
+                    style="background: #1652f0; border: 2px solid #1652f0; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 20px 40px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;">Convert
+                    BTC</a>
+                </td>
+              </tr>
+            </table>
+            <!-- Button : END -->
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+            <p style="margin: 0 0 10px;">For buy/sell availability, please see <a
+                href="https://support.coinbase.com/customer/en/portal/articles/2630943-supported-digital-currencies"
+                target="_blank" style="text-decoration: underline;">Supported Digital Currencies.</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- 1 Column Text + Button : END -->
+
+
+  <!-- Spacer : BEGIN -->
+  <tr>
+    <td style="text-align: center;">
+      <div style="border: solid 1px #c9c9c9; width: 95%;"></div>
+    </td>
+  </tr>
+  <!-- Spacer : END -->
+
+
+</table>
+<!-- Email Body : END -->
+
+
+</div>
+
+
+<!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+</center>
+</body>
+
+</html>
+{% endblock %}

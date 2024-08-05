@@ -1,0 +1,33 @@
+[
+{
+  
+
+    "model": "Users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$oEZKCSxqKfBRD7iLz6NR9f$z9cdZzKpM3JEy/ybrdNQ5GITNe6IoxM9TGy4VZJfguM=",
+        "last_login": null,
+        "is_superuser": true,
+        "email": "Sleykesh22@gmail.com",
+        "account_id": "",
+        "name": "",
+        "phone_number": "",
+        "date_joined": "2024-07-22T15:07:42.452Z",
+        "is_active": true,
+        "is_staff": true,
+        "slug": "",
+        "otp": null,
+        "otp_expiry": null,
+        "picture": "",
+        "referee": null,
+        "referral_id": "81647825199",
+        "is_admin": false,
+        "country": null,
+        "_wallet_name": null,
+        "_wallet_address": null,
+        "email_verified": false,
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

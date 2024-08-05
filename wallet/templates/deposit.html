@@ -1,0 +1,300 @@
+{% extends 'dashboard-base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+
+
+<div class="gamfi-explore-content gamfi-previous-section pt-0 md-pt-0 pb-110 md-pb-50">
+    <div class="container">
+        <div class="breadcrumbs-area sec-heading">
+            <div class="sub-inner  mb-40">
+
+                <span class="sub-title">Account Center</span>
+                <img class="heading-left-image" src="{% static 'main/images/icons/steps.png' %}" />
+            </div>
+
+        </div>
+
+        <!-- Tab Menu Section Start -->
+        <div class="project-menu-area d-flex align-items-center justify-content-between">
+            <div class="project-left-menu">
+                <ul class="nav" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="tab-link active" id="personal-tab" data-bs-toggle="tab"
+                            data-bs-target="#open-igo" type="button" role="tab" aria-controls="open-igo"
+                            aria-selected="true">
+                            Crypto Transfer
+                        </button>
+                    </li>
+
+
+                    <li class="nav-item" role="presentation">
+                        <button class="tab-link" id="wallet-tab" data-bs-toggle="tab" data-bs-target="#upcoming"
+                            type="button" role="tab" aria-controls="upcoming" aria-selected="false">
+                            Fiat
+                            Deposit
+                        </button>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Tab Content Section Start -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Open IGO Content Start -->
+            <div class="tab-pane fade show active" id="open-igo" role="tabpanel" aria-labelledby="personal-tab">
+                <div class="account__content p-0 m-0">
+                    <div class="account__form">
+                        <div class="account__title mb-29" hidden>
+                            <h2 style="font-size:24px">Fund Your Wallet</h2>
+
+                        </div>
+                        <form action="" method="post" enctype="multipart/form-data" class="deposit-form">
+                            {% csrf_token %}
+                            <span input-name="payment_method" class="field-error"></span>
+                            <div class="payment-list">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+                                            <input checked class="payment-check"
+                                                wallet_address="{{usdt_bep20_wallet_address}}" type="radio"
+                                                id="payusdbep20" name="payment_method" value="USDT(BEP20)">
+                                            <label for="payusdbep20">
+                                                <div class="payment-icon payment-icon-usd"><em
+                                                        class="payment-icon fas fa-credit-card"></em></div>
+                                                <span class="payment-cur">USDT(Bep20)</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+
+                                            <input class="payment-check" wallet_address="{{usdt_trc20_wallet_address}}"
+                                                type="radio" id="payusdtrc20" name="payment_method" value="USDT(TRC20)">
+                                            <label for="payusdtrc20">
+                                                <div class="payment-icon payment-icon-usd"><em
+                                                        class="payment-icon fas fa-credit-card"></em></div>
+                                                <span class="payment-cur">USDT(Trc20)</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" wallet_address="{{eth_wallet_address}}"
+                                                type="radio" id="payeth" name="payment_method" value="ETH">
+                                            <label for="payeth">
+                                                <div class="payment-icon payment-icon-eth"><img
+                                                        src="{% static 'user-dashboard/images/icon-ethereum.png' %}">
+                                                </div>
+                                                <span class="payment-cur">Ethereum</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" wallet_address="{{bnb_wallet_address}}"
+                                                type="radio" id="paybnb" name="payment_method" value="BNB">
+                                            <label for="paybnb">
+                                                <div class="payment-icon payment-icon-bnb">
+                                                    <img class="payment-icon"
+                                                        src="{% static 'user-dashboard/images/bnb-logo.png' %}"></div>
+                                                <span class="payment-cur">BNB</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" wallet_address="{{ltc_wallet_address}}"
+                                                type="radio" id="paylightcoin" name="payment_method" value="LTC">
+                                            <label for="paylightcoin">
+                                                <div class="payment-icon payment-icon-bnb"><img class="payment-icon"
+                                                        src="{% static 'user-dashboard/images/ltc-logo.png' %}"></div>
+                                                <span class="payment-cur">LTC</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" wallet_address="{{btc_wallet_address}}"
+                                                type="radio" id="paybtc" name="payment_method" value="BTC">
+                                            <label for="paybtc">
+                                                <div class="payment-icon payment-icon-btc"><em
+                                                        class="payment-icon fab fa-btc"></em></div>
+                                                <span class="payment-cur">Bitcoin</span>
+                                            </label>
+
+                                        </div>
+                                    </div><!-- .col -->
+
+                                </div><!-- .row -->
+                            </div>
+
+                            <div class="input__group mb-23">
+
+                                <label>Deposit Amount($500,000 Max)</label>
+                                <span input-name="email" class="field-error mb-23"><br></span>
+                                <input type="number" name="amount" id="deposit-amount">
+                            </div>
+
+
+
+
+
+                            <div class="latest-content p-0" style="margin-top: 0px;">
+
+                                <div class="latest-item p-0">
+
+                                    <div class="latest-text p-0">
+
+
+                                        <p>Pay <b>$</b><b id="pay-amount">500</b> to the specified wallet address, then
+                                            enter your deposit address
+                                            .</p>
+                                        <p>
+                                            <div class="input__group mb-23">
+                                                <label>Wallet Address(
+                                                    <span id="address_name" class="">USDT(BEP20)</span>
+                                                    )
+                                                </label>
+                                                <div class="payment-input refferal-info">
+                                                    <button class="refferal-copy copy-clipboard"
+                                                        id="wallet-address-copy"
+                                                        data-clipboard-text="{{usdt_bep20_wallet_address}}">
+                                                        <i class="fa fa-copy" style="font-size: 30px;"></i>
+                                                    </button>
+                                                    <input name="wallet_address" readonly class="input-bordered"
+                                                        type="text" id="address_value"
+                                                        value="{{usdt_bep20_wallet_address}}">
+
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="hover-shape1"></div>
+                            <div class="hover-shape2"></div>
+                            <div class="hover-shape3"></div>
+
+                            <div class="input__group mb-40">
+                                <label>Deposit Address (Enter your wallet address)</label>
+                                <span input-name="deposit_address" class="field-error mb-23"><br></span>
+                                <input type="text" name="deposit_address" required style="margin-bottom: 7px;">
+                                This would be used to confirm this transaction
+                            </div>
+
+
+                            <div class="item-button">
+                                <button id="submit-deposit-btn" type="submit" class="theme-btn blue"
+                                    style="width: 100%;">
+                                    <span>Submit</span>
+                                    <div class="hover-shape1"></div>
+                                    <div class="hover-shape2"></div>
+                                    <div class="hover-shape3"></div>
+                                </button>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                    <div class="account-shadow"></div>
+                </div>
+            </div>
+            <!-- Open IGO Content End -->
+
+            <!-- Upcoming Content Start -->
+            <div class="tab-pane fade" id="upcoming" role="tabpanel" aria-labelledby="wallet-tab">
+                <div class="how_to_participate_right_content">
+                    <div class="how_to_participate_right_card how_to_participate_right_card1 ">
+                        <div class="how_to_participate_right_card_number">
+                            <img style="width: 100px;height: 100px;border-radius: 15px;"    src="{% static 'main/img/binance-logo.png' %}" class="img-fluid" />
+                        </div>
+                        <div class="how_to_participate_right_card_text">
+                            <h4>Deposit Via Binance</h4>
+                            <p>Create a Binance Account or Login to an existing account, Deposit via credit card or any
+                                other convenient channel, Proceed to fund your {{site_name}} account using a crypto
+                                transfer 
+                            </p>
+                            <a  href="https://www.binance.com/en/fiat/deposit/USD" style="background-color: transparent;margin-top: 20px;margin-left: 0px;"  class="readon black-shape apply-project-btn" href="">
+                                <span class="btn-text">
+                                    Proceed
+                                </span>
+                          
+                            </a>
+                        </div>
+                            
+                    </div>
+                    <div class="how_to_participate_right_card how_to_participate_right_card2 ">
+                        <div class="how_to_participate_right_card_number">
+                            <img style="width: 100px;height: 100px;"    src="{% static 'main/img/bybit-logo.png' %}" class="img-fluid" />
+                        </div>
+                        <div class="how_to_participate_right_card_text">
+                            <h4>Deposit Via ByBit</h4>
+                            <p>Create a Bybit Account or Login to an existing account, Deposit via credit card or any
+                                other convenient channel, Proceed to fund your {{site_name}} account using a crypto
+                                transfer 
+                            </p>
+                            <a style="background-color: transparent;margin-top: 20px;margin-left: 0px;"  class="readon black-shape apply-project-btn" href="https://www.bybit.com/fiat/trade/deposit/home">
+                                <span class="btn-text">
+                                    Proceed
+                                </span>
+                          
+                            </a>
+                        </div>
+                    </div>
+                    <div class="how_to_participate_right_card how_to_participate_right_card2 ">
+                        <div class="how_to_participate_right_card_number">
+                            <img style="width: 100px;height: 100px;border-radius: 15px;"    src="{% static 'main/img/kucoin-logo.png' %}" class="img-fluid" />
+                        </div>
+                        <div class="how_to_participate_right_card_text">
+                            <h4>Deposit Via KuCoin</h4>
+                            <p>Create a Kucoin Account or Login to an existing account, Deposit via credit card or any
+                                other convenient channel, Proceed to fund your {{site_name}} account using a crypto
+                                transfer  from Kucoin.
+                            </p>
+                            <a style="background-color: transparent;margin-top: 20px;margin-left: 0px;"  class="readon black-shape apply-project-btn" href="hhttps://www.kucoin.com/ucenter/signup">
+                                <span class="btn-text">
+                                    Proceed
+                                </span>
+                          
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Open IGO Content End -->
+
+
+
+
+            <!-- Open IGO Content End -->
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'main/js/core/wallet.js' %}"></script>
+{% endblock %}

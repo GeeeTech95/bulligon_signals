@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+ <!-- account section start -->
+ <div class="account__area " style="margin-top: 50px;"> 
+    <div class="account-bg"></div>
+    <div class="container">
+        <div class="account__content">
+            <div class="account__form">
+                <div class="account__title mb-29">
+                    <h2>Error 403! </h2>
+                    <h3> You are not authorized to view this page because you don't have the required permisions.</h3>
+            
+                </div>
+
+                <div class="item-button">
+               
+                  
+                    <a  href="{% url 'index' %}" class="theme-btn blue" style="width: 100%;">
+                        <span>Back To Home</span>
+                        <div class="hover-shape1"></div>
+                        <div class="hover-shape2"></div>
+                        <div class="hover-shape3"></div>
+                    </a >
+                </div>
+               
+            </div>
+            <div class="account-shadow"></div>
+        </div>
+    </div>
+</div>		
+<!-- account section END -->
+{% endblock %}
+
+

@@ -1,0 +1,98 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load vocabulary %}
+
+
+
+{% block content %}
+<tr>
+  <td>
+    <h2 style="text-align:left"><b>Deposit Awaiting Network Confirmations</b></h2>
+    <strong>
+      <h4>Dear {{instance.user.name}},</h4>
+    </strong>
+
+
+
+    <p>
+      Thank you for your recent deposit on {{site_name}}. Your transaction is currently being processed and is awaiting network confirmations
+
+    </p>
+    <p>
+
+    </p>
+
+    <p>
+      if you did not authorize this activity please contact
+      <a href="#">support</a> immediately.
+    </p>
+
+
+    <p>
+      Below are the details of your deposit:
+    </p>
+
+    <h2 style="margin-top: 20px;font-size: 18px;">Deposit  Details</h2>
+
+
+
+    <table style="background-color: #090a1ade; margin-bottom:30px;padding:10px">
+      <tbody style="color: white;">
+
+
+        <tr>
+          <td>Deposit Amount</td>
+          <td> USD {{instance.amount|intcomma}}</td>
+        </tr>
+        <hr>
+
+     
+
+        <tr>
+          <td>Deposit Chain</td>
+          <td>{{instance.payment_method}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Deposit Address</td>
+          <td>{{instance.deposit_address}}</td>
+        </tr>
+        <hr>
+
+        <tr>
+          <td>Status </td>
+          <td>Awaiting Confirmation</td>
+        </tr>
+        <hr>
+
+
+        <tr>
+          <td>Date and Time</td>
+          <td>{{instance.date|date:"j M, Y"}} {{instance.date.time}}</td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+    <p><strong>What Happens Next:</strong></p>
+    <ol>
+      <li><strong>Processing:</strong>Your deposit transaction is awaiting network confirmations, and is currently at 2 network confirmations as at the time of this mail.</li>
+      <li><strong>Completion:</strong> Once completed, the funds will be deposited to your {{site_name}} wallet. You will receive a confirmation email once the transaction is completed.</li>
+    </ol>
+    <p><strong>Important Information:</strong></p>
+    <p>The processing time for deposits may vary depending on network congestion and security checks. Please allow up
+      to 10 minutes for the completion of your request.</p>
+    <br>
+    <i>This is an automatically generated message, it does not accept replies.</i>
+
+
+
+
+
+  </td>
+</tr>
+{% endblock %}

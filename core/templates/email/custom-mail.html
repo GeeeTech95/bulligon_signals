@@ -1,0 +1,23 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+
+{% block content %}
+<tr>
+  <td>
+    {% if name %}
+    <strong>
+      <h2>Dear {{name}},</h2>
+    </strong>
+    {% endif %}
+
+    {% autoescape off %}
+
+    {{text}}
+
+    {% endautoescape %}
+
+
+  </td>
+</tr>
+{% endblock %}

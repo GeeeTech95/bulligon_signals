@@ -1,0 +1,101 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load vocabulary %}
+
+
+
+{% block content %}
+<tr>
+  <td>
+    <h2 style="text-align:left"><b>You have got a Referral</b></h2>
+    <strong>
+      <h4>Dear {{instance.referee.name}},</h4>
+    </strong>
+
+
+
+    <p>
+      We are excited to inform you that your recent referral has been successful, and you are on your path to earn referral
+              bonuses! Thank you for sharing {{site_name}} with your network and helping our community grow.
+
+    </p>
+    <p>
+
+    </p>
+
+   
+
+    <p>
+      Here are the details of your referral :
+    </p>
+
+    <h2 style="margin-top: 20px;font-size: 18px;">Referral Details</h2>
+
+
+
+    <table style="background-color: #090a1ade; margin-bottom:30px;padding:10px">
+      <tbody style="color: white;">
+
+
+        <tr>
+          <td>Referee Name </td>
+          <td>{{instance.name}} </td>
+        </tr>
+        <hr>
+
+        <tr>
+          <td>Date </td>
+          <td>{{instance.date_joined|date}}</td>
+        </tr>
+        <hr>
+
+     
+  
+
+      </tbody>
+
+    </table>
+    <h3>
+      <strong>
+        How to Maximize Your Rewards:
+      </strong>
+     </h3>
+
+ 
+
+    <p style="margin: 0 ;font-size: 18px;">
+      <ol>
+        <li><strong>  Keep Referring:</strong> Y The more people you refer, the more bonuses you earn. Share your unique referral link with friends and
+          family who might be interested in crypto investment and staking.</li>
+
+        <li><strong>Engage with the Community:</strong> Participate in our community forums and social media channels to stay updated on new features, promotions,
+          and opportunities to earn even more.</li>
+          <li><strong>Explore Our Features:</strong>   Make the most out of {{site_name}} by exploring our diverse investment and staking options designed to
+            help you grow your crypto portfolio.</li>
+      </ol>
+  
+    </p>
+
+
+
+    <a class="button-a button-a-primary" href="{{site_url}}{% url 'referral' %}" target="_blank"
+      style="background: #6d4afe; text-align: center; border: 2px solid #6d4afe; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 10px 20px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;margin: 20px 140px;">
+      View Your referrals
+    </a>
+    <p><strong>Important Information:</strong></p>
+    <p>If you have any questions about your investment or need further assistance, please contact our support team at
+      [support email].</p>
+    <p>Please keep your account details secure and do not share your login credentials with anyone.</p>
+
+    <br>
+    <i>This is an automatically generated message, it does not accept replies.</i>
+
+
+
+
+
+  </td>
+</tr>
+{% endblock %}

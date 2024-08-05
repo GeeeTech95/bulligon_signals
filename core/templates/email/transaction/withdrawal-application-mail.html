@@ -1,0 +1,100 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load vocabulary %}
+
+
+
+{% block content %}
+<tr>
+  <td>
+    <h2 style="text-align:left"><b>{{site_name}} Withdrawal Request</b></h2>
+    <strong>
+      <h4>Dear {{instance.user.name}},</h4>
+    </strong>
+
+
+
+    <p>
+      We have received your request to withdraw funds from your {{site_name}} account. Your request is currently being processed. Here are the details of your withdrawal application:
+
+    </p>
+    <p>
+
+    </p>
+
+    <p>
+      if you did not authorize this activity please  contact
+      <a href="#">support</a> immediately.
+    </p>
+
+
+    <p>
+      Below are the details of this transaction ;
+    </p>
+
+    <h2 style="margin-top: 20px;font-size: 18px;">Withdrawal Details</h2>
+
+
+
+    <table style="background-color: #090a1ade; margin-bottom:30px;padding:10px">
+      <tbody style="color: white;">
+ 
+       
+        <tr>
+          <td>WIthdrawal Amount</td>
+          <td>USD {{instance.amount|intcomma}} </td>
+        </tr>
+        <hr>
+        
+        <tr>
+          <td>Source Balance</td>
+          <td>{{instance.balance_type}} Wallet</td>
+        </tr>
+        <hr>
+       
+        <tr>
+          <td>Destination Chain</td>
+          <td>{{instance.wallet_name}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Destination Address</td>
+          <td>{{instance.wallet_address}}</td>
+        </tr>
+         <hr>
+      
+        <tr>
+          <td>Status </td>
+          <td>Processing</td>
+        </tr>
+        <hr>
+
+
+        <tr>
+          <td>Date and Time</td>
+          <td>{{instance.date|date:"j b, Y"}} {{instance.date.time}}</td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+ <p><strong>What Happens Next:</strong></p>
+            <ol>
+                <li><strong>Processing:</strong> Our team is currently reviewing your withdrawal request to ensure all details are accurate and meet our security standards.</li>
+                <li><strong>Completion:</strong> Once approved, the funds will be transferred to your specified destination address. You will receive a confirmation email once the transaction is completed.</li>
+            </ol>
+            <p><strong>Important Information:</strong></p>
+    <br>
+    <i>This is an automatically generated message, it does not accept replies.</i>
+
+
+
+
+
+  </td>
+</tr>
+{% endblock %}

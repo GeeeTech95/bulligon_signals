@@ -1,0 +1,184 @@
+{% extends 'admin-dashboard-base2.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% load mytags %}
+
+{% block content %}
+
+<div class="main-content" style="margin:0px;background-color: white">
+        <section class="section" >
+          <div class="section-body">
+                <div class="row">
+                        <div class="col-12">
+                          <div class="card" style="">
+                            <div class="card-header">
+                              <h4>Pending Deposits</h4>
+                              <div class="card-header-form">
+                                <form>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                            <div class="card-body p-0">
+                              <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <tr>
+                                    <th class="text-center">
+                                      <div class="custom-checkbox custom-checkbox-table custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                                          class="custom-control-input" id="checkbox-all">
+                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                                      </div>
+                                    </th>
+                                    <th>Member</th>
+                                   
+                                    <th>Amount</th>
+                                    <th>Payment Method</th>
+                                    <th>Proof</th>
+                                    <th> Date</th>
+        
+                                    <th>Action</th>
+                                  </tr>
+                                  {% if  deposits %}
+
+                                  {% for deposit in deposits %}
+                                  <tr>
+                                    <td class="p-0 text-center">
+                                      <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                          id="checkbox-1">
+                                        <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                      </div>
+                                    </td>
+                                    <td>
+                                        <span>{{deposit.user.name}}<br>
+                                          <c hidden  style="font-size: 10px">{{deposit.user.name}}</c>
+                                        </span>
+                                            {% if deposit.user.picture %}
+                                            
+                                            {% else %}
+                          
+                                               {% endif %}
+                                          
+                                    </td>
+                                    
+                                    <td>${{deposit.amount}}</td>
+                                    <td>{{deposit.payment_method}}</td>
+                                    <td>
+
+                                        <a href="{{deposit.payment_proof.url}}">
+                                          <img alt="image" src="{{deposit.payment_proof.url}}" width="55">
+                                        </a>
+                                        
+                                  </td>
+                                  
+                                    <td>{{deposit.date}}</td>
+                                  
+                                    <td id="action-cell{{deposit.pk}}">
+                                            <div class="dropdown d-inline">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      Action
+                                                    </button>
+                                                    <div class="dropdown-menu deposit-action">
+                                                      <a action_url="{% url 'approve-deposit' %}" id ="approve-deposit" pk="{{deposit.pk}}" class="dropdown-item has-icon" href="#"><i class="far fa-envelope"></i>Approve</a>
+                                                      <!--a id ="disapprove-button" class="dropdown-item has-icon" href="#"><i class="far fa-envelope"></i>Disapprove</a-->
+                                                     
+                                                    </div>
+                                                  </div> 
+                                        </td>
+                                  </tr>
+
+                                  {% endfor %}
+                                  {% else %}
+                                  <p style="padding-left:10px">You have no new Pending deposits</p>
+                                  {% endif %}
+                                  
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          </div>
+        </section>
+</div>            
+
+<div class="modal fade" id="approve-deposit-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color:black" class="modal-title" id="approve-pop-up-modal-title"></h5>
+        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="approve-pop-up-modal-body">
+        <center>
+       <img hidden="" style="height:33%;width:33%;padding-bottom:10px" src="{% static 'dashboard/image/transaction_success.jpg' %}">
+      </center>
+      <p style="margin:20px 10px 20px 20px;font-size:18px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"></p>
+      </div>
+      <div  id="approve-modal-pop-up-footer" class="modal-footer bg-whitesmoke br">
+          <button hidden type="button" id="yes-approve" class="btn btn-primary"></button>
+          <button hidden target_url= "{% url 'delete-coin' %}" type="button" id="yes-delete" class="btn btn-primary"></button>
+        <button hidden type="button" id="footer-button" class="btn btn-primary"></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script> 
+    $(".deposit-action a").click(function(){
+        var pk = $(this).attr("pk")
+        var action_url = $(this).attr("action_url")
+        $('#approve-pop-up-modal-title').html('Confirm')
+        $('.approve-pop-up-modal-body p').html("Are you sure you want to Approve this Deposit ?")
+        $("#approve-modal-pop-up-footer #yes-approve").html("Approve")
+        $("#approve-modal-pop-up-footer #yes-approve").removeAttr('hidden')
+        $("#yes-approve").attr("pk",pk)
+        $("#yes-approve").attr("action_url",action_url)
+        $("#approve-deposit-modal").modal('show')
+       
+    })
+
+    $("#yes-approve").on('click',function(){
+       
+        $(this).html("processing...");
+        var pk = $(this).attr('pk')
+        $.ajax({
+            type:"GET",
+            url :  $(this).attr('action_url'),
+            data : {'pk' : pk},
+            success : function(data){
+           
+                if(data.success){
+                  $(".close-modal").trigger("click")
+                  $("#action-cell" + pk).html("<button class='btn btn-success'>Approved</button>");
+                }
+                
+                else if(data.error){
+                  $(this).html("<i class='fa fa-bad'></>");
+                    $('#pop-up-modal-title').html('Error !')
+                  $('.pop-up-modal-body p').html(data.error)
+                  //$("#globalmodal").modal('close')
+                  alert(data.error)
+                
+                }
+            }
+        
+    });
+});
+
+</script>
+
+{% endblock %}

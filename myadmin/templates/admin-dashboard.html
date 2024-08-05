@@ -1,0 +1,169 @@
+{% extends 'admin-dashboard-base2.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+ <!-- Main Content -->
+ <div class="main-content">
+        <section class="section">
+          <div class="row ">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15">Total Revenue</h5><hr>
+                          <h2 class="mb-3 font-18">${{site_revenue}}</h2>
+                          <!--p class="mb-0"><span class="col-green"><a class="col-green" href="">View Statement</a></span> </p-->
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="{% static 'assets/img/banner/1.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="card-content">
+                          <h5 class="font-15"> Site Info</h5>
+                          <hr>
+                            <div style="">
+                            <span>
+                           
+                            <c style="padding-right:30px">Registered Users :</c><a href="{% url 'my-members' %}">{{registered_users}}</a>
+                          </div>
+                          <!--a href=""><p class="mb-0"><span class="col-orange">View Detail</span> </p></a-->
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="{% static 'assets/img/banner/2.png' %}" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+    
+                 
+        
+          <div class="row">
+            <div class="col-12 xl-12 ">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Members Recent Transactions</h4>
+                  <div class="card-header-form">
+                    <form>
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                          <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <tr>
+                     
+                        <th>Transaction ID</th>
+                        <th>Transaction Type</th>
+                        <th>Member</th>
+            
+                        <th>Amount</th>
+                      
+                        <th>Description</th>
+                        <th>Status</th>
+                       
+                        <th>Date</th>
+                        <th>Action</th>
+                      </tr>
+                      {% if transaction_history %}
+                      {% for transact in transaction_history %}
+                      <tr>
+                        
+                        <td>{{transact.transaction_id}}</td>
+                        {% if transact.transaction_type == "DEPOSIT" %}
+                        <td style="color:green">{{transact.transaction_type}}</td>
+                        {% else %}
+                        <td style="color:red">{{transact.transaction_type}}</td>
+                        {% endif %}
+                        
+                        <td>{{transact.user}}</td>
+
+                        {% if transact.transaction_type == "DEPOSIT" %}
+                        <td style="color:green">+${{transact.amount}}</td>
+                        {% else %}
+                        <td style="color:red">-${{transact.amount}}</td>
+                        {% endif %}
+       
+                       
+                        {% if transact.description %}
+                        <td>{{transact.description}}</td>
+                        {% else %}
+                        <td>-</td>
+                        {% endif %}
+                        {% if transact.status == "Declined" %}
+                        <td><div class="badge badge-danger">Failed</div></td>
+                        {% else %}
+                          {% if transact.status  == "Processing" %}
+                          <td><div class="badge badge-warning">Pending</div></td>
+                          {% else %}
+                          <td><div class="badge badge-success">Successful</div></td>
+                          {% endif %}
+                        {% endif  %}
+                        
+                       
+                        
+                        <td>{{transact.date}}</td>
+                        <td>
+                          
+                          <div class="badge badge-primary">Completed</div>
+                         
+                        </td>
+                    
+                      </tr>
+                      {% endfor %}
+                      {% else %}
+                      <tr >&nbsp;&nbsp;You have no transactions yet</tr>
+                      {% endif %}
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            
+        </section>
+        
+           
+           
+          
+      </div>
+      
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'admin-dashboard-base2.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% load mytags %}
+
+{% block content %}
+
+<div class="main-content" style="margin:0px;background-color: white">
+        <section class="section" >
+          <div class="section-body">
+                <div class="row">
+                        <div class="col-12">
+                          <div class="card" style="">
+                            <div class="card-header">
+                              <h4>Users</h4>
+                              <div class="card-header-form">
+                                <form>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                            <div class="card-body p-0">
+                              <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <tr>
+                                    <th class="text-center">
+                                      <div class="custom-checkbox custom-checkbox-table custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                                          class="custom-control-input" id="checkbox-all">
+                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                                      </div>
+                                    </th>
+                                    <th>Name</th>
+                                    <th>Balance</th>
+                                    
+                                    <th><span>Referral <br> Earnings</span></th>
+                                    <th><span>Funded<br> Earnings</span></th>
+                                    <th>Withdrawals</th>
+                                  
+                                    
+                                    <th>Reg Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                  </tr>
+
+                                  {% for member in members %}
+                                  <tr>
+                                    <td class="p-0 text-center">
+                                      <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                          id="checkbox-1">
+                                        <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                      </div>
+                                    </td>
+                                    <td>
+                                        <span>{{member.nicK_name}}<br><c style="font-size: 10px">{{member.name}}</c></span>
+                              
+                                          
+                                    </td>
+                                    
+                                    <td>${{member.user_wallet.current_balance}}</td>
+                                  
+                                    <td>${{member.user_wallet.referral_earning}}</td>
+                                    <td>${{member.user_wallet.funded_earning}}</td>
+                                    <td>${{member.user_wallet.withdrawals}}</td>
+                                  
+                                    <!--td>  <span><div class="badge badge-success">Active</div>
+                                    <br> <c style="font-size: 10px" >expires {{member.user_wallet.plan_end.date}}</c></span></td>
+                              
+                                    <td>  <span><div class="badge badge-danger">Inactive</div>
+                                      <!--br> <c style="font-size: 10px" >expires 34</c></span></td->
+                                    
+                                   
+                                    
+
+                                    <td class="align-middle">
+                                      <span>{{member.user_wallet.plan}}</div>
+                                        <br> 
+                                      <div class="progress" data-height="4" data-toggle="tooltip" title="100%">
+                                        <div class="progress-bar bg-success" data-width="{{member.user_wallet.plan_progress}}"></div>
+                                      </div>
+                                    </td-->
+                                    <td>{{member.date_joined.date}}</td>
+                                   
+                                   
+                                    <td>
+                                        {% if member.is_active %}
+                                      <div class="badge badge-success">Active</div>
+                                      {% else %}
+                                      <div class="badge badge-danger">Inactive</div>
+                                      {% endif %}
+                                    </td>
+                                    <td>
+                                            <div class="dropdown d-inline">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      Action
+                                                    </button>
+                                                    <div class="dropdown-menu">
+
+                                                      <a class="dropdown-item has-icon" href="{% url 'create-transaction' member.user_wallet.wallet_id %}"><i class="far fa-file"></i> Fund</a>
+                                                      <a class="dropdown-item has-icon" href="{% url 'member-detail' member.pk %}"><i class="far fa-user"></i> View Details</a>
+                                                     
+                                                    </div>
+                                                  </div> 
+                                        </td>
+                                  </tr>
+
+                                  {% endfor %}
+                                  
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          </div>
+        </section>
+</div>            
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends 'dashboard-base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="gamfi-explore-content gamfi-previous-section pt-0 md-pt-0 pb-110 md-pb-50">
+    <div class="container">
+        <div class="breadcrumbs-area sec-heading">
+            <div class="sub-inner  mb-40">
+
+                <span class="sub-title">Withdaw Funds</span>
+                <img class="heading-left-image" src="{% static 'main/images/icons/steps.png' %}" />
+            </div>
+
+        </div>
+
+        <!-- Tab Menu Section Start -->
+        <div class="project-menu-area d-flex align-items-center justify-content-between">
+            <div class="project-left-menu">
+                <ul class="nav" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="tab-link active" id="personal-tab" data-bs-toggle="tab"
+                            data-bs-target="#open-igo" type="button" role="tab" aria-controls="open-igo"
+                            aria-selected="true">Destination Wallet</button>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Tab Content Section Start -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Open IGO Content Start -->
+            <div class="tab-pane fade show active" id="open-igo" role="tabpanel" aria-labelledby="personal-tab">
+
+                {% if user.wallet_address_valid %}
+                {% if  withdrawal_allowed %}
+             
+                <form action ="{% url 'withdraw' %}" method="post" class="withdrawal-form" dashboard_link="{% url 'dashboard' %}">
+                    {% csrf_token %}
+                    <div class="input__group mb-23">
+
+                        <label>Select Balance Type</label>
+                        <span input-name="balance_type" class="field-error"></span>
+                        <div class="payment-list">
+                            <div class="row">
+
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="payment-item">
+                                        <input class="payment-check" 
+                                            type="radio" id="main" name="balance_type" value="Main">
+                                        <label for="main">
+                                            <div class="payment-icon payment-icon-ltc">
+                                                <em
+                                                class="payment-icon fa fa-cog"></em></div>
+                                            <span class="payment-cur">Main</span><br>
+                                            <span>Avail: ${{user.user_wallet.available_balance|intcomma}}</span>
+                                        </label>
+
+                                    </div>
+                                </div><!-- .col -->
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="payment-item">
+                                        <input class="payment-check"
+                                            type="radio" id="referral" name="balance_type" value="Referral">
+                                        <label for="referral">
+                                            <div class="payment-icon payment-icon-btc"><em
+                                                    class="payment-icon fab fa-cog"></em></div>
+                                            <span class="payment-cur">Referral</span><br>
+                                            <span>Avail: ${{user.user_wallet.referral_earning|intcomma}}</span>
+                                        </label>
+
+                                    </div>
+                                </div><!-- .col -->
+
+                            </div><!-- .row -->
+                        </div>
+                    </div>
+
+                    <div class="input__group mb-23">
+                              
+                        <label>Amount</label>  
+                        <span input-name="amount" class="field-error mb-23"><br></span>
+                        <input type="number" name="amount" required >
+                    </div> 
+
+                    {% include "otp.html" %}
+
+                    <div class="item-button">
+                        <button type="submit" class="theme-btn blue" style="width: 100%;">
+                            <span>Withdraw</span>
+                            <div class="hover-shape1"></div>
+                            <div class="hover-shape2"></div>
+                            <div class="hover-shape3"></div>
+                        </button >
+                    </div>
+                </form>
+
+                {% else %}
+                <center class="pt-40 pb-40">
+                    Fund withdrawals are not available at the moment, we are working to bring it back ASAP. please check
+                    back in a moment.
+                </center>
+                {% endif %}
+                {% else %}
+                <center class="pt-40 pb-40">
+                    You are yet to enter a valid wallet address, you can't proceed with a withdrawal. Please click <a
+                        href="{% url 'profile' %}?tab=wallet-address">HERE</a> to provide a valid wallet address for
+                    payment.
+                </center>
+                {% endif %}
+            </div>
+
+
+
+            <div class="tab-pane fade" id="upcoming" role="tabpanel" aria-labelledby="wallet-tab">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'main/js/core/wallet.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'main/js/core/otp.js' %}"></script>
+
+
+{% endblock %}

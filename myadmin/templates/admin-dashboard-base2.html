@@ -1,0 +1,407 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- index.html  21 Nov 2019 03:44:50 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>{{site_name}} - Admin Dashboard</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{% static 'dashboard/css/app.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/bundles/prism/prism.css' %}">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/components.css' %}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="{% static 'dashboard/css/custom.css' %}">
+  <link rel='shortcut icon' type='image/x-icon' href='dashboard/img/favicon.ico' />
+
+  <link href="{% static 'socials/alita/css/materialdesignicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'socials/alita/css/fontawesome.css' %}" rel="stylesheet">
+
+  
+  {% block ccs %}
+  {% endblock %}
+
+  <style>
+
+#floater{
+         position:fixed;
+         box-shadow:4px white;
+         bottom:52px;
+         right:10px;
+         width: fit-content;
+         height: fit-content;
+         font-size:30px;
+         box-shadow:white 5px;
+        
+         z-index : 3000;
+        }
+
+       
+
+        .loader{
+        
+        width: 100%;
+        height: 100vh;
+        
+
+        }
+
+        #tools div img {
+            width: 90px;
+            height : 60px
+        }
+
+        .self-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:white;
+            height: 48px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;   
+
+        }
+
+        .my-footer-nav{
+            padding-left:9%;
+            text-align: center;
+            position: relative;
+            padding-top:0.1px;
+            
+            
+        }
+
+        .my-footer-nav ul{
+          list-style-type : none;
+          margin:auto;
+         padding-left :-10px;
+          overflow : hidden;
+        
+		}
+		.fa-times path {
+			stroke : black;
+			stroke-width : 20px
+		}
+        
+        .my-footer-nav li{
+          float : left;
+		  padding-right : 17px;
+		  
+        }
+
+        .self-footer a{
+           
+            color: rgba(11, 11, 12, 0.856);
+           font-size:29px;
+		   font-weight:150;
+		   stroke-width: 5px solid red;
+	
+        }
+        .my-footer-nav li i{
+            display :block;
+            color: black;
+            text-align:center;
+            padding-left:45%;
+            text-decoration :none;
+            
+
+        }
+        .my-footer-nav li i:hover {
+         background-color:grey
+        }
+		.new-content-indicator {
+			position:relative;
+			top:-16px;
+			right:8px;
+			outline:none;
+            left:-15px;
+			padding:2px 5px;
+			width:25px;
+			height:25px;
+			background-color:red;
+			color:white;
+			font-weight:500;
+			border-radius: 50%;
+			
+		}
+
+		.fa-bell g g path {
+			stroke:black;
+			stroke-width: 40px;
+		}
+
+		.create-post-slider{
+			display:none;
+			width:100%;
+			height:40px;
+			background-color:#00264d;
+			position:fixed;
+			bottom:48px;
+			left:0px;
+			z-index:1000;
+		}
+
+		.create-post-slider button{
+			outline:none;
+			border-radius: 20px;
+			background-color: white;
+			color:#00264d;
+			text-align:center;
+			border:0px;
+			margin:0px 10px 0px 10px;
+			font-weight:300;
+			font-family:Georgia, 'Times New Roman', Times, serif;
+		}
+
+  </style>
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app" style="background-color: white">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky">
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a></li>
+            <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                <i data-feather="maximize"></i>
+              </a></li>
+            
+          </ul>
+        </div>
+        <ul class="navbar-nav navbar-right">
+            <li>
+                <form class="form-inline mr-auto">
+                  <div class="search-element">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                    <button class="btn" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </li>
+          
+              <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i>
+              </a>
+              <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+                
+                <div class="dropdown-header">
+                  Notifications
+                  <div class="float-right">
+                    <a href="#">Mark All As Read</a>
+                  </div>
+                </div>
+                <div class="dropdown-list-content dropdown-list-icons">
+                 
+                  {% for not in user.notification.all %}
+                 
+                  <a href="#" class="dropdown-item dropdown-item-unread"> <span
+                      class="dropdown-item-icon bg-primary text-white"> <i class="fas
+                          fa-code"></i>
+                    </span> <span class="dropdown-item-desc">{{not.message}} <span class="time">{{not.date}}</span>
+                    </span>
+                  </a>
+                  {% endfor %} 
+                </div>
+                <div class="dropdown-footer text-center">
+                  <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </li>
+                
+          
+       
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html"> 
+              <!--img alt="image" src="{% static 'dashboard/img/logo.png' %}" class="header-logo" /--> <span
+                class="logo-name">{{user.username}}</span>
+            </a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            
+            <li class="nav-item">
+              <a style="padding-left:20px" href="{% url 'admin-dashboard' %}" class="nav-link"><i data-feather="monitor"></i><span>My Dashboard</span></a>
+            </li>
+          
+            
+            <!--li  class="nav-item"> 
+                <a style="color:black;padding-left:10px" href="" class="nav-link"><i class="fas fa-user"></i><span>Dashboard Info</span></a>
+            </li>
+            <li class="nav-item">
+              <a style="padding-left:10px" class="nav-link" href=""><i class="fas fa-share"></i><span>Send Money</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a style="padding-left:10px" class="nav-link" href=""><i class="fas fa-credit-card"></i><span>Request For Credit Card</span></a>
+            </li-->
+            
+ 
+            <li class="dropdown" style="padding-left:0px">
+                <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-money-bill"></i><span>Transactions</span></a>
+                <ul class="dropdown-menu">
+                    <!--li class="nav-item"><a class="nav-link" href=""><i class="fas fa-file"></i><span>Create Transaction</span></a></li-->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'transaction-history' %}"><i class="fas fa-history"></i><span>Transaction History</span></a></li>
+                    <!--li class="nav-item"><a class="nav-link" href="#"><i style="color: red" class="fas fa-history"></i><span>Failed Transactions</span></a></li-->
+          
+    
+                </ul>
+            </li>
+        <!--li  class="nav-item"> 
+            <a style="color:black;padding-left:10px" href='' class="nav-link"><i class="fas fa-arrow-up"></i><span>Deposit</span></a>
+        </li>
+
+        <li  class="nav-item"> 
+            <a style="color:black;padding-left:10px" href="" class="nav-link"><i class="fas fa-arrow-down"></i><span>Withdraw</span></a>
+        </li-->
+         
+        <li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-arrow-up"></i><span>Deposits</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="{% url 'deposit-notice' %}">Deposit Notice</a></li>
+              <li><a class="nav-link"href="{% url 'investment-notice' %}">Investment Notice</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-arrow-down"></i><span>Withdrawals</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="{% url 'withdrawals' %}">Withdrawal Requests</a></li>
+           
+            </ul>
+        </li>
+         
+        <!--li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-money-bill"></i><span>Crypto Wallet</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="{% url 'add-coin' %}">Add Wallet Address</a></li>
+              <li><a class="nav-link"href="{% url 'coin-list' %}">View All Addresses</a></li>
+           
+            </ul>
+        </li-->
+
+        <li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-user"></i><span>Members</span></a>
+            <ul class="dropdown-menu">
+            
+              <li><a class="nav-link"href="{% url 'my-members' %}">All Members</a></li>
+            </ul>
+        </li>
+        
+        <li class="dropdown" style="padding-left:0px">
+          <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="far fa-envelope"></i><span>Email</span></a>
+          <ul class="dropdown-menu">
+           
+            <li><a class="nav-link"href="{% url 'send-custom-mail' %}">Send Mail</a></li>
+          </ul>
+      </li>
+
+        <!--li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-file"></i><span>Investment plans</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link"href="{% url 'create-plan' %}">Add Plan</a></li>
+              <li><a class="nav-link"href="{% url 'plans-admin' %}">View plans</a></li>
+            </ul>
+        </li>
+
+        
+        <!--li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Email</span></a>
+            <ul class="dropdown-menu">
+
+              <li><a class="nav-link"href="">Send All Members Email </a></li>
+             
+            </ul>
+        </li-->
+
+        <li class="dropdown" style="padding-left:0px">
+            <a style="padding-left:10px" href="#" class="menu-toggle nav-link has-dropdown"><i class="fas fa-cog"></i><span>Settings</span></a>
+            <ul class="dropdown-menu">
+              
+              <li><a class="nav-link"href="{% url 'admin-settings' %}">General Settings</a></li>
+
+            </ul>
+        </li>
+        
+        <li  class="nav-item"> 
+          <a style="color:black;padding-left:10px" href="{% url 'logout' %}" class="nav-link"><i class="fas fa-arrow-left"></i><span>Logout</span></a>
+      </li>
+            
+           
+              
+    
+            
+            
+            
+          </ul>
+        </aside>
+      </div>
+
+       <div style="padding-bottom:30px">
+      {% block content %}
+      <!-- Main Content -->
+     
+       {% endblock %}
+      </div>
+
+      <!-- Vertically Center -->
+      <div class="modal fade" id="globalmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 style="color:black" class="modal-title" id="pop-up-modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="pop-up-modal-body">
+            <center>
+           <img hidden="" style="height:33%;width:33%;padding-bottom:10px" src="{% static 'dashboard/image/transaction_success.jpg' %}">
+          </center>
+          <p style="margin:20px 10px 20px 20px;font-size:18px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"></p>
+          </div>
+          <div  id="modal-pop-up-footer" class="modal-footer bg-whitesmoke br">
+              <button hidden type="button" id="yes-approve" class="btn btn-primary"></button>
+              <button hidden target_url= "{% url 'delete-coin' %}" type="button" id="yes-delete" class="btn btn-primary"></button>
+            <button hidden type="button" id="footer-button" class="btn btn-primary"></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      
+     
+  <!-- General JS Scripts -->
+  <script src="{% static 'dashboard/js/app.min.js' %}""></script>
+  <script src="{% static 'dashboard/bundles/prism/prism.js' %}"></script>
+  <!-- JS Libraies -->
+  <script src="{% static 'dashboard/bundles/apexcharts/apexcharts.min.js' %}""></script>
+  <!-- Page Specific JS File -->
+  <script src="{% static 'dashboard/js/page/index.js' %}""></script>
+  <!-- Template JS File -->
+  <script src="{% static 'dashboard/js/scripts.js' %}""></script>
+  <!-- Custom JS File -->
+  <script src="{% static 'dashboard/js/custom.js' %}""></script>
+
+  {% block js %}
+  {% endblock %}
+</body>
+
+
+<!-- index.html  21 Nov 2019 03:47:04 GMT -->
+</html>

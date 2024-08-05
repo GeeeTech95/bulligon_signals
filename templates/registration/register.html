@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<style>
+    select {
+        width: 100%;
+        height: 50px;
+        background-color: transparent;
+        color: white;
+    }
+
+    select option {
+        color: black;
+
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<!-- account section start -->
+<div class="account__area">
+    <div class="account-bg"></div>
+    <div class="container">
+        <div class="account__content">
+            <div class="account__form">
+                <div class="account__title mb-29">
+                    <h2>Create Account</h2>
+                    <h3>Join Over <b>100K+</b> {{site_name}} Users. Signup and claim up to 100 USDT Trading Trial Fund
+                    </h3>
+                </div>
+
+                <form  email_confirm_link="{% url 'verify-email' %}" action="{% url 'register-api'  %}" method="post"
+                    class="registration-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.3s" data-wow-duration="0.4s">
+                            <div class="input__group mb-23">
+                                <span input-name="email" class="field-error"></span>
+                                <label>Email address</label>
+                                <input type="email" name="email" id="email" placeholder="Enter your email address">
+                            </div>
+                            <div class="input__group mb-23">
+                                <label>Country</label><br>
+                                <span input-name="country" class="field-error"></span>
+                                <select name="country">
+                                    {% for country in COUNTRIES %}
+                                    <option  value="{{country.pk}}">{{country.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="input__group mb-23">
+                                <label>Password</label>
+                                <span input-name="password" class="field-error"></span>
+                                <input type="password" name="password" id="pass" placeholder="Enter your password">
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.3s" data-wow-duration="0.4s">
+                            <div class="input__group mb-23">
+                                <label>Full Name</label>
+                                <span input-name="name" class="field-error"></span>
+                                <input type="text" name="name" id="f-name" placeholder="Enter your name">
+                            </div>
+                            <div class="input__group mb-23">
+                                <label>Phone Number</label>
+                                <span input-name="phone_number" class="field-error"></span>
+                                <input type="text" name="phone_number" id="p-number"
+                                    placeholder="Enter your mobile number">
+                            </div>
+                            <div class="input__group mb-23">
+                                <span input-name="password_comfirmation" class="field-error"></span>
+                                <label>Comfirm Password</label>
+                                <input type="password" name="password_comfirmation" id="pass2" placeholder="Re-nter your password">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="input__group mb-23" hidden>
+                   
+                        <input type="text" name="referral_id" value="{{referral_id}}">
+                    </div>
+
+
+
+                    <div class="item-text mb-28">
+                        <input type="checkbox" name="accept" id="accept" required>
+                        <label for="accept">
+                            I accept the
+                            <a href="{% url 'tos' %}">Term of Conditions</a>
+                            and
+                            <a href="{% url 'privacy-policy' %}">Privacy Policy </a>
+                        </label>
+                    </div>
+                    <div class="item-button">
+                        <button type="submit" class="theme-btn blue" style="width: 100%;">
+                            <span>Register Account</span>
+                            <div class="hover-shape1"></div>
+                            <div class="hover-shape2"></div>
+                            <div class="hover-shape3"></div>
+                        </button>
+                    </div>
+                </form>
+                <div class="item-bottom mt-31">
+                    <h4>
+                        Already have an account ?
+                        <a href="{% url 'login' %}">Sign in now !</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="account-shadow"></div>
+        </div>
+    </div>
+</div>
+<!-- account section END -->
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'main/js/core/account.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}

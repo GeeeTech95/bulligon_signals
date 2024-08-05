@@ -1,0 +1,101 @@
+{% extends 'base-mail2.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load vocabulary %}
+
+
+
+{% block content %}
+<tr>
+  <td>
+    <h2 style="text-align:left"><b>{{site_name}} Transaction</b></h2>
+    <strong>
+      <h4>Dear {{transaction.user.name}},</h4>
+    </strong>
+
+
+
+    <p>
+      We are pleased to inform you that your recent transaction on {{site_name}} has been successfully processed.
+      <br>You should always
+      verify the legitimacy of any transaction by checking your {{site_name}}
+      <a href="https://www.bitcoinvoyager.finance{% url 'transaction' %}">transaction logs</a>.
+
+    </p>
+    <p>
+
+    </p>
+
+    <p>
+      if you did not authorize this activity please contact
+      <a href="#">support</a> immediately.
+    </p>
+
+    <p>
+      Below are the details of your transaction for your records:
+    </p>
+
+
+
+    <table style="background-color: #090a1ade; margin:0px;padding:10px;">
+      <tbody style="color: white;">
+        <tr>
+          <td>Transaction Type</td>
+          <td>{{transaction.transaction_type|upper}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Chain</td>
+          <td>{{transaction.coin|upper}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Transaction Amount</td>
+          <td>{{transaction.amount|intcomma}} USD</td>
+        </tr>
+        <hr>
+
+        <tr>
+          <td>User</td>
+          <td>{{transaction.user}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>Transaction Batch</td>
+          <td>{{transaction.batch}}</td>
+        </tr>
+        <hr>
+        <tr>
+          <td>REF. </td>
+          <td>{{transaction.transaction_id}}</td>
+        </tr>
+        <hr>
+
+
+        <tr>
+          <td>Date and Time</td>
+          <td>{{transaction.date|date:"j b, Y"}} {{transaction.date.time}}</td>
+        </tr>
+
+
+
+      </tbody>
+
+    </table>
+
+
+    <br>
+    <i>This is an automatically generated message, it does not accept replies.</i>
+
+
+    {% autoescape off %}
+    {{text}}
+    {% endautoescape %}
+
+
+
+
+  </td>
+</tr>
+{% endblock %}

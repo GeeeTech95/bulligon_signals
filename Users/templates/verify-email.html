@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<!-- account section start -->
+<div class="account__area " style="margin-top: 50px;">
+    <div class="account-bg"></div>
+    <div class="container">
+        <div class="account__content">
+            <div class="account__form">
+                <div class="account__title mb-29">
+                    <h2>Email Verification</h2>
+                    <h3>Please enter the OTP sent your email <b>{{user.email_hidden}}</b></h3>
+                </div>
+                <form action="" method="post" class="verify-email-form" dashboard_link = "{% url 'dashboard' %}">
+                    {% csrf_token %}
+                    <div class="otp-section">
+
+                        <div class="otp-field">
+                            <input type="text" maxlength="1" />
+                            <input type="text" maxlength="1" />
+                            <input class="space" type="text" maxlength="1" />
+                            <input type="text" maxlength="1" />
+                            <input type="text" maxlength="1" />
+                            <input type="text" maxlength="1" />
+                        </div>
+                    </div>
+                    <span input-name="otp" class="field-error"></span>
+
+                    <div class="item-button">
+                        <button type="submit" class="theme-btn blue" style="width: 100%;">
+                            <span>Verify</span>
+                            <div class="hover-shape1"></div>
+                            <div class="hover-shape2"></div>
+                            <div class="hover-shape3"></div>
+                        </button>
+                    </div>
+                </form>
+                <div class="item-bottom mt-31">
+                    <h4>
+                        Didn't get any email ?
+                        <a id="resend-otp"  url ="{% url 'send-code' %}" href="#0">Resend OTP</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="account-shadow"></div>
+        </div>
+    </div>
+</div>
+<!-- account section END -->
+{% endblock %}
+
+
+{% block js %}
+
+<script src="{% static 'main/js/core/otp.js' %}"></script>
+<script src="{% static 'main/js/core/account.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}
