@@ -70,7 +70,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'bitcoin_voyager.urls'
+ROOT_URLCONF = 'bulligon_signals.urls'
 
 
 TEMPLATES = [
@@ -98,7 +98,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bitcoin_voyager.wsgi.application'
+WSGI_APPLICATION = 'bulligon_signals.wsgi.application'
 
 AUTH_USER_MODEL = 'Users.User'
 
