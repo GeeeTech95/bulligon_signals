@@ -1,17 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
 
 <!-- Mirrored from thetork.com/demos/html/bitrader/index1-light.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Aug 2023 07:56:05 GMT -->
 <head>
-  <title>Bitrader - Professional Multipurpose HTML Template for Your Crypto, Forex, and Stocks Trading Business </title>
+  <title>{{site_name}} | THe signal that profits </title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Sites meta Data -->
   <meta name="application-name"
-    content="Bitrader - Professional Multipurpose HTML Template for Your Crypto, Forex, and Stocks Trading Business">
+    content="{{site_name}} | THe signal that profits">
   <meta name="author" content="thetork">
   <meta name="keywords" content="Bitrader, Crypto, Forex, and Stocks Trading Business">
   <meta name="description"
@@ -25,29 +27,29 @@
   <meta property="og:description"
     content="Welcome to Bitrader, the game-changing HTML template meticulously crafted to revolutionize your trading business. With its sleek and modern design, Bitrader provides a cutting-edge platform to showcase your expertise, attract clients, and stay ahead in the competitive trading markets.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/og.png">
+  <meta property="og:image" content="main/images/og.png">
 
 
 
-  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="main/images/favicon.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/all.min.css' %}">
 
-  <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/swiper-bundle.min.css' %}">
 
 
 
   <!-- main css for template -->
-  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
 
 <body>
 
   <!-- ===============>> Preloader start here <<================= -->
   <div class="preloader">
-    <img src="{% static 'assets/images/logo/preloader.png' %}">
+    <img src="{% static 'main/images/logo/preloader.png' %}">
   </div>
   <!-- ===============>> Preloader end here <<================= -->
 
@@ -55,7 +57,7 @@
 
   <!-- ===============>> light&dark switch start here <<================= -->
   <div class="lightdark-switch d-none">
-    <span class="dark-btn" id="btnSwitch"><img src="{% static 'assets/images/icon/moon.svg' %}"
+    <span class="dark-btn" id="btnSwitch"><img src="{% static 'main/images/icon/moon.svg' %}"
         class="swtich-icon"></span>
   </div>
   <!-- ===============>> light&dark switch start here <<================= -->
@@ -71,7 +73,7 @@
         <div class="header-wrapper">
           <div class="logo">
             <a href="index-2.html">
-              <img class="dark" src="{% static 'assets/images/logo/logo.png' %}" alt="logo">
+              <img class="dark" src="{% static 'main/images/logo/logo.png' %}" alt="logo">
             </a>
           </div>
           <div class="menu-area">
@@ -156,12 +158,14 @@
 
 
 
+  {% block content %}
+
 
   <!-- ===============>> Banner section start here <<================= -->
   <section class="banner banner--style1">
     <div class="banner__bg">
       <div class="banner__bg-element">
-        <img src="{% static 'assets/images/banner/home1/bg.png' %}" alt="section-bg-element" class="dark d-none d-lg-block">
+        <img src="{% static 'main/images/banner/home1/bg.png' %}" alt="section-bg-element" class="dark d-none d-lg-block">
         <span class="bg-color d-lg-none"></span>
       </div>
     </div>
@@ -171,7 +175,7 @@
           <div class="col-lg-6 col-md-7">
             <div class="banner__content" data-aos="fade-right" data-aos-duration="1000">
               <div class="banner__content-coin">
-                <img src="{% static 'assets/images/banner/home1/3.png' %}">
+                <img src="{% static 'main/images/banner/home1/3.png' %}">
               </div>
               <h1 class="banner__content-heading">Invest your money
                 with <span>higher return</span></h1>
@@ -224,14 +228,14 @@
           </div>
           <div class="col-lg-6 col-md-5">
             <div class="banner__thumb" data-aos="fade-left" data-aos-duration="1000">
-              <img src="{% static 'assets/images/banner/home1/1.png' %}" alt="banner-thumb" class="dark">
+              <img src="{% static 'main/images/banner/home1/1.png' %}" alt="banner-thumb" class="dark">
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="banner__shape">
-      <span class="banner__shape-item banner__shape-item--1"><img src="{% static 'assets/images/banner/home1/4.png' %}"
+      <span class="banner__shape-item banner__shape-item--1"><img src="{% static 'main/images/banner/home1/4.png' %}"
           alt="shape icon"></span>
     </div>
 
@@ -251,35 +255,35 @@
             <div class="swiper-slide">
               <div class="partner__item">
                 <div class="partner__item-inner">
-                  <img src="{% static 'assets/images/partner/light/1.png' %}" alt="partner logo" class="dark">
+                  <img src="{% static 'main/images/partner/light/1.png' %}" alt="partner logo" class="dark">
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="partner__item">
                 <div class="partner__item-inner">
-                  <img src="{% static 'assets/images/partner/light/2.png' %}" alt="partner logo" class="dark">
+                  <img src="{% static 'main/images/partner/light/2.png' %}" alt="partner logo" class="dark">
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="partner__item">
                 <div class="partner__item-inner">
-                  <img src="{% static 'assets/images/partner/light/3.png' %}" alt="partner logo" class="dark">
+                  <img src="{% static 'main/images/partner/light/3.png' %}" alt="partner logo" class="dark">
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="partner__item">
                 <div class="partner__item-inner">
-                  <img src="{% static 'assets/images/partner/light/4.png' %}" alt="partner logo" class="dark">
+                  <img src="{% static 'main/images/partner/light/4.png' %}" alt="partner logo" class="dark">
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="partner__item">
                 <div class="partner__item-inner">
-                  <img src="{% static 'assets/images/partner/light/5.png' %}" alt="partner logo" class="dark">
+                  <img src="{% static 'main/images/partner/light/5.png' %}" alt="partner logo" class="dark">
                 </div>
               </div>
             </div>
@@ -303,7 +307,7 @@
             <div class="about__thumb pe-lg-5" data-aos="fade-right" data-aos-duration="800">
               <div class="about__thumb-inner">
                 <div class="about__thumb-image floating-content">
-                  <img class="dark" src="{% static 'assets/images/about/1.png' %}">
+                  <img class="dark" src="{% static 'main/images/about/1.png' %}">
                   <div class="floating-content__top-left">
                     <div class="floating-content__item">
                       <h3> <span class="purecounter" data-purecounter-start="0" data-purecounter-end="10">30</span>
@@ -419,11 +423,11 @@
                   <div class="tab-pane fade show active" id="feat-pills-one" role="tabpanel"
                     aria-labelledby="feat-pills-one-tab" tabindex="0">
                     <div class="feature__image floating-content">
-                      <img src="{% static 'assets/images/feature/1.png' %}">
+                      <img src="{% static 'main/images/feature/1.png' %}">
                       <div class="floating-content__top-right floating-content__top-right--style2" data-aos="fade-left"
                         data-aos-duration="1000">
                         <div class="floating-content__item floating-content__item--style2 text-center">
-                          <img src="{% static 'assets/images/feature/5.png' %}">
+                          <img src="{% static 'main/images/feature/5.png' %}">
                           <p class="style2">Interest Rate For Loan</p>
                         </div>
                       </div>
@@ -441,11 +445,11 @@
                   <div class="tab-pane fade" id="feat-pills-two" role="tabpanel" aria-labelledby="feat-pills-two-tab"
                     tabindex="0">
                     <div class="feature__image floating-content">
-                      <img src="{% static 'assets/images/feature/2.png' %}">
+                      <img src="{% static 'main/images/feature/2.png' %}">
                       <div class="floating-content__top-right floating-content__top-right--style2" data-aos="fade-left"
                         data-aos-duration="1000">
                         <div class="floating-content__item floating-content__item--style2 text-center">
-                          <img src="{% static 'assets/images/feature/6.png' %}">
+                          <img src="{% static 'main/images/feature/6.png' %}">
                           <p class="style2">Interest Rate For Loan</p>
                         </div>
                       </div>
@@ -463,11 +467,11 @@
                   <div class="tab-pane fade" id="feat-pills-three" role="tabpanel"
                     aria-labelledby="feat-pills-three-tab" tabindex="0">
                     <div class="feature__image floating-content">
-                      <img src="{% static 'assets/images/feature/1.png' %}">
+                      <img src="{% static 'main/images/feature/1.png' %}">
                       <div class="floating-content__top-right floating-content__top-right--style2" data-aos="fade-left"
                         data-aos-duration="1000">
                         <div class="floating-content__item floating-content__item--style2 text-center">
-                          <img src="{% static 'assets/images/feature/7.png' %}">
+                          <img src="{% static 'main/images/feature/7.png' %}">
                           <p class="style2">Interest Rate For Loan</p>
                         </div>
                       </div>
@@ -485,11 +489,11 @@
                   <div class="tab-pane fade" id="feat-pills-four" role="tabpanel" aria-labelledby="feat-pills-four-tab"
                     tabindex="0">
                     <div class="feature__image floating-content">
-                      <img src="{% static 'assets/images/feature/2.png' %}">
+                      <img src="{% static 'main/images/feature/2.png' %}">
                       <div class="floating-content__top-right floating-content__top-right--style2" data-aos="fade-left"
                         data-aos-duration="1000">
                         <div class="floating-content__item floating-content__item--style2 text-center">
-                          <img src="{% static 'assets/images/feature/8.png' %}">
+                          <img src="{% static 'main/images/feature/8.png' %}">
                           <p class="style2">Interest Rate For Loan</p>
                         </div>
                       </div>
@@ -512,7 +516,7 @@
       </div>
     </div>
     <div class="feature__shape">
-      <span class="feature__shape-item feature__shape-item--1"><img src="{% static 'assets/images/feature/shape/1.png' %}"
+      <span class="feature__shape-item feature__shape-item--1"><img src="{% static 'main/images/feature/shape/1.png' %}"
           alt="shape-icon"></span>
       <span class="feature__shape-item feature__shape-item--2"> <span></span> </span>
     </div>
@@ -536,7 +540,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/1.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/1.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -552,7 +556,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/2.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/2.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -568,7 +572,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/3.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/3.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -584,7 +588,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/4.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/4.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -601,7 +605,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/5.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/5.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -617,7 +621,7 @@
               <div class="service__item-inner text-center">
                 <div class="service__thumb mb-30">
                   <div class="service__thumb-inner">
-                    <img class="dark" src="{% static 'assets/images/service/6.png' %}">
+                    <img class="dark" src="{% static 'main/images/service/6.png' %}">
                   </div>
                 </div>
                 <div class="service__content">
@@ -749,7 +753,7 @@
     </div>
     <div class="roadmap__shape">
       <span class="roadmap__shape-item roadmap__shape-item--1"> <span></span> </span>
-      <span class="roadmap__shape-item roadmap__shape-item--2"> <img src="{% static 'assets/images/icon/1.png' %}">
+      <span class="roadmap__shape-item roadmap__shape-item--2"> <img src="{% static 'main/images/icon/1.png' %}">
       </span>
     </div>
   </section>
@@ -780,16 +784,16 @@
                   <!-- pricing middle part -->
                   <div class="pricing__item-middle">
                     <ul class="pricing__list">
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Weekly online meeting</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Personal training</li>
                     </ul>
@@ -818,19 +822,19 @@
                   <!-- pricing middle part -->
                   <div class="pricing__item-middle">
                     <ul class="pricing__list">
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Weekly online meeting</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Personal training</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Business analysis</li>
                     </ul>
@@ -859,16 +863,16 @@
                   <!-- pricing middle part -->
                   <div class="pricing__item-middle">
                     <ul class="pricing__list">
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         With all standard features</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'assets/images/icon/check.svg' %}" alt="check"
+                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
                         Personal training</li>
                     </ul>
@@ -888,7 +892,7 @@
     </div>
     <div class="pricing__shape">
       <span class="pricing__shape-item pricing__shape-item--1"> <span></span> </span>
-      <span class="pricing__shape-item pricing__shape-item--2"> <img src="{% static 'assets/images/icon/1.png' %}">
+      <span class="pricing__shape-item pricing__shape-item--2"> <img src="{% static 'main/images/icon/1.png' %}">
       </span>
     </div>
   </section>
@@ -911,7 +915,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/1.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/1.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -929,7 +933,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="900">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/2.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/2.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -947,7 +951,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1000">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/3.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/3.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -965,7 +969,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1100">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/4.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/4.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -983,7 +987,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/5.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/5.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -1001,7 +1005,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="900">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/6.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/6.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -1019,7 +1023,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1000">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/7.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/7.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -1037,7 +1041,7 @@
             <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1100">
               <div class="team__item-inner team__item-inner--shape">
                 <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="{% static 'assets/images/team/8.png' %}" class="dark">
+                  <img src="{% static 'main/images/team/8.png' %}" class="dark">
                 </div>
                 <div class="team__item-content team__item-content--style1">
                   <div class="team__item-author team__item-author--style1">
@@ -1086,7 +1090,7 @@
               <div class="blog__item blog__item--style2">
                 <div class="blog__item-inner">
                   <div class="blog__thumb">
-                    <img src="{% static 'assets/images/blog/1.png' %}" alt="blog Images">
+                    <img src="{% static 'main/images/blog/1.png' %}" alt="blog Images">
                   </div>
 
                   <div class="blog__content">
@@ -1100,7 +1104,7 @@
 
                     <div class="blog__writer">
                       <div class="blog__writer-thumb">
-                        <img src="{% static 'assets/images/blog/author/1.png' %}" alt="writer">
+                        <img src="{% static 'main/images/blog/author/1.png' %}" alt="writer">
                       </div>
                       <div class="blog__writer-designation">
                         <h6 class="mb-0">Vasha Gueye</h6>
@@ -1115,7 +1119,7 @@
               <div class="blog__item blog__item--style2">
                 <div class="blog__item-inner">
                   <div class="blog__thumb">
-                    <img src="{% static 'assets/images/blog/2.png' %}" alt="blog Images">
+                    <img src="{% static 'main/images/blog/2.png' %}" alt="blog Images">
                   </div>
 
                   <div class="blog__content">
@@ -1129,7 +1133,7 @@
 
                     <div class="blog__writer">
                       <div class="blog__writer-thumb">
-                        <img src="{% static 'assets/images/blog/author/2.png' %}" alt="writer">
+                        <img src="{% static 'main/images/blog/author/2.png' %}" alt="writer">
                       </div>
                       <div class="blog__writer-designation">
                         <h6 class="mb-0">Abhivibha Kanmani</h6>
@@ -1144,7 +1148,7 @@
               <div class="blog__item blog__item--style2">
                 <div class="blog__item-inner">
                   <div class="blog__thumb">
-                    <img src="{% static 'assets/images/blog/3.png' %}" alt="blog Images">
+                    <img src="{% static 'main/images/blog/3.png' %}" alt="blog Images">
                   </div>
 
                   <div class="blog__content">
@@ -1158,7 +1162,7 @@
 
                     <div class="blog__writer">
                       <div class="blog__writer-thumb">
-                        <img src="{% static 'assets/images/blog/author/3.png' %}" alt="writer">
+                        <img src="{% static 'main/images/blog/author/3.png' %}" alt="writer">
                       </div>
                       <div class="blog__writer-designation">
                         <h6 class="mb-0">Hulya Aydin</h6>
@@ -1217,7 +1221,7 @@
                     <div class="testimonial__footer">
                       <div class="testimonial__author">
                         <div class="testimonial__author-thumb">
-                          <img src="{% static 'assets/images/testimonial/1.png' %}" alt="author">
+                          <img src="{% static 'main/images/testimonial/1.png' %}" alt="author">
                         </div>
                         <div class="testimonial__author-designation">
                           <h6>Mobarok Hossain</h6>
@@ -1244,7 +1248,7 @@
                     <div class="testimonial__footer">
                       <div class="testimonial__author">
                         <div class="testimonial__author-thumb">
-                          <img src="{% static 'assets/images/testimonial/2.png' %}" alt="author">
+                          <img src="{% static 'main/images/testimonial/2.png' %}" alt="author">
                         </div>
                         <div class="testimonial__author-designation">
                           <h6>Guy Hawkins</h6>
@@ -1271,7 +1275,7 @@
                     <div class="testimonial__footer">
                       <div class="testimonial__author">
                         <div class="testimonial__author-thumb">
-                          <img src="{% static 'assets/images/testimonial/6.png' %}" alt="author">
+                          <img src="{% static 'main/images/testimonial/6.png' %}" alt="author">
                         </div>
                         <div class="testimonial__author-designation">
                           <h6>Belal Hossain</h6>
@@ -1421,14 +1425,14 @@
           </div>
           <div class="col-lg-6">
             <div class="faq__thumb faq__thumb--style1" data-aos="fade-left" data-aos-duration="1000">
-              <img class="dark" src="{% static 'assets/images/others/1.png' %}" alt="faq-thumb">
+              <img class="dark" src="{% static 'main/images/others/1.png' %}" alt="faq-thumb">
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="faq__shape faq__shape--style1">
-      <span class="faq__shape-item faq__shape-item--1"><img src="{% static 'assets/images/others/2.png' %}"></span>
+      <span class="faq__shape-item faq__shape-item--1"><img src="{% static 'main/images/others/2.png' %}"></span>
     </div>
   </section>
   <!-- ===============>> FAQ section start here <<================= -->
@@ -1444,7 +1448,7 @@
         <div class="cta__newsletter justify-content-center">
           <div class="cta__newsletter-inner" data-aos="fade-up" data-aos-duration="1000">
             <div class="cta__thumb">
-              <img src="{% static 'assets/images/cta/3.png' %}" alt="cta-thumb">
+              <img src="{% static 'main/images/cta/3.png' %}" alt="cta-thumb">
             </div>
             <div class="cta__subscribe">
               <h2 > <span>Subscribe</span> our news</h2>
@@ -1460,9 +1464,9 @@
           </div>
         </div>
         <div class="cta__shape">
-          <span class="cta__shape-item cta__shape-item--1"><img src="{% static 'assets/images/cta/2.png' %}"></span>
-          <span class="cta__shape-item cta__shape-item--2"><img src="{% static 'assets/images/cta/4.png' %}"></span>
-          <span class="cta__shape-item cta__shape-item--3"><img src="{% static 'assets/images/cta/5.png' %}"></span>
+          <span class="cta__shape-item cta__shape-item--1"><img src="{% static 'main/images/cta/2.png' %}"></span>
+          <span class="cta__shape-item cta__shape-item--2"><img src="{% static 'main/images/cta/4.png' %}"></span>
+          <span class="cta__shape-item cta__shape-item--3"><img src="{% static 'main/images/cta/5.png' %}"></span>
         </div>
       </div>
     </div>
@@ -1472,7 +1476,7 @@
 
 
 
-
+{% endblock %}
 
   <!-- ===============>> footer start here <<================= -->
   <footer class="footer brand-1">
@@ -1482,7 +1486,7 @@
           <div class="row gy-5 gx-4">
             <div class="col-md-6">
               <div class="footer__about">
-                <a href="index-2.html" class="footer__about-logo"><img src="{% static 'assets/images/logo/logo-dark.png' %}"
+                <a href="index-2.html" class="footer__about-logo"><img src="{% static 'main/images/logo/logo-dark.png' %}"
                     alt="Logo"></a>
                 <p class="footer__about-moto ">Welcome to our trading site! We offer the best, most
                   affordable products and services around. Shop now and start finding great deals!</p>
@@ -1491,7 +1495,7 @@
                     <div class="footer__app-inner">
                       <div class="footer__app-thumb">
                         <a href="https://www.apple.com/app-store/" target="_blank" class="stretched-link">
-                          <img src="{% static 'assets/images/footer/apple.png' %}">
+                          <img src="{% static 'main/images/footer/apple.png' %}">
                         </a>
                       </div>
                       <div class="footer__app-content">
@@ -1504,7 +1508,7 @@
                     <div class="footer__app-inner">
                       <div class="footer__app-thumb">
                         <a href="https://play.google.com/store" target="_blank" class="stretched-link">
-                          <img src="{% static 'assets/images/footer/play.png' %}">
+                          <img src="{% static 'main/images/footer/play.png' %}">
                         </a>
                       </div>
                       <div class="footer__app-content">
@@ -1577,8 +1581,8 @@
         <div class="footer__bottom">
           <div class="footer__end">
             <div class="footer__end-copyright">
-              <p class=" mb-0">© 2023 All Rights Reserved By <a href="https://themeforest.net/user/thetork/portfolio"
-                  target="_blank">Thetork</a> </p>
+              <p class=" mb-0">© 2023 All Rights Reserved By <a 
+                  target="_blank">{{site_name}}</a> </p>
             </div>
             <div>
               <ul class="social">
@@ -1604,7 +1608,7 @@
       </div>
     </div>
     <div class="footer__shape">
-      <span class="footer__shape-item footer__shape-item--1"><img src="{% static 'assets/images/footer/1.png' %}"
+      <span class="footer__shape-item footer__shape-item--1"><img src="{% static 'main/images/footer/1.png' %}"
           alt="shape icon"></span>
       <span class="footer__shape-item footer__shape-item--2"> <span></span> </span>
     </div>
@@ -1620,16 +1624,16 @@
 
   <!-- vendor plugins -->
 
-  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}""></script>
-  <script src="{% static 'assets/js/all.min.js' %}""></script>
-  <script src="{% static 'assets/js/swiper-bundle.min.js' %}""></script>
-  <script src="{% static 'assets/js/aos.js' %}""></script>
-  <script src="{% static 'assets/js/fslightbox.js' %}""></script>
-  <script src="{% static 'assets/js/purecounter_vanilla.js' %}""></script>
+  <script src="{% static 'main/js/bootstrap.bundle.min.js' %}""></script>
+  <script src="{% static 'main/js/all.min.js' %}""></script>
+  <script src="{% static 'main/js/swiper-bundle.min.js' %}""></script>
+  <script src="{% static 'main/js/aos.js' %}""></script>
+  <script src="{% static 'main/js/fslightbox.js' %}""></script>
+  <script src="{% static 'main/js/purecounter_vanilla.js' %}""></script>
 
 
 
-  <script src="{% static 'assets/js/custom.js' %}""></script>
+  <script src="{% static 'main/js/custom.js' %}""></script>
 
 
 </body>

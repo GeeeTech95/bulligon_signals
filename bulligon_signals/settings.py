@@ -216,7 +216,7 @@ EMAIL_HOST_USER_ALERT = "transaction@bitcoinvoyager.finance"
 
 EMAIL_USE_TLS = True
 
-SITE_NAME = "Bitcoin Voyager"
+SITE_NAME = "Bulligon Signals"
 SITE_ADDRESS = "https://www.bitcoinvoyager.finance/"
 
 FREE_PLAN_DURATION = 2  # in days

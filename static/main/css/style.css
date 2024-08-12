@@ -3289,7 +3289,7 @@ h6 a {
   }
 }
 .header-wrapper .logo a img {
-  max-width: 100%;
+  max-width: 200px;
 }
 @media (max-width: 575px) {
   .header-wrapper .logo {

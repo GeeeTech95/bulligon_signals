@@ -10,9 +10,9 @@ def core(request):
     print(prepend + host)
     ctx['liquidity'] = 53199180
 
-    ctx['site_name_verbose'] = "Bitcoin Voyager"
-    ctx['site_name'] = "Bitcoin Voyager"
-    ctx['site_name_full'] = "Bitcoin Voyager"
+    ctx['site_name_verbose'] = "Bulligon SIgnals"
+    ctx['site_name'] = "Bulligon SIgnals"
+    ctx['site_name_full'] = "Bulligon SIgnals"
     ctx['support_email'] = "support@bitcoinvoyager.finance"
     ctx['site_email'] = "support@bitcoinvoyager.finance"
     ctx['site_phone'] = "+3594858"
