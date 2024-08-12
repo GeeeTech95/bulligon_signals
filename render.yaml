@@ -15,7 +15,7 @@ services:
         value: 4
 
       - key: DATABASE_URL      
-         value: postgresql://arcticxpress:Wdbtdpe51sbQsroUeLrTFgvVOk3Qe5O1@dpg-cqcne9tumphs73fhfmeg-a/bulligonsignals
+        value: postgresql://arcticxpress:Wdbtdpe51sbQsroUeLrTFgvVOk3Qe5O1@dpg-cqcne9tumphs73fhfmeg-a/bulligonsignals
 
 
                
