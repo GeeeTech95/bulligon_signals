@@ -3290,15 +3290,19 @@ h6 a {
 }
 .header-wrapper .logo a img {
   max-width: 200px;
+  max-height: 70px;
 }
 @media (max-width: 575px) {
   .header-wrapper .logo {
     max-width: 130px;
+
   }
 }
 @media (max-width: 1199px) and (min-width: 992px) {
   .header-wrapper .logo {
     width: 200px;
+
+
   }
 }
 .header-wrapper .menu-area .header-btn {
