@@ -79,18 +79,7 @@
           <div class="menu-area">
             <ul class="menu menu--style1">
               <li>
-                <a href="#0">Demos </a>
-                <ul class="submenu">
-                  <li><a href="index-2.html">Home Stock</a></li>
-                  <li><a href="index1-light.html">Home Stock V1<span class="style1">Light</span></a></li>
-                  <li><a href="index1-dark.html">Home Stock V2<span class="style2">Dark</span> </a></li>
-                  <li><a href="index-3.html">Home Crypto</a></li>
-                  <li><a href="index-2-light.html">Home Crypto V1<span class="style1">Light</span></a></li>
-                  <li><a href="index-2-dark.html">Home Crypto V2<span class="style2">Dark</span> </a></li>
-                  <li><a href="index-4.html">Home Forex</a></li>
-                  <li><a href="index-3-light.html">Home Forex V1<span class="style1">Light</span></a></li>
-                  <li><a href="index-3-dark.html">Home Forex V2<span class="style2">Dark</span> </a></li>
-                </ul>
+                <a href="{% url 'index' %}">Home</a>
               </li>
               <li>
                 <a href="#0">Services</a>
@@ -100,32 +89,17 @@
                 </ul>
               </li>
               <li>
-                <a href="#0">About</a>
+                <a href="#0">About Us</a>
                 <ul class="submenu">
                   <li><a href="about.html">About Us</a></li>
-                  <li><a href="price.html">Price</a></li>
-                  <li><a href="team.html">Team</a></li>
-                  <li><a href="team-2.html">Team 2</a></li>
-                  <li><a href="team-details.html">Team Details</a></li>
+                  <li><a href="price.html">FAQ</a></li>
+                  <li><a href="team.html">Testimonials</a></li>
+
+                
                 </ul>
               </li>
 
-              <li>
-                <a href="#0">Pages</a>
-                <ul class="submenu">
-                  <li><a href="blogs.html">Blogs</a></li>
-                  <li><a href="blog-sidebar.html">Blog - Side Bar</a></li>
-                  <li><a href="blog-details.html">Blog Details</a></li>
-                  <li><a href="signup.html">Sign Up</a></li>
-                  <li><a href="signup-2.html">Sign Up 2</a></li>
-                  <li><a href="signin.html">Sign In</a></li>
-                  <li><a href="signin-2.html">Sign In 2</a></li>
-                  <li><a href="forgot-pass.html">Reset Password</a></li>
-                  <li><a href="forgot-pass-2.html">Reset Password 2</a></li>
-                  <li><a href="404.html">404 Error</a></li>
-                </ul>
-
-              </li>
+            
               <li>
                 <a href="contact.html">Contact Us</a>
               </li>
@@ -135,7 +109,7 @@
           <div class="header-action">
             <div class="menu-area">
               <div class="header-btn">
-                <a href="signup.html" class="trk-btn trk-btn--border trk-btn--primary">
+                <a href="{% url 'register' %}" class="trk-btn trk-btn--border trk-btn--primary">
                   <span>Join Now</span>
                 </a>
               </div>
@@ -1488,9 +1462,8 @@
               <div class="footer__about">
                 <a href="index-2.html" class="footer__about-logo"><img src="{% static 'main/images/logo/logo-dark.png' %}"
                     alt="Logo"></a>
-                <p class="footer__about-moto ">Welcome to our trading site! We offer the best, most
-                  affordable products and services around. Shop now and start finding great deals!</p>
-                <div class="footer__app">
+                <p class="footer__about-moto ">Welcome to Our Trading Platform! Discover top-notch, affordable products and services tailored just for you. Shop now and uncover incredible deals!</p>
+                <div class="footer__app" hidden>
                   <div class="footer__app-item footer__app-item--apple">
                     <div class="footer__app-inner">
                       <div class="footer__app-thumb">
