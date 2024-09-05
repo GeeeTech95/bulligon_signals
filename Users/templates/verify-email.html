@@ -5,52 +5,91 @@
 {% block content %}
 
 
-<!-- account section start -->
-<div class="account__area " style="margin-top: 50px;">
-    <div class="account-bg"></div>
-    <div class="container">
-        <div class="account__content">
-            <div class="account__form">
-                <div class="account__title mb-29">
-                    <h2>Email Verification</h2>
-                    <h3>Please enter the OTP sent your email <b>{{user.email_hidden}}</b></h3>
-                </div>
-                <form action="" method="post" class="verify-email-form" dashboard_link = "{% url 'dashboard' %}">
-                    {% csrf_token %}
-                    <div class="otp-section">
 
-                        <div class="otp-field">
-                            <input type="text" maxlength="1" />
-                            <input type="text" maxlength="1" />
-                            <input class="space" type="text" maxlength="1" />
-                            <input type="text" maxlength="1" />
-                            <input type="text" maxlength="1" />
-                            <input type="text" maxlength="1" />
-                        </div>
-                    </div>
-                    <span input-name="otp" class="field-error"></span>
 
-                    <div class="item-button">
-                        <button type="submit" class="theme-btn blue" style="width: 100%;">
-                            <span>Verify</span>
-                            <div class="hover-shape1"></div>
-                            <div class="hover-shape2"></div>
-                            <div class="hover-shape3"></div>
-                        </button>
-                    </div>
-                </form>
-                <div class="item-bottom mt-31">
-                    <h4>
-                        Didn't get any email ?
-                        <a id="resend-otp"  url ="{% url 'send-code' %}" href="#0">Resend OTP</a>
-                    </h4>
+<section class="page-header bg--cover " style="padding-top: 100px;background-image: url('{% static 'main/images/header/1.png' %}')">
+  <div class="container">
+    <div class="page-header__content" data-aos="fade-right" data-aos-duration="1000">
+      <h2>Verify Your Email Address</h2>
+      <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item "><a href="#0">Home</a
+            
+            ></li>
+          <li class="breadcrumb-item active" aria-current="page">Verify Email</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="page-header__shape">
+      <span class="page-header__shape-item page-header__shape-item--1"><img
+          src="{% static 'main/images/header/2.png' %}" alt="shape-icon"></span>
+    </div>
+  </div>
+</section>
+<!-- ================> Page header end here <================== -->
+
+
+
+
+
+<!-- ===============>> account start here <<================= -->
+<section class="account padding-top padding-bottom sec-bg-color2">
+  <div class="container">
+    <div class="account__wrapper" data-aos="fade-up" data-aos-duration="800">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="account__content account__content--style1">
+
+            <!-- account tittle -->
+            <div class="account__header">
+              <h2>Verify Email</h2>
+              <p>Please enter the OTP sent your email <b>{{user.email_hidden}}</b> </p>
+            </div>
+
+            <!-- account form -->
+            <form  class="account__form needs-validation verify-email-form"
+            action="" method="post"  dashboard_link = "{% url 'dashboard' %}" method="post" novalidate>
+              {% csrf_token %}
+              <div class="otp-section">
+
+                <div class="otp-field">
+                    <input type="text" maxlength="1" />
+                    <input type="text" maxlength="1" />
+                    <input class="space" type="text" maxlength="1" />
+                    <input type="text" maxlength="1" />
+                    <input type="text" maxlength="1" />
+                    <input type="text" maxlength="1" />
                 </div>
             </div>
-            <div class="account-shadow"></div>
+            <span input-name="otp" class="field-error"></span>
+
+
+                
+
+
+              <button type="submit "  id="verify-email-btn" class="trk-btn trk-btn--border trk-btn--primary d-block mt-4">
+                verify OTP
+            </button>
+            </form>
+
+
+            <div class="account__switch">
+             
+              <p>   Didn't get any email ?
+                <a id="resend-otp"  url ="{% url 'send-code' %}" href="#0">Resend OTP</a></p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!-- account section END -->
+  </div>
+  <div class="account__shape">
+    <span class="account__shape-item account__shape-item--1"><img src="{% static 'main/images/contact/4.png' %}"
+        alt="shape-icon"></span>
+  </div>
+</section>
+<!-- ===============>> account end here <<================= -->
+
 {% endblock %}
 
 
