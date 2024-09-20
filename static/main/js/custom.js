@@ -32,8 +32,6 @@ moon.addEventListener('click', () => {
 // =================== light and dark end ================== //
 
 
-
-
 // =================== Change image path start ================== //
 
 

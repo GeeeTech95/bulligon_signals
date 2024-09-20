@@ -59,10 +59,13 @@
               </div>
 
               <!-- account form -->
-              <form action="#" class="account__form needs-validation" novalidate>
+              <form action="#" class="account__form needs-validation login-form" novalidate>
+                {% csrf_token %}
+                
                 <div class="row g-4">
                   <div class="col-12">
                     <div>
+                      <span input-name="email" class="field-error"></span>
                       <label for="account-email" class="form-label">Email</label>
                       <input type="email" class="form-control" id="account-email" placeholder="Enter your email"
                         required>
@@ -70,6 +73,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-pass">
+                      <span input-name="password" class="field-error"></span>
                       <label for="account-pass" class="form-label">Password</label>
                       <input type="password" class="form-control showhide-pass" id="account-pass" placeholder="Password"
                         required>

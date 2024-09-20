@@ -1,12 +1,10 @@
 from django.urls import include,path
-from .transaction import Deposit, Plans,Withdrawal,Invest
+from .transaction import Deposit, Plans,Subscribe
 
 
 urlpatterns = [
     path('fund-wallet/',Deposit.as_view(),name ='deposit'),
-    path('withdraw/',Withdrawal.as_view(),name ='withdraw'),
     #path('plans/',Plans.as_view(),name ='plans'),
-    path('<slug:slug>/invest/',Invest.as_view(),name ='invest'),
-    
+    path('<slug:slug>/invest/',Subscribe.as_view(),name ='subscribe'),
     
 ]

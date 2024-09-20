@@ -48,6 +48,7 @@ $(document).on("submit", ".login-form", function (e) {
 
 $(document).on("submit", ".registration-form", function (e) {
     e.preventDefault()
+    alert("hello")
     buttonObj = $("#signup-btn")
 
     changeToLoading(buttonObj, "Creating Account")

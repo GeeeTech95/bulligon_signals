@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.forms.models import model_to_dict
-from wallet.models import Investment, Wallet, WithdrawalApplication as WA, Transaction as TR
+from wallet.models import Subscription, Wallet, Transaction as TR
 from django.db.models import Sum
 from django.utils import timezone
 from django.contrib import messages
@@ -25,14 +25,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
             )['total']
         except:
             pass
-        try:
-            ctx['pending_withdrawal'] = self.request.user.pending_withdrawal.filter(
-                status="PENDING"
-            ).aggregate(
-                total=Sum("amount")
-            )['total']
-        except:
-            pass
+    
         ctx['recent_transactions'] = TR.objects.filter(
             user=self.request.user)[:6]
 
@@ -78,7 +71,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
     def get(self, request, *args, **kwargs):
         # self.get_crypto_price_notification()
         user = request.user
-        user.handle_due_investments()
+        user.handle_due_subscriptions()
         # if request.user.user_wallet.plan_is_active and request.user.user_wallet.plan_is_due :
         # request.user.user_wallet.on_plan_complete()
 
@@ -155,11 +148,6 @@ class Referral (LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        try:
-            ctx['pending_withdrawal'] = WA.objects.filter(
-                user=self.request.user, balance_type="Referral", status="PENDING")[0].amount
-        except:
-            pass
         prepend = "https://" if self.request.is_secure() else "http://"
         host = prepend + self.request.get_host()
         ctx['referral_link'] = "{}{}?ref_id={}".format(

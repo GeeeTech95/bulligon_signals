@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
+{% block css %}
+<style>
+  img.dark {
+    height: 80px;
+    width: auto;
+  }
+</style>
+{% endblock %}
   {% block content %}
 
 
@@ -87,55 +94,76 @@
 
 
 
-
-  <!-- ===============>> partner section start here <<================= -->
-  <div class="partner partner--gradient">
-    <div class="container">
-      <div class="partner__wrapper">
-        <div class="partner__slider swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="partner__item">
-                <div class="partner__item-inner">
-                  <img src="{% static 'main/images/partner/light/1.png' %}" alt="partner logo" class="dark">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partner__item">
-                <div class="partner__item-inner">
-                  <img src="{% static 'main/images/partner/light/2.png' %}" alt="partner logo" class="dark">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partner__item">
-                <div class="partner__item-inner">
-                  <img src="{% static 'main/images/partner/light/3.png' %}" alt="partner logo" class="dark">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partner__item">
-                <div class="partner__item-inner">
-                  <img src="{% static 'main/images/partner/light/4.png' %}" alt="partner logo" class="dark">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partner__item">
-                <div class="partner__item-inner">
-                  <img src="{% static 'main/images/partner/light/5.png' %}" alt="partner logo" class="dark">
-                </div>
+<!-- ===============>> partner section start here <<================= -->
+<div class="partner partner--gradient">
+  <div class="container">
+    <div class="partner__wrapper">
+      <div class="partner__slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance" class="dark">
               </div>
             </div>
           </div>
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="dark">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="Polygon" class="dark">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano" class="dark">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="dark">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="Avalanche" class="dark">
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="swiper-slide">
+            <div class="partner__item">
+              <div class="partner__item-inner">
+                <img src="https://cryptologos.cc/logos/chainlink-link-logo.png" alt="Chainlink" class="dark">
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-  <!-- ===============>> partner section end here <<================= -->
-
+</div>
+<!-- ===============>> partner section end here <<================= -->
 
 
 
@@ -584,32 +612,31 @@
     <div class="container">
       <div class="pricing__wrapper">
         <div class="row g-4 align-items-center">
+          
+          {% for plan in plans %}
           <div class="col-md-6 col-lg-4">
-            <div class="pricing__item" data-aos="fade-right" data-aos-duration="1000">
+            <div class="pricing__item" data-aos="{% cycle 'fade-right' 'fade-up' 'fade-left' %}" data-aos-duration="1000">
               <div class="pricing__item-inner">
                 <div class="pricing__item-content">
 
+                  
+
                   <!-- pricing top part -->
                   <div class="pricing__item-top">
-                    <h6 class="mb-15">Basic</h6>
-                    <h3 class="mb-25">$99/<span>Monthly</span> </h3>
+                    <h6 class="mb-15">{{plan.name}}</h6>
+                    <h3 class="mb-25">${{plan.cost}}/<span>{{plan.duration_slug}}</span> </h3>
                   </div>
 
                   <!-- pricing middle part -->
                   <div class="pricing__item-middle">
                     <ul class="pricing__list">
+                      {% for feature in plan.features_list %}
                       <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
                             class="dark"></span>
-                        Weekly online meeting</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Personal training</li>
+                        {{feature}}
+                      </li>
+                      {% endfor %}
+                      
                     </ul>
 
                   </div>
@@ -622,85 +649,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="pricing__item " data-aos="fade-up" data-aos-duration="1000">
-              <div class="pricing__item-inner active">
-                <div class="pricing__item-content">
-
-                  <!-- pricing top part -->
-                  <div class="pricing__item-top">
-                    <h6 class="mb-15">standard</h6>
-                    <h3 class="mb-25">$149/<span>Monthly</span> </h3>
-                  </div>
-
-                  <!-- pricing middle part -->
-                  <div class="pricing__item-middle">
-                    <ul class="pricing__list">
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Weekly online meeting</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Personal training</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Business analysis</li>
-                    </ul>
-
-                  </div>
-
-                  <!-- pricing bottom part -->
-                  <div class="pricing__item-bottom">
-                    <a href="#0" class="trk-btn trk-btn--outline active">Choose Plan</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="pricing__item" data-aos="fade-left" data-aos-duration="1000">
-              <div class="pricing__item-inner">
-                <div class="pricing__item-content">
-
-                  <!-- pricing top part -->
-                  <div class="pricing__item-top">
-                    <h6 class="mb-15">premium</h6>
-                    <h3 class="mb-25">$199/<span>Monthly</span> </h3>
-                  </div>
-
-                  <!-- pricing middle part -->
-                  <div class="pricing__item-middle">
-                    <ul class="pricing__list">
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        With all standard features</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Unlimited learning access</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        24/7 technical support</li>
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        Personal training</li>
-                    </ul>
-
-                  </div>
-
-                  <!-- pricing bottom part -->
-                  <div class="pricing__item-bottom">
-                    <a href="#0" class="trk-btn trk-btn--outline">Choose Plan</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+        
+         
         </div>
       </div>
     </div>
