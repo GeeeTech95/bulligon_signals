@@ -1,5 +1,21 @@
 [
     {
+        "model": "wallet.plancategory",
+        "pk": 1,
+        "fields": {
+            "name": "VIP PROFITABLE ZONE",
+            "slug": "vip-profitable-zone"
+        }
+    },
+    {
+        "model": "wallet.plancategory",
+        "pk": 2,
+        "fields": {
+            "name": "VVIP BULLIGON SIGNALS",
+            "slug": "vvip-bulligon-signals"
+        }
+    },
+    {
         "model": "wallet.plan",
         "pk": 8,
         "fields": {
