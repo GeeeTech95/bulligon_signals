@@ -19,9 +19,13 @@ class PlanCategory(models.Model) :
      
     name = models.CharField(max_length=50, choices=Category_Choices )
     slug = models.CharField(max_length=50)
+    display_order = models.PositiveIntegerField(default=0)
 
     def __str__(self) :
         return self.name
+    
+    class Meta() :
+        ordering = ["display_order"]
 
 
 
