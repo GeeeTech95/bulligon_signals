@@ -11,16 +11,23 @@ import math
 import uuid
 
 
+class PlanCategory(models.Model) :
+    Category_Choices = (
+        ("VIP PROFITABLE ZONE", "VIP PROFITABLE ZONE"),
+        ("VVIP BULLIGON SIGNALS", "VVIP BULLIGON SIGNALS")
+    )
+     
+    name = models.CharField(max_length=50, choices=Category_Choices )
+    slug = models.CharField(max_length=50)
 
+    def __str__(self) :
+        return self.name
 
 
 
 
 class Plan(models.Model):
-    Category_Choices = (
-        ("vip", "vip"),
-        ("vvip", "vvip")
-    )
+   
 
     DURATION_CHOICES = (
     (30, "Monthly"), # indays 
@@ -31,7 +38,7 @@ class Plan(models.Model):
 )
 
 
-    category = models.CharField(max_length=40, choices=Category_Choices)
+    category = models.ForeignKey(PlanCategory,related_name='plans',on_delete=models.PROTECT,null = True)
     name = models.CharField(
         max_length=40, help_text="name you wish to call the  plan")
     slug = models.SlugField(blank=True)
@@ -70,7 +77,36 @@ class Plan(models.Model):
         ordering = ['cost']
 
 
+class Signal(models.Model):
+    CATEGORY_CHOICES = [
+        ('buy', 'Buy'),
+        ('sell', 'Sell'),
+        ('hold', 'Hold'),
+    ]
 
+    STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('expired', 'Expired'),
+        ('pending', 'Pending'),
+    ]
+
+   
+    asset = models.CharField(max_length=50)  # e.g., BTC/USD, ETH/USDT
+    signal_type = models.CharField(max_length=4, choices=CATEGORY_CHOICES)
+    entry_price = models.DecimalField(max_digits=15, decimal_places=2)
+    take_profit = models.DecimalField(max_digits=15, decimal_places=2)
+    stop_loss = models.DecimalField(max_digits=15, decimal_places=2)
+    status = models.CharField(max_length=7, choices=STATUS_CHOICES, default='pending')
+    issued_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    exclude_for = models.ManyToManyField(PlanCategory, blank=True)
+
+    class Meta:
+        ordering = ['-issued_at']
+
+    def __str__(self):
+        return f"{self.asset} - {self.signal_type} signal"
 
 
 
@@ -287,11 +323,11 @@ class Wallet(models.Model):
 
     @property
     def current_balance(self):
-        return round(self.initial_balance + self.get_active_subscription_balance + self.funded_earning - self.withdrawals, 2)
+        return round(self.initial_balance + self.funded_earning - self.withdrawals, 2)
 
     @property
     def available_balance(self):
-        return round(self.initial_balance + self.funded_earning - self.withdrawals - self.get_pending_withdrawal_debits, 2)
+        return round(self.initial_balance + self.funded_earning - self.withdrawals , 2)
 
     def __str__(self):
         return "{}-wallet".format(self.user.name)

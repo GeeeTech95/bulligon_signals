@@ -603,67 +603,70 @@
 <!-- ========== Roadmap Section Ends Here========== -->
 
 
-  <!-- ===============>> Pricing section start here <<================= -->
-  <section class="pricing padding-top padding-bottom">
-    <div class="section-header section-header--max50">
-      <h2 class="mb-15 mt-minus-5">Our <span>pricings </span>plan</h2>
-      <p>We offer the best pricings around - from installations to repairs, maintenance, and more!</p>
-    </div>
-    <div class="container">
-      <div class="pricing__wrapper">
-        <div class="row g-4 align-items-center">
-          
-          {% for plan in plans %}
-          <div class="col-md-6 col-lg-4">
-            <div class="pricing__item" data-aos="{% cycle 'fade-right' 'fade-up' 'fade-left' %}" data-aos-duration="1000">
-              <div class="pricing__item-inner">
-                <div class="pricing__item-content">
+<!-- ===============>> Pricing section with Dynamic Tabs start here <<================= -->
+<section class="pricing padding-top padding-bottom">
+  <div class="section-header section-header--max50">
+    <h2 class="mb-15 mt-minus-5">Our <span>Pricing</span> Plan</h2>
+    <p>We offer the best pricing plans around—catering to various needs!</p>
+  </div>
+  <div class="container">
+    <div class="pricing__wrapper">
+      <!-- Tab Navigation -->
+      <ul class="nav nav-tabs justify-content-center" id="pricingTab" role="tablist">
+        {% for category in plan_categories %}
+        <li class="nav-item" role="presentation">
+          <button style="padding: 20px 15px;" class="nav-link {% if forloop.first %}active{% endif %}" id="{{ category.slug }}-tab" data-bs-toggle="tab" data-bs-target="#{{ category.slug }}" type="button" role="tab" aria-controls="{{ category.slug }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+            {{ category }} 
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
 
-                  
-
-                  <!-- pricing top part -->
-                  <div class="pricing__item-top">
-                    <h6 class="mb-15">{{plan.name}}</h6>
-                    <h3 class="mb-25">${{plan.cost}}/<span>{{plan.duration_slug}}</span> </h3>
-                  </div>
-
-                  <!-- pricing middle part -->
-                  <div class="pricing__item-middle">
-                    <ul class="pricing__list">
-                      {% for feature in plan.features_list %}
-                      <li class="pricing__list-item"><span><img src="{% static 'main/images/icon/check.svg' %}" alt="check"
-                            class="dark"></span>
-                        {{feature}}
-                      </li>
-                      {% endfor %}
-                      
-                    </ul>
-
-                  </div>
-
-                  <!-- pricing bottom part -->
-                  <div class="pricing__item-bottom">
-                    <a href="#0" class="trk-btn trk-btn--outline">Choose Plan</a>
+      <!-- Tab Content -->
+      <div class="tab-content pt-40" id="pricingTabContent">
+        {% for category in plan_categories %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="{{ category.slug }}" role="tabpanel" aria-labelledby="{{ category.slug }}-tab">
+          <div class="row g-4 align-items-center">
+            {% for plan in plans %}
+            {% if plan.category == category %}
+            <div class="col-md-6 col-lg-4">
+              <div class="pricing__item" data-aos="{% cycle 'fade-right' 'fade-up' 'fade-left' %}" data-aos-duration="1000">
+                <div class="pricing__item-inner">
+                  <div class="pricing__item-content">
+                    <!-- Pricing top part -->
+                    <div class="pricing__item-top">
+                      <h6 class="mb-15">{{ plan.name }}</h6>
+                      <h3 class="mb-25">${{ plan.cost }}/<span>{{ plan.duration_slug }}</span> </h3>
+                    </div>
+                    <!-- Pricing middle part -->
+                    <div class="pricing__item-middle">
+                      <ul class="pricing__list">
+                        {% for feature in plan.features_list %}
+                        <li class="pricing__list-item">
+                          <span><img src="{% static 'main/images/icon/check.svg' %}" alt="check" class="dark"></span>
+                          {{ feature }}
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <!-- Pricing bottom part -->
+                    <div class="pricing__item-bottom">
+                      <a href="{% url 'subscribe-signal' plan.slug %}" class="trk-btn trk-btn--outline">Choose Plan</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            {% endif %}
+            {% endfor %}
           </div>
-          {% endfor %}
-        
-         
         </div>
+        {% endfor %}
       </div>
     </div>
-    <div class="pricing__shape">
-      <span class="pricing__shape-item pricing__shape-item--1"> <span></span> </span>
-      <span class="pricing__shape-item pricing__shape-item--2"> <img src="{% static 'main/images/icon/1.png' %}">
-      </span>
-    </div>
-  </section>
-  <!-- ===============>> Pricing section start here <<================= -->
-
-
+  </div>
+</section>
+<!-- ===============>> Pricing section with Dynamic Tabs end here <<================= -->
 
 
 

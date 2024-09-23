@@ -1,0 +1,116 @@
+{% extends 'dashboard-base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="account__area pt-0" >
+  
+    {% if low_balance %}
+    <div class="project-item project-value-inner d-flex justify-content-between  mb-30 " style="border-radius: 20px;background-color: #F5F7FC;color: #6b777f;">
+        <div class="project-value">
+            <span>
+                Your balance : <b>${{user.user_wallet.initial_balance}} is too low for the selected plan, please <a href="{% url 'plans' %}">Select a lower plan</a> or  <a href="{% url 'deposit' %}">Make a Deposit</a></b>
+            </span>
+     
+           
+        </div>
+     
+     
+        
+    </div>
+ 
+    {% else %}
+    <div class="container" >
+        <div class="account__content">
+            <div class="account__form">
+                <div class="account__title mb-29">
+                    <h2>STAKE</h2>
+                    
+                  
+                </div>
+                <form action="" method="post" >
+                    {% csrf_token %}
+                    
+                    <div class="input__group mb-23">
+                        <span input-name="amount" class="field-error"></span>
+                        <label>AMOUNT</label>
+                        <input type="number" name="amount" id="amount" placeholder="Enter an amount you wish to stake">
+                    </div> 
+                    <input required name="plan" hidden readonly value="{{plan.pk}}">
+                    <p>{{form.amount.errors}}</p>
+                    <div class="item-text mb-28">
+                        <input type="checkbox" name="accept" id="accept">
+                        <label for="accept">
+                            I accept the 
+                            <a href="#">Term of Conditions</a>
+                            and 
+                            <a href="#">Trading Policy </a>
+                        </label>
+                    </div>
+                    <div class="item-button">
+                        <button type="submit" class="theme-btn blue" style="width: 100%;">
+                            <span>Proceed</span>
+                            <div class="hover-shape1"></div>
+                            <div class="hover-shape2"></div>
+                            <div class="hover-shape3"></div>
+                        </button >
+                    </div>
+                </form>
+               
+            </div>
+            <div class="account-shadow"></div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+    $(".copy-clipboard").click(function(e){
+       e.preventDefault()
+    })
+
+    $(".payment-check").on("change", function() {
+        //fill in the wallet address for selected method
+        var add = $(this).attr("wallet_address")
+        $("input[name=wallet_address]").val(add)
+        $("#wallet-address-copy").attr("data-clipboard-text",add)
+        $("#address_name").html($(this).attr("value"))
+      
+    })
+   
+
+    $(".next").click(function(){ 
+        $("#" + $(this).attr("to_tab")).trigger("click")
+    })
+
+    $("input[name=amount]").on("keyup keydown",function(){
+        $("#pay-amount").html($(this).val())
+    })
+
+    function correctAmount(){
+
+        max_cost = "{{plan.max_cost}}"
+        max_cost = "{{plan.max_cost}}"
+        
+        entered_value = parseInt($(this).val())
+        max_cost = parseInt(max_cost)
+        max_cost = parseInt(max_cost)
+
+        if ( entered_value > max_cost){
+            $(this).val(max_cost)
+        }
+
+        else if (entered_value < max_cost){
+            $(this).val(max_cost)
+        }
+        
+    }
+</script>
+{% endblock %}

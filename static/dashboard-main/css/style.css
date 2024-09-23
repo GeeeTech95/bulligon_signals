@@ -24,16 +24,100 @@ CSS table of content
 /*--------------------------------
 02. Base style
 --------------------------------*/
+
+:root {
+  --brand-color:#00D094;
+  --secondary-color:#0A4FD5;
+  --tertiary-color:#E0FAF2;
+  --tertiary-color2:#F5F7FC;
+  --tertiary-color3:#F5F7FC;
+  --body-color:#FFFFFF;
+  --header-bg-color: #0e352a;
+  --border-color:#E6EDFB;
+  --border-color-2: #E6EDFB;
+  --border-color-3: #E6EDFB;
+  --border-color-4: #E6EDFB;
+  --border-color-5: #F1F4FB;
+  --border-color-6: #E5F9F3;
+  --border-color-7: #9DB9EE;
+  --border-color-8: rgba(189, 189, 189, 0.2);
+  --feature-bg-color: #00150F;
+  --social-border-color:#F0F4FA;
+  --social-border-color-2:#ECEFF2;
+  --social-border-color-3:#ECEFF2;
+  --form-border:#DCDFE8;
+  --title-color:#0C263A;
+  --title-color-style2:#0C263A;
+  --text-color:#6B777F;
+  --text-color-light:#6B6F7F;
+  --text-color-2: rgba(255, 255, 255, 0.6);
+  --text-color-3: rgba(255, 255, 255, 0.70);
+  --bg-color: #EDF2F8;
+  --bg-color-trans: rgba(237, 242, 248, 0.22);
+  --bg-grad-color: #FFF;
+  --bg-grad-color-trans: rgba(255, 255, 255, 0.00);
+  --bg-grad-color-2: #D5E5F9;
+  --bg-grad-color-trans-2: rgba(255, 255, 255, 0.22);
+  --bg-grad-color-3: #E9EFF7;
+  --bg-grad-color-trans-3: rgba(240, 244, 250, 0.16);
+  --bg-grad-color-4: rgba(0, 208, 148, 0.32);
+  --bg-grad-color-trans-4: rgba(229, 237, 248, 0.00);
+  --bg-color-2:#F5F8FC;
+  --bg-color-3:#FFFFFF;
+  --bg-color-4:linear-gradient(150.39deg, rgba(237, 242, 248, 0.22) 15.02%, #52eaf0 99.59%);
+  --bg-color-5:linear-gradient(150.39deg, rgba(237, 242, 248, 0.22) 15.02%, #52eaf0 99.59%);
+  --bg-color-6:#F5F7FC;
+  --bg-color-7:#F1F4FB;
+  --bg-color-8:#124D6D;
+  --bg-color-9:white;
+  --bg-white:#ffffff;
+  --bg-team:#d6e5ff;
+  --form-focus-color:#366CD5;
+  --wh-color:#fff;
+  --black-color:#000;
+  --floating-content-border-color: rgba(0, 0, 0, 0.02);
+  --floating-content-bg-color: rgba(255, 255, 255, 0.90);
+  --floating-content-bg-color-2: rgba(255, 255, 255, 0.50);
+  --service-item-border-color: #fff;
+  --service-item-bg-color: #fff;
+  --faq-item-btn-border-color: #03314b12;
+  --faq-bg-color: #fff;
+  --extra-bg-color: #fff;
+  --tag-bg-color: #EDFFFA;
+  --bg-shape-color: #B8CFEB;
+  --bg-shape-color-trans: rgba(255, 255, 255, 0.22);
+  --bg-shape-color-2: #D5E5F9;
+  --bg-shape-color-trans-2: rgba(255, 255, 255, 0.22);
+  --footer-bg-color: #00150F;
+  --faq-img-bg-shadow: #16d466;
+  --pagination-bg-color: #E0FAF2;
+  --section-bg-color: #f8f8f8;
+  --sec-bg-color-2: #fff;
+  --account-bg-color: #F5F7FC;
+  --account-bg-color2: #FFF;
+  --arrow-color1: #B5CAF2;
+  --arrow-icon-color: #0A4FD5;
+  --header-border-color: #EBE9E1;
+  --banner2-bg-color: #0e241d;
+  --about-img-bg-shadow: #85F2D382;
+  --cta-img-bg-shadow: #45554b;
+  --error-color:#F04438;
+  --warning-color:#F79009;
+  --success-color:#12B76A;
+  --danger-color:#FF0000;
+}
+
+
 html,
 body {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "Inter", sans-serif;
   vertical-align: baseline;
   line-height: 1.6;
   font-weight: 500;
   overflow-x: hidden;
-  background-color: #151625;
+  background-color: var(--body-color)
 }
 
 img {
@@ -53,7 +137,7 @@ h4,
 h5,
 h6 {
   font-family: "Russo One", sans-serif;
-  color: #FFFFFF;
+  color: #41474b;
   margin: 0 0 26px;
   line-height: 1.35;
   font-weight: 400;
@@ -87,7 +171,7 @@ h6 {
 }
 
 .sec-heading .sub-title {
-  color: #A3FF12;
+  color: #00D094;
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
@@ -107,7 +191,7 @@ h6 {
 }
 
 a {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-decoration: none !important;
@@ -118,7 +202,7 @@ a:active,
 a:hover {
   text-decoration: none;
   outline: 0 none;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 ul {
@@ -157,13 +241,13 @@ body .dblock {
 ::-moz-selection {
   background: #2D65F8;
   text-shadow: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 ::selection {
   background: #2D65F8;
   text-shadow: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 [class^="flaticon-"]:before,
@@ -189,13 +273,13 @@ body .search-modal .search-block input {
   border-color: rgba(255, 255, 255, 0.4);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #FFFFFF;
+  color: #41474b;
   font-weight: 600;
   font-size: 18px;
 }
 
 body .search-modal .close {
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 20px;
   font-size: 14px;
   background-color: transparent;
@@ -216,7 +300,7 @@ body .search-modal .close {
 }
 
 body .search-modal .close:hover {
-  color: #A3FF12 !important;
+  color: #00D094 !important;
   opacity: 1 !important;
 }
 
@@ -225,7 +309,7 @@ body .modal-backdrop {
 }
 
 .white-color {
-  color: #FFFFFF !important;
+  color: #41474b !important;
 }
 
 .border-none {
@@ -286,7 +370,7 @@ body .modal-backdrop {
 }
 
 .banner-content .description {
-  color: #FFFFFF;
+  color: #41474b;
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 40px;
@@ -323,7 +407,7 @@ body .modal-backdrop {
 }
 
 .game-price-item .game-price-inner .all-raise {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .game-price-item .allocation-max img {
@@ -331,22 +415,22 @@ body .modal-backdrop {
 }
 
 .game-price-item .allocation-max .allocation {
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 73px;
 }
 
 .game-price-item .targeted-raise .all-raise {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: uppercase;
 }
 
 .game-price-item .targeted-raise .targeted-raise {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .game-price-item .price-details h3,
 .game-price-item .price-details a {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   text-transform: capitalize;
@@ -459,7 +543,7 @@ body .modal-backdrop {
 .price-counter .timer ul li,
 .banner-slider-inner .timer ul li {
   font-size: 30px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .price-counter .timer ul li span,
@@ -561,8 +645,8 @@ body .modal-backdrop {
   right: 0;
   width: 5px;
   height: 200px;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(-100%, #A3FF12), color-stop(64%, rgba(21, 22, 37, 0)));
-  background: linear-gradient(to top, #A3FF12 -100%, rgba(21, 22, 37, 0) 64%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(-100%, #00D094), color-stop(64%, rgba(21, 22, 37, 0)));
+  background: linear-gradient(to top, #00D094 -100%, rgba(21, 22, 37, 0) 64%);
 }
 
 .active-shape .shadow-4,
@@ -571,8 +655,8 @@ body .modal-backdrop {
   right: 5px;
   width: 200px;
   height: 5px;
-  background: -webkit-gradient(linear, right top, left top, color-stop(-100%, #A3FF12), color-stop(64%, rgba(21, 22, 37, 0)));
-  background: linear-gradient(to left, #A3FF12 -100%, rgba(21, 22, 37, 0) 64%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(-100%, #00D094), color-stop(64%, rgba(21, 22, 37, 0)));
+  background: linear-gradient(to left, #00D094 -100%, rgba(21, 22, 37, 0) 64%);
 }
 
 .hover-shape-border .border-shadow {
@@ -615,11 +699,11 @@ body .modal-backdrop {
 }
 
 .project-item a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-item a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project-item:hover {
@@ -660,7 +744,7 @@ body .modal-backdrop {
 }
 
 .project-item .project-media span {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-item .project-media li {
@@ -675,7 +759,7 @@ body .modal-backdrop {
 
 .project-item .project-media li strong {
   font-weight: 400;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-item .project-media li span {
@@ -700,7 +784,7 @@ body .modal-backdrop {
 }
 
 .social-icon-list li a {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -712,7 +796,7 @@ body .modal-backdrop {
 }
 
 .social-icon-list li a:hover i {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 /* --- Gamfi previous Section CSS ---*/
@@ -778,7 +862,7 @@ body .modal-backdrop {
 
 .previous-mainmenu ul li {
   display: inline-block;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: uppercase;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -825,7 +909,7 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .form-switch:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .form-switch .switch {
@@ -864,7 +948,7 @@ body .modal-backdrop {
   width: 14px;
   left: 6px;
   bottom: 5px;
-  background-color: #FFFFFF;
+  background-color: #41474b;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -878,7 +962,7 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .form-switch input:checked + .slider {
-  background-color: #6D4AFE;
+  background-color: #00D094;
 }
 
 .gamfi-previous-section .form-switch input:checked + .slider:before {
@@ -886,8 +970,8 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .form-switch input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #6D4AFE;
-          box-shadow: 0 0 1px #6D4AFE;
+  -webkit-box-shadow: 0 0 1px #00D094;
+          box-shadow: 0 0 1px #00D094;
 }
 
 .gamfi-previous-section .form-switch input:checked + .slider:before {
@@ -896,7 +980,7 @@ body .modal-backdrop {
 }
 
 .previous-item {
-  background: #1A1B30;
+  background: #F5F7FC;
   margin-bottom: 30px;
   padding: 30px 30px;
   display: -webkit-box;
@@ -910,7 +994,7 @@ body .modal-backdrop {
           align-items: center;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .previous-item .previous-gaming {
@@ -929,12 +1013,12 @@ body .modal-backdrop {
 }
 
 .previous-price a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .previous-price .dsc {
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .previous-chaining {
@@ -1040,11 +1124,11 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .project-item a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .project-item a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .project-item .heading-title {
@@ -1084,12 +1168,12 @@ body .modal-backdrop {
 
 .gamfi-previous-section .project-item .project-media li strong {
   font-weight: 400;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .project-item .project-media li span {
   float: right;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .project-item .project-media .social-icon-list {
@@ -1110,7 +1194,7 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .project-item .project-media .social-icon-list li a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .project-item .project-media .social-icon-list li a i {
@@ -1120,7 +1204,7 @@ body .modal-backdrop {
 }
 
 .gamfi-previous-section .project-item .project-media .social-icon-list li a i:hover {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .gamfi-previous-section .calender-image-area {
@@ -1222,7 +1306,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -1233,7 +1317,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 28px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -1316,7 +1400,7 @@ body .modal-backdrop {
 
 .tokenomics-counter .counter-number {
   font-size: 36px;
-  color: #6D4AFE;
+  color: #00D094;
   font-family: "Russo One", sans-serif;
   display: block;
 }
@@ -1326,7 +1410,7 @@ body .modal-backdrop {
   background: url("../images/bg/team-bg.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-color: #090A1A;
+  background-color: var(--body-color);
 }
 
 .team-item {
@@ -1360,13 +1444,13 @@ body .modal-backdrop {
 }
 
 .team-item a {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .team-item a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .team-item .dsc {
@@ -1489,7 +1573,7 @@ body .modal-backdrop {
   position: relative;
   z-index: 2;
   margin-bottom: 200px;
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .gamfi_header_v2 {
@@ -1515,7 +1599,7 @@ body .modal-backdrop {
   font-size: 50px;
   line-height: 70px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -1529,7 +1613,7 @@ body .modal-backdrop {
   font-weight: 600;
   font-size: 18px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 22px;
 }
 
@@ -1555,7 +1639,7 @@ body .modal-backdrop {
   line-height: 19px;
   text-transform: uppercase;
   margin-bottom: 26px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .buy-token-logos ul {
@@ -1896,7 +1980,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 45px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .market_cap_content h3 {
@@ -1906,7 +1990,7 @@ body .modal-backdrop {
   font-size: 22px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #6D4AFE;
+  color: #00D094;
   margin-bottom: 0px;
 }
 
@@ -1968,7 +2052,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-right: 10px;
   text-transform: lowercase;
 }
@@ -2008,7 +2092,7 @@ body .modal-backdrop {
 }
 
 .project_v2_tab_btns ul li.project_v2_tab_links.active button {
-  background: rgba(255, 255, 255, 0.15);
+  background: #41474b;
   border: none;
 }
 
@@ -2038,14 +2122,14 @@ body .modal-backdrop {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .gamfi-project-section.project_pools_sect {
   /*
     background: url(../images/bg/project-bg.jpg);
     */
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 115px;
   padding-bottom: 105px;
 }
@@ -2188,7 +2272,7 @@ body .modal-backdrop {
 }
 
 .key_points_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 115px;
   padding-bottom: 105px;
   position: relative;
@@ -2214,7 +2298,7 @@ body .modal-backdrop {
   font-size: 22px;
   line-height: 27px;
   margin-bottom: 21px;
-  color: #FFFFFF;
+  color: #41474b;
   text-transform: capitalize;
 }
 
@@ -2226,11 +2310,11 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .tier_system_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 0px;
   padding-bottom: 105px;
 }
@@ -2259,7 +2343,7 @@ body .modal-backdrop {
   font-size: 14px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .tier_system_headings ul li.tiers_headings {
@@ -2346,7 +2430,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 158%;
   text-transform: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tier_system_items ul li span {
@@ -2360,7 +2444,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 16px;
   line-height: 158%;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tier_system_items ul li.tiers_item {
@@ -2472,7 +2556,7 @@ body .modal-backdrop {
 }
 
 .multi_chain_support_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 0px;
   padding-bottom: 105px;
 }
@@ -2487,7 +2571,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .multi_chain_support_right_list {
@@ -2523,7 +2607,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .multi_chain_support_right_list ul li span {
@@ -2552,7 +2636,7 @@ body .modal-backdrop {
 }
 
 .gamfi_our_mentor_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 0px;
   padding-bottom: 105px;
 }
@@ -2586,7 +2670,7 @@ body .modal-backdrop {
 }
 
 .roadmap-tab-btns ul li.tablinks.active button {
-  background: rgba(255, 255, 255, 0.15);
+  background: #41474b;
   border: none;
 }
 
@@ -2612,7 +2696,7 @@ body .modal-backdrop {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .our_partners_content_sect {
@@ -2659,8 +2743,8 @@ body .modal-backdrop {
 }
 
 .our_partners_content_sect .overlay {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 10, 26, 0)), to(#090A1A));
-  background: linear-gradient(180deg, rgba(9, 10, 26, 0) 0%, #090A1A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(9, 10, 26, 0)), to(var(--body-color)));
+  background: linear-gradient(180deg, rgba(9, 10, 26, 0) 0%, var(--body-color) 100%);
   height: 158px;
   width: 100%;
   z-index: 2;
@@ -2707,7 +2791,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2724,7 +2808,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-transform: none;
   -webkit-backdrop-filter: blur(10px);
@@ -2739,7 +2823,7 @@ body .modal-backdrop {
 
 .faq_content_sect .faq_questions .accordion.active, .faq_content_sect .faq_questions .accordion:hover {
   background: rgba(255, 255, 255, 0.05);
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .faq_content_sect .faq_questions .accordion
@@ -2775,7 +2859,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
   max-width: 100%;
 }
@@ -2787,7 +2871,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 36px;
   position: relative;
   z-index: 2;
@@ -2800,7 +2884,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .no-border {
@@ -2838,7 +2922,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: #FFFFFF;
+  color: #41474b;
   border: 1px solid rgba(255, 255, 255, 0.1);
   outline: none;
   -webkit-transition: all 0.4s ease-in-out;
@@ -2851,12 +2935,12 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
-  color: #6D4AFE;
+  color: #00D094;
   margin-bottom: 75px;
 }
 
 .roadmap_contents.disable h3 {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .roadmap_list_sect {
@@ -2867,7 +2951,7 @@ body .modal-backdrop {
 .roadmap_list_sect .check_icon_bg {
   height: 21px;
   width: 21px;
-  background: #A3FF12;
+  background: #00D094;
   border-radius: 50%;
   position: absolute;
   top: -30px;
@@ -2898,7 +2982,7 @@ body .modal-backdrop {
   font-weight: 500;
   font-size: 16px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3006,7 +3090,7 @@ body .modal-backdrop {
   font-size: 50px;
   line-height: 70px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 30px;
 }
 
@@ -3018,7 +3102,7 @@ body .modal-backdrop {
   font-weight: 600;
   font-size: 18px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 60px;
 }
 
@@ -3051,7 +3135,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 16px;
   line-height: 40px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -3062,7 +3146,7 @@ body .modal-backdrop {
   font-size: 22px;
   line-height: 40px;
   text-transform: uppercase;
-  color: #6D4AFE;
+  color: #00D094;
   margin-bottom: 0px;
 }
 
@@ -3154,7 +3238,7 @@ body .modal-backdrop {
   line-height: 36px;
   text-transform: uppercase;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .multi_block_chains_left h3 span {
@@ -3170,7 +3254,7 @@ body .modal-backdrop {
 }
 
 .key_points_v2_section {
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   position: relative;
@@ -3205,18 +3289,18 @@ body .modal-backdrop {
           justify-content: center;
   background: transparent;
   outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   width: 170px;
   height: 50px;
   padding: 0px;
 }
 
 .gamfi_v3_project_pools_btn li.active button {
-  background: rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
+  background: #41474b;
+  color: #41474b;
   border: none;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -3277,7 +3361,7 @@ body .modal-backdrop {
 }
 
 .how_to_participate_sect {
-  background: #090A1A;
+  background: var(--body-color);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3314,7 +3398,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 16px;
   line-height: 26px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 40px;
   max-width: 450px;
   width: 100%;
@@ -3353,7 +3437,7 @@ body .modal-backdrop {
           justify-content: flex-start;
   min-height: 186px;
   padding: 35px 50px;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   margin-bottom: 20px;
@@ -3375,7 +3459,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 10px;
 }
 
@@ -3386,7 +3470,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 26px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .multi_block_chains_right_sect {
@@ -3504,13 +3588,13 @@ body .modal-backdrop {
 
 .project_clasic_2_container.home_v3_project_clasic_2_container {
   padding: 0px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
 
 .home_v4_our_project_sect .gamfi-previous-section .previous-item {
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -3702,7 +3786,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-previous-section .previous-item .previous-raise.list4_custom span {
@@ -3712,7 +3796,7 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .previous_clasic_custom_progress_sect p {
@@ -3722,14 +3806,14 @@ body .modal-backdrop {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
 /*--- Project page style ---*/
 /*--- Gamfi Project Details Section CSS ---*/
 .project-details-conent {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .project-details-conent .game-price-item {
@@ -3766,7 +3850,7 @@ body .modal-backdrop {
   font-size: 20px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-details-conent .banner-bottom-content .social-icon-list li i:hover {
@@ -3775,12 +3859,12 @@ body .modal-backdrop {
 
 .project-details-conent .banner-bottom-content .social-icon-list li a {
   display: block;
-  color: #FFFFFF;
+  color: #41474b;
   font-size: 20px;
 }
 
 .project-details-conent .banner-bottom-content .social-icon-list li a:hover {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-details-conent .project-item .date-listing {
@@ -3800,7 +3884,7 @@ body .modal-backdrop {
   border: 2px solid;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 12px 20px;
   border-color: #303244;
   font-family: "Russo One", sans-serif;
@@ -3820,7 +3904,7 @@ body .modal-backdrop {
 
 .project-details-conent .project-item .date-listing li:hover button, .project-details-conent .project-item .date-listing li.active button {
   background: #303244;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-details-conent .project-item .date-listing li a {
@@ -3831,7 +3915,7 @@ body .modal-backdrop {
 .project-details-conent .project-item .date-listing li a:hover {
   background: #313245;
   border-color: #313245;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-details-conent .project-item .date-listing li input {
@@ -3844,7 +3928,7 @@ body .modal-backdrop {
   border: 2px solid;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 12px 20px;
   border-color: #303244;
   font-family: "Russo One", sans-serif;
@@ -3854,7 +3938,7 @@ body .modal-backdrop {
 .project-details-conent .project-item .date-listing li.active,
 .project-details-conent .project-item .date-listing li input:checked + label {
   background: #303244;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-details-conent .project-item .date-listing li + li {
@@ -3862,7 +3946,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .banner-bottom-content .btn-area .readon {
-  background: #6D4AFE;
+  background: #00D094;
   border: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -3870,12 +3954,12 @@ body .modal-backdrop {
 }
 
 .project-details-conent .readon {
-  background: #6D4AFE;
-  border-color: #6D4AFE;
+  background: #00D094;
+  border-color: #00D094;
   border: 2px solid #3C3D4F;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 12px 20px;
 }
 
@@ -3925,7 +4009,7 @@ body .modal-backdrop {
 
 .project-details-conent .project-item .big-text {
   font-size: 30px;
-  color: #A3FF12;
+  color: #00D094;
   font-family: "Russo One", sans-serif;
   position: absolute;
   right: 0;
@@ -3948,7 +4032,7 @@ body .modal-backdrop {
   background: transparent;
   padding: 16px 20px;
   position: relative;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project-details-conent .project-item .project-form-list .balance-form-area input[type="text"] {
@@ -3958,14 +4042,14 @@ body .modal-backdrop {
 
 .project-details-conent .project-item .project-form-list .balance-form-area .max {
   position: absolute;
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 17px;
   margin-left: -60px;
 }
 
 .project-details-conent .project-item .project-form-list .balance-form-area input[type="submit"] {
   width: 100%;
-  color: #FFFFFF;
+  color: #41474b;
   background: #313245;
   -webkit-transition: 0.4S;
   transition: 0.4S;
@@ -3977,7 +4061,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .project-item .project-form-list .balance-form-area .approve input[type="submit"] {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .project-details-conent .project-item .hover-shape-inner {
@@ -3989,7 +4073,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .project-media span {
-  color: #FFFFFF;
+  color: #6b777f;
 }
 
 .project-details-conent .project-media img {
@@ -4009,7 +4093,7 @@ body .modal-backdrop {
 
 .project-details-conent .project-media li strong {
   font-weight: 400;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-details-conent .project-media li span {
@@ -4029,11 +4113,11 @@ body .modal-backdrop {
 }
 
 .project-details-conent .project-media .social-icon-list li a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-details-conent .project-media .social-icon-list li a:hover {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-video-area {
@@ -4132,7 +4216,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .project-content .project-price .darkslateblue::before {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .project-details-conent .project-content .project-price .cyan::before {
@@ -4149,7 +4233,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .project-content .project-price .springGreen::before {
-  background: #A3FF12;
+  background: #00D094;
 }
 
 .project-details-conent .project-content .project-price .darkturquoise::before {
@@ -4180,7 +4264,7 @@ body .modal-backdrop {
   display: block;
   background: transparent;
   padding: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "Russo One", sans-serif;
   margin-bottom: 25px;
 }
@@ -4194,7 +4278,7 @@ body .modal-backdrop {
 }
 
 .project-summary-menu .nav button.active {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project-summary-menu .nav button.active img {
@@ -4203,7 +4287,7 @@ body .modal-backdrop {
 }
 
 .project-meta-inner .meta-header {
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 45px 50px 15px;
   margin-bottom: 30px;
 }
@@ -4217,26 +4301,26 @@ body .modal-backdrop {
 .project-btn-area .active {
   margin-bottom: 20px;
   border: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-btn-area .next {
   background: #1E1F35;
   border: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-btn-area .next:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-btn-area .draw {
-  color: #FFFFFF;
+  color: #41474b;
   background: #303244;
 }
 
 .project-meta-item {
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 43px 50px 50px;
 }
 
@@ -4251,7 +4335,7 @@ body .modal-backdrop {
 }
 
 .project-details-conent .game-price-item .text-content {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-details-conent .game-price-item .targeted-raise .targeted-raise {
@@ -4259,17 +4343,17 @@ body .modal-backdrop {
 }
 
 .project-menu-area {
-  background: #222231;
+  background: #F5F7FC;
   margin-bottom: 42px;
 }
 
 .project-menu-area ul li {
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid #F5F7FC;
 }
 
 .project-menu-area ul li a,
 .project-menu-area ul li .tab-link {
-  color: #FFFFFF;
+  color: #41474b;
   padding: 18px 28px;
 }
 
@@ -4278,7 +4362,7 @@ body .modal-backdrop {
   font-family: "Russo One", sans-serif;
   position: relative;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project-menu-area .project-left-menu .tab-link::before {
@@ -4287,14 +4371,14 @@ body .modal-backdrop {
   left: 0;
   width: 0;
   height: 2px;
-  background: #6D4AFE;
+  background: #00D094;
   bottom: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .project-menu-area .project-left-menu .tab-link.active {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-menu-area .project-left-menu .tab-link.active::before {
@@ -4302,7 +4386,7 @@ body .modal-backdrop {
 }
 
 .project-menu-area .project-left-menu .tab-link.calendar-date-text {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-menu-area .project-right-menu ul li {
@@ -4310,16 +4394,16 @@ body .modal-backdrop {
 }
 
 .project-menu-area .project-right-menu ul li:first-child {
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid #F5F7FC;
 }
 
 .project-menu-area .project-right-menu ul li:last-child {
-  border-right: 0 solid rgba(255, 255, 255, 0.08);
+  border-right: 0 solid #F5F7FC;
 }
 
 .project-menu-area .project-right-menu ul li a {
   display: block;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project-menu-area .al-access-menu > li {
@@ -4331,7 +4415,7 @@ body .modal-backdrop {
   position: absolute;
   top: 26px;
   right: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 8px;
   -webkit-transition: 0.4s;
@@ -4364,7 +4448,7 @@ body .modal-backdrop {
 }
 
 .project-menu-area .al-access-menu li a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-menu-area .al-access-menu li:hover ul {
@@ -4399,9 +4483,9 @@ body .modal-backdrop {
 
 .project-menu-area .al-access-menu li ul li {
   display: block;
-  background: #222231;
+  background: #F5F7FC;
   border: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid #F5F7FC !important;
 }
 
 .project-menu-area .al-access-menu li ul li:last-child {
@@ -4415,7 +4499,7 @@ body .modal-backdrop {
 
 /*--- Gamfi Explore Content Section CSS ---*/
 .gamfi-explore-content {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .gamfi-explore-content .project-menu-area {
@@ -4475,7 +4559,7 @@ body .modal-backdrop {
 
 .gamfi-explore-content .project-media ul li span {
   float: right;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-explore-content .icon-listing {
@@ -4495,7 +4579,7 @@ body .modal-backdrop {
 }
 
 .gamfi-explore-content .icon-listing .social-icon-list li i {
-  color: #FFFFFF;
+  color: #41474b;
   padding-right: 19px;
   font-size: 15px;
   -webkit-transition: 0.4s;
@@ -4581,7 +4665,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 0px;
   margin: 0px;
 }
@@ -4606,7 +4690,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   text-transform: capitalize;
   margin-top: 15px;
 }
@@ -4618,7 +4702,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 33px;
 }
 
@@ -4642,11 +4726,11 @@ body .gamfi-explore-content .project-item {
   line-height: 30px;
   text-transform: uppercase;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .total_rised_progress_headings h3 span {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .total_rised_progress_headings p {
@@ -4658,7 +4742,7 @@ body .gamfi-explore-content .project-item {
   margin-bottom: 0px;
   text-align: right;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .total_rised_progress_bg {
@@ -4673,7 +4757,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .total_rised_progress_bar.progess32 {
-  background: #A3FF12;
+  background: #00D094;
   height: 100%;
   width: 32%;
   -webkit-animation-name: Progressing32;
@@ -4701,7 +4785,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .total_rised_progress_bar.Progress65 {
-  background: #A3FF12;
+  background: #00D094;
   height: 100%;
   width: 65%;
   -webkit-animation-name: Progressing65;
@@ -4729,7 +4813,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .total_rised_progress_bar.Progress89 {
-  background: #A3FF12;
+  background: #00D094;
   height: 100%;
   width: 89%;
   -webkit-animation-name: Progressing89;
@@ -4757,7 +4841,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .total_rised_progress_bar.progress32 {
-  background: #A3FF12;
+  background: #00D094;
   height: 100%;
   width: 32%;
   -webkit-animation-name: Progressing32;
@@ -4793,7 +4877,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
   position: relative;
 }
@@ -4848,7 +4932,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .access_allocation_participants_sect ul li p {
@@ -4857,7 +4941,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -4880,7 +4964,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_2_container_social_sect ul li a i {
   font-size: 20px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project_clasic_slider_sect .my_slides {
@@ -4988,12 +5072,12 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  color: #A3FF12;
+  color: #00D094;
   margin-bottom: 10px;
 }
 
 .project_details_road_map_content h4.disable {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project_details_road_map_content ul {
@@ -5006,7 +5090,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5056,7 +5140,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 14px;
   margin-top: 28px;
 }
@@ -5068,7 +5152,7 @@ body .gamfi-explore-content .project-item {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -5150,7 +5234,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 50px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5163,7 +5247,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .project_summary_tabs_sect .project-summary-tab-btn.active a, .project_summary_tabs_sect .project-summary-tab-btn:hover a {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .project_summary_tabs_sect .project-summary-tab-btn img {
@@ -5204,7 +5288,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar82 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing82;
           animation-name: Progressing82;
   -webkit-animation-duration: 3s;
@@ -5232,7 +5316,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar92 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing92;
           animation-name: Progressing92;
   -webkit-animation-duration: 4s;
@@ -5260,7 +5344,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar100 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing100;
           animation-name: Progressing100;
   -webkit-animation-duration: 4s;
@@ -5288,7 +5372,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar36 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing36;
           animation-name: Progressing36;
   -webkit-animation-duration: 4s;
@@ -5316,7 +5400,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar65 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing65;
           animation-name: Progressing65;
   -webkit-animation-duration: 4s;
@@ -5335,7 +5419,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_custom_progress_sect .progress_bg .progress_bar.progress_bar93 {
   height: 100%;
-  background: #A3FF12;
+  background: #00D094;
   -webkit-animation-name: Progressing93;
           animation-name: Progressing93;
   -webkit-animation-duration: 4s;
@@ -5363,7 +5447,7 @@ body .gamfi-explore-content .project-item {
 
 /*--- project clasic style ---*/
 .gamfi_project_clasic_project_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 50px;
   padding-bottom: 92px;
 }
@@ -5424,7 +5508,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   text-transform: capitalize;
 }
 
@@ -5435,7 +5519,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -5474,7 +5558,7 @@ body .gamfi-explore-content .project-item {
   font-size: 14px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project_clasic_slider_rise_content h2 {
@@ -5484,7 +5568,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project_clasic_slider_claim_btn button {
@@ -5493,7 +5577,7 @@ body .gamfi-explore-content .project-item {
   height: 60px;
   border: none;
   outline: none;
-  background: #6D4AFE;
+  background: #00D094;
   font-family: "Russo One", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -5501,7 +5585,7 @@ body .gamfi-explore-content .project-item {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project_clasic_slider_center_sect {
@@ -5543,7 +5627,7 @@ body .gamfi-explore-content .project-item {
   text-align: right;
   text-transform: uppercase;
   margin-bottom: 22px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project_clasic_slider_right_timer ul li {
@@ -5552,7 +5636,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 30px;
   line-height: 26px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project_clasic_slider_right_access_allocatoin_sect {
@@ -5590,7 +5674,7 @@ body .gamfi-explore-content .project-item {
   font-size: 14px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .access_allocation_text h2 {
@@ -5600,7 +5684,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
   text-transform: none;
 }
 
@@ -5621,7 +5705,7 @@ body .gamfi-explore-content .project-item {
 
 .project_clasic_slider_social_links li a i {
   font-size: 22px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project_clasic_slider_progress_sect {
@@ -5636,7 +5720,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 30px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -5684,7 +5768,7 @@ body .gamfi-explore-content .project-item {
 /*--- Gamfi Calendar Section CSS ---*/
 /*--- calendar style ---*/
 .calendar header {
-  background: #222231;
+  background: #F5F7FC;
   margin-bottom: 42px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5717,7 +5801,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 @media screen and (max-width: 991px) {
@@ -5784,7 +5868,7 @@ body .gamfi-explore-content .project-item {
   border-radius: 0%;
   background-color: transparent;
   border: 1px solid #2E2F3C;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 10px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5847,7 +5931,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .list-menu > li {
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid #F5F7FC;
   position: relative;
   padding-right: 50px;
 }
@@ -5859,7 +5943,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   position: relative;
 }
 
@@ -5870,7 +5954,7 @@ body .gamfi-explore-content .project-item {
   right: -28px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 8px;
   -webkit-transition: 0.4s;
@@ -5896,11 +5980,11 @@ body .gamfi-explore-content .project-item {
   top: 100%;
   left: 0;
   width: 100%;
-  background: #222231;
+  background: #F5F7FC;
 }
 
 .list-menu .sub-menu li {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #F5F7FC;
 }
 
 .list-menu .sub-menu li a {
@@ -5931,7 +6015,7 @@ body .gamfi-explore-content .project-item {
     padding-right: 50px;
     display: block;
     width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid #F5F7FC;
   }
   .list-menu li a {
     width: 100%;
@@ -5995,7 +6079,7 @@ body .gamfi-explore-content .project-item {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .event-item .border-shadow {
@@ -6028,8 +6112,8 @@ body .gamfi-explore-content .project-item {
   right: 0;
   width: 5px;
   height: 200px;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(-100%, #a3ff12), color-stop(64%, rgba(21, 22, 37, 0)));
-  background: linear-gradient(to top, #a3ff12 -100%, rgba(21, 22, 37, 0) 64%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(-100%, #00D094), color-stop(64%, rgba(21, 22, 37, 0)));
+  background: linear-gradient(to top, #00D094 -100%, rgba(21, 22, 37, 0) 64%);
 }
 
 .event-item .border-shadow.shadow-4 {
@@ -6037,8 +6121,8 @@ body .gamfi-explore-content .project-item {
   right: 5px;
   width: 200px;
   height: 5px;
-  background: -webkit-gradient(linear, right top, left top, color-stop(-100%, #a3ff12), color-stop(64%, rgba(21, 22, 37, 0)));
-  background: linear-gradient(to left, #a3ff12 -100%, rgba(21, 22, 37, 0) 64%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(-100%, #00D094), color-stop(64%, rgba(21, 22, 37, 0)));
+  background: linear-gradient(to left, #00D094 -100%, rgba(21, 22, 37, 0) 64%);
 }
 
 .event-top {
@@ -6069,7 +6153,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .event-top p {
@@ -6079,7 +6163,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .event-time {
@@ -6093,7 +6177,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   position: relative;
 }
 
@@ -6136,7 +6220,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .info-list .social-link {
@@ -6155,7 +6239,7 @@ body .gamfi-explore-content .project-item {
 
 /*--- ProjectDetails2 ---*/
 .project_details2_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 100px;
   padding-bottom: 140px;
   position: relative;
@@ -6179,7 +6263,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .first_survivor_city_left_section {
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 30px;
@@ -6225,7 +6309,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .first_survivor_city_left_timer .price-counter ul li span {
@@ -6255,7 +6339,7 @@ body .gamfi-explore-content .project-item {
   font-size: 30px;
   line-height: 36px;
   text-transform: capitalize;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .first_survivor_city_right_project_name span {
@@ -6266,7 +6350,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .first_survivor_city_right_headings {
@@ -6287,7 +6371,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-top: 35px;
   margin-bottom: 40px;
 }
@@ -6309,7 +6393,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .pool_and_token_info_card {
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 43px 29px;
@@ -6323,7 +6407,7 @@ body .gamfi-explore-content .project-item {
   font-size: 22px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -6380,7 +6464,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .pool_and_token_info_list ul li p.pool_and_token_info_list_right {
@@ -6389,7 +6473,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .pool_and_token_info_list ul li p.pool_and_token_info_list_right span {
@@ -6407,7 +6491,7 @@ body .gamfi-explore-content .project-item {
   font-size: 22px;
   line-height: 50px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 12px;
 }
 
@@ -6422,7 +6506,7 @@ body .gamfi-explore-content .project-item {
 
 .project_details2_schedule_table_headings {
   height: 60px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
   width: 100%;
 }
 
@@ -6456,7 +6540,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project_details2_schedule_table_headings ul li.column_1 {
@@ -6520,7 +6604,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project_details2_schedule_table_body ul li span {
@@ -6563,7 +6647,7 @@ body .gamfi-explore-content .project-item {
   font-size: 22px;
   line-height: 50px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 12px;
 }
 
@@ -6578,7 +6662,7 @@ body .gamfi-explore-content .project-item {
 
 .project_details2_allocations_table_headings {
   height: 60px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #F5F7FC;
 }
 
 .project_details2_allocations_table_headings ul {
@@ -6603,7 +6687,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6672,7 +6756,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6729,13 +6813,13 @@ body .gamfi-explore-content .project-item {
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- IGO Ranking page style ---*/
 /*--- Gamfi Igo-Rankging Section CSS ---*/
 .igo-rankging-table-list {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .igo-rankging-table-list table {
@@ -6791,7 +6875,7 @@ body .gamfi-explore-content .project-item {
 
 .igo-rankging-table-list tr th {
   font-family: "Russo One", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-weight: 400;
   text-transform: uppercase;
   padding-top: 8px;
@@ -6799,8 +6883,8 @@ body .gamfi-explore-content .project-item {
 }
 
 .igo-rankging-table-list tr td {
-  background: #1A1B30;
-  color: #FFFFFF;
+  background: #F5F7FC;
+  color: #41474b;
 }
 
 @-moz-document url-prefix() {
@@ -6822,7 +6906,7 @@ body .gamfi-explore-content .project-item {
 /*--- blog style ---*/
 .latest_articles_sect {
   padding: 71px 0px 100px 0px;
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .latest_articles_card {
@@ -6878,7 +6962,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .article_details h2:hover {
-  color: #a3ff12;
+  color: #00D094;
 }
 
 .article_details h2 span {
@@ -6888,7 +6972,7 @@ body .gamfi-explore-content .project-item {
   font-size: 14px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   cursor: auto;
 }
 
@@ -6898,7 +6982,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 22px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 16px;
   text-transform: none;
   max-width: 299px;
@@ -6911,7 +6995,7 @@ body .gamfi-explore-content .project-item {
   font-size: 16px;
   line-height: 28px;
   margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .article_details a {
@@ -6920,7 +7004,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6954,14 +7038,14 @@ body .gamfi-explore-content .project-item {
   font-size: 30px;
   line-height: 50px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   display: block;
   margin-bottom: 17px;
   margin-top: 18px;
 }
 
 .article_details2 h4 a span {
-  color: #6D4AFE;
+  color: #00D094;
 }
 
 .article_details2 h4 a strong {
@@ -6971,7 +7055,7 @@ body .gamfi-explore-content .project-item {
   font-size: 30px;
   line-height: 50px;
   text-transform: uppercase;
-  color: #A3FF12;
+  color: #00D094;
   margin-right: 10px;
 }
 
@@ -6991,7 +7075,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   cursor: pointer;
 }
 
@@ -7011,7 +7095,7 @@ body .gamfi-explore-content .project-item {
 .blog-detail-conent {
   padding-top: 60px;
   padding-bottom: 140px;
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .blog-detail-conent .blog-area .blog-description .des {
@@ -7039,7 +7123,7 @@ body .gamfi-explore-content .project-item {
   font-size: 22px;
   line-height: 36px;
   padding-left: 65px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .blog-detail-conent .blog-area .igo-blog h4 {
@@ -7072,7 +7156,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .blog-detail-conent .blog-area .tokenomics-item .project-content .project-sale.darkslateblue:before {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .blog-detail-conent .blog-area .tokenomics-item .project-content .project-sale.cyan:before {
@@ -7088,7 +7172,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .blog-detail-conent .blog-area .tokenomics-item .project-content .project-sale.springGreen:before {
-  background: #A3FF12;
+  background: #00D094;
 }
 
 .blog-detail-conent .blog-area .tokenomics-item .project-content .project-sale.darkturquoise:before {
@@ -7158,7 +7242,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .blog-detail-conent .blog-area .about-blog .about-menu .about-list .about-listing li a {
-  background: #222231;
+  background: #F5F7FC;
   padding: 15px 15px;
   display: inline-block;
   font-style: italic;
@@ -7194,7 +7278,7 @@ body .gamfi-explore-content .project-item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 10px 25px 10px 10px;
 }
 
@@ -7224,7 +7308,7 @@ body .gamfi-explore-content .project-item {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 30px;
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 10px 10px 10px 35px;
   text-align: right;
 }
@@ -7246,7 +7330,7 @@ body .gamfi-explore-content .project-item {
 
 .blog-detail-conent .blog-area .about-blog .blog-contact .next-item .next-text h5 a,
 .blog-detail-conent .blog-area .about-blog .blog-contact .previous-item .previous-text h5 a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .blog-detail-conent .blog-area .comment-item .blog-comment {
@@ -7311,7 +7395,7 @@ body .gamfi-explore-content .project-item {
   width: 100%;
   border: 1px solid #2E2F3C;
   padding: 15px 20px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .blog-detail-conent .blog-area .form-item .input-button input.textarea {
@@ -7328,15 +7412,15 @@ body .gamfi-explore-content .project-item {
   position: absolute;
   left: 0;
   top: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #6b777f;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .blog-detail-conent .blog-area .form-item .input-submit input {
   width: 100%;
-  background: #6D4AFE;
-  color: #FFFFFF;
+  background: #00D094;
+  color: #41474b;
   border: none;
   padding: 17px;
   text-transform: uppercase;
@@ -7372,7 +7456,7 @@ body .gamfi-explore-content .project-item {
 .categories-item .catergories-form input {
   background: transparent;
   border: none;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .categories-item .catergories-form i {
@@ -7380,13 +7464,13 @@ body .gamfi-explore-content .project-item {
   position: absolute;
   right: 20px;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .categories-item .catergories-form i:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .categories-item .categories-summary ul {
@@ -7396,7 +7480,7 @@ body .gamfi-explore-content .project-item {
 }
 
 .categories-item .categories-summary ul li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   line-height: 36px;
@@ -7405,11 +7489,11 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .categories-item .categories-summary ul li a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .post-item .post-shade {
@@ -7447,11 +7531,11 @@ body .gamfi-explore-content .project-item {
   font-size: 14px;
   line-height: 30px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .post-item .recent-content .recent-text h5 a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tag-menu ul {
@@ -7525,14 +7609,14 @@ div.latest-item .hover-shape-bg {
   line-height: 28px;
   max-width: 240px;
   width: 100%;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .news-letter-item .newsletter-link form input[type="email"] {
   width: 100%;
   border: 2px solid #494A5C;
   background: transparent;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 15px 0 15px 20px;
   margin-bottom: 30px;
 }
@@ -7541,7 +7625,7 @@ div.latest-item .hover-shape-bg {
   padding: 17px 0;
   width: 100%;
   text-transform: uppercase;
-  background: #A3FF12;
+  background: #00D094;
   border: transparent;
   font-family: "Russo One", sans-serif;
 }
@@ -7550,7 +7634,7 @@ div.latest-item .hover-shape-bg {
 .latest-details-content {
   padding-top: 70px;
   padding-bottom: 140px;
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .latest-details-content .latest-content {
@@ -7582,11 +7666,11 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .latest-item .latest-text {
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 32px 30px;
 }
 
@@ -7604,7 +7688,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .latest-item .latest-btn a::before {
@@ -7618,7 +7702,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .latest-item .latest-btn a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .latest-item h4.title {
@@ -7626,7 +7710,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .latest-item h4.title a {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- Stacking page style ---*/
@@ -7657,7 +7741,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 158%;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 24px;
 }
 
@@ -7668,11 +7752,11 @@ div.latest-item .hover-shape-bg {
   font-size: 30px;
   line-height: 158%;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-bottom: 110px;
 }
 
@@ -7715,14 +7799,14 @@ div.latest-item .hover-shape-bg {
 }
 
 .staking_flip_card_front {
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   padding: 40px;
 }
 
 .staking_flip_card_back {
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   -webkit-transform: rotateY(180deg);
@@ -7750,7 +7834,7 @@ div.latest-item .hover-shape-bg {
   font-size: 30px;
   line-height: 36px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -7794,7 +7878,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_front_timebg span::before {
@@ -7841,7 +7925,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .staking_flip_card_front_list ul li strong {
@@ -7851,7 +7935,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_front_buttons {
@@ -7879,11 +7963,11 @@ div.latest-item .hover-shape-bg {
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_front_buttons button.btn_purple {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .staking_flip_card_front_reward {
@@ -7898,7 +7982,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 14px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -7909,7 +7993,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_back_content {
@@ -7954,7 +8038,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -8000,12 +8084,12 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
   text-align: left;
 }
 
 .staking_flip_card_back_form_input {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #41474b;
   height: 60px;
   max-width: 290px;
   width: 100%;
@@ -8034,7 +8118,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_back_form_input button {
@@ -8050,7 +8134,7 @@ div.latest-item .hover-shape-bg {
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking_flip_card_back_approve_btn {
@@ -8062,7 +8146,7 @@ div.latest-item .hover-shape-bg {
 .staking_flip_card_back_approve_btn button {
   width: 100%;
   height: 40px;
-  background: #6D4AFE;
+  background: #00D094;
   font-family: "Russo One", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -8070,7 +8154,7 @@ div.latest-item .hover-shape-bg {
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- lp ---*/
@@ -8119,7 +8203,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 19px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -8181,7 +8265,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8269,7 +8353,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 30px;
   line-height: 26px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .staking4_time_counter .timer ul li span {
@@ -8278,7 +8362,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-form-list h4 {
@@ -8287,7 +8371,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 12px;
 }
 
@@ -8297,16 +8381,16 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .project-form-list h6 span {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .project-form-list h6 a {
   text-transform: uppercase;
-  color: #6D4AFE;
+  color: #00D094;
   margin-left: 15px;
 }
 
@@ -8333,13 +8417,13 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   border: none;
   outline: none;
 }
 
 .project-value h6 {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 0px;
@@ -8347,7 +8431,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .staking4_table_sect {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .table_col1 {
@@ -8390,13 +8474,13 @@ div.latest-item .hover-shape-bg {
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- farming page style ---*/
 /*--- Gamfi farming Section CSS ---*/
 .gamfi-farming-content .default-centent {
-  background: #1A1B30;
+  background: #F5F7FC;
   padding: 18px 25px;
   margin-bottom: 20px;
   cursor: pointer;
@@ -8407,7 +8491,7 @@ div.latest-item .hover-shape-bg {
       -ms-flex: 0 0 16.66%;
           flex: 0 0 16.66%;
   width: 16.66%;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-farming-content .list-1 {
@@ -8425,7 +8509,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi-farming-content .expeand-centent {
-  background: #222231;
+  background: #F5F7FC;
   padding: 28px 30px;
 }
 
@@ -8456,11 +8540,11 @@ div.latest-item .hover-shape-bg {
 
 .farm-form-list input[type="text"] {
   width: 100%;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .farm-form-list input[type="submit"] {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4S;
   transition: 0.4S;
   text-transform: uppercase;
@@ -8471,7 +8555,7 @@ div.latest-item .hover-shape-bg {
 
 .farm-form-list .max {
   position: absolute;
-  color: #FFFFFF;
+  color: #41474b;
   right: 45%;
   top: 19px;
 }
@@ -8480,7 +8564,7 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   z-index: 9999;
   right: 9px;
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .farm-form-list .black-shape span {
@@ -8496,7 +8580,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .farm-form-list .black-shape input[type="submit"].submit-active {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .expeand-menu ul {
@@ -8507,19 +8591,19 @@ div.latest-item .hover-shape-bg {
 
 .expeand-menu ul li {
   display: inline-block;
-  color: #A3FF12;
+  color: #00D094;
   font-size: 14px;
   margin-right: 30px;
 }
 
 .expeand-menu ul li i {
   font-size: 15px;
-  color: #A3FF12;
+  color: #00D094;
   padding-left: 10px;
 }
 
 .expeand-centent .unit {
-  color: #A3FF12;
+  color: #00D094;
   font-size: 22px;
   font-family: "Russo One", sans-serif;
 }
@@ -8599,7 +8683,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi-farming-table {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .gamfi-farming-table table {
@@ -8608,7 +8692,7 @@ div.latest-item .hover-shape-bg {
 
 .gamfi-farming-table tr th {
   font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-weight: 400;
   text-transform: uppercase;
   padding-top: 8px;
@@ -8616,8 +8700,8 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi-farming-table tr td {
-  background: #1A1B30;
-  color: #FFFFFF;
+  background: #F5F7FC;
+  color: #41474b;
 }
 
 .gamfi-farming-table tr th,
@@ -8649,7 +8733,7 @@ div.latest-item .hover-shape-bg {
 /*--- leaderboard page style ---*/
 /*--- Gamfi Leaderboard Section CSS ---*/
 .leaderboard-table-list {
-  background: #090A1A;
+  background: var(--body-color);
 }
 
 .leaderboard-table-list table {
@@ -8660,7 +8744,7 @@ div.latest-item .hover-shape-bg {
 
 .leaderboard-table-list tr th {
   font-family: "Russo One", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-weight: 400;
   text-transform: uppercase;
   padding-top: 8px;
@@ -8668,8 +8752,8 @@ div.latest-item .hover-shape-bg {
 }
 
 .leaderboard-table-list tr td {
-  background: #1A1B30;
-  color: #FFFFFF;
+  background: #F5F7FC;
+  color: #41474b;
 }
 
 .leaderboard-table-list tr th,
@@ -8706,7 +8790,7 @@ div.latest-item .hover-shape-bg {
 /*--- FAQ screen css ---*/
 .faq_screen_sect {
   padding: 64px 0px 140px 0px;
-  background: #090a1a;
+  background: var(--body-color);
 }
 
 .faq_screen_tab_sect {
@@ -8726,7 +8810,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 50px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   cursor: pointer;
 }
 
@@ -8750,7 +8834,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 50px;
-  color: #a3ff12;
+  color: #00D094;
   text-transform: none;
 }
 
@@ -8777,7 +8861,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 22px;
   line-height: 27px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: none;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -8792,7 +8876,7 @@ div.latest-item .hover-shape-bg {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 25px 0px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid #41474b;
 }
 
 .faq_content_sect .accordion span {
@@ -8804,13 +8888,13 @@ div.latest-item .hover-shape-bg {
 
 .faq_content_sect .accordion.active {
   background: transparent;
-  color: #FFFFFF;
+  color: #41474b;
   border-bottom: none;
 }
 
 .faq_content_sect .accordion:hover {
   background: transparent;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .faq_content_sect .icon-minus {
@@ -8842,7 +8926,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   max-width: 639px;
   width: 100%;
   margin-bottom: 0px;
@@ -8851,7 +8935,7 @@ div.latest-item .hover-shape-bg {
 /*--- tier pages style ---*/
 /*--- Tier ---*/
 .gamfi_tier_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 70px;
   padding-bottom: 110px;
   position: relative;
@@ -8886,7 +8970,7 @@ div.latest-item .hover-shape-bg {
 .gamfi_tier_card {
   max-width: 370px;
   width: 100%;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 45px;
@@ -8915,7 +8999,7 @@ div.latest-item .hover-shape-bg {
   font-size: 36px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -8926,7 +9010,7 @@ div.latest-item .hover-shape-bg {
   font-size: 22px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -8942,7 +9026,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-top: 21px;
   margin-bottom: 0px;
 }
@@ -8955,7 +9039,7 @@ div.latest-item .hover-shape-bg {
   line-height: 30px;
   text-align: center;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- TierV2 ---*/
@@ -8983,7 +9067,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -8993,7 +9077,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 22px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9083,7 +9167,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .tier_v2_col_body ul li h5 {
@@ -9092,14 +9176,14 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
 .tier_v2_col_body .bottom_shape {
   height: 50px;
   width: 100%;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   margin-bottom: 10px;
@@ -9107,7 +9191,7 @@ div.latest-item .hover-shape-bg {
 
 /*--- Tier V3 ---*/
 .gamfi_tier_v3_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 70px;
   padding-bottom: 140px;
 }
@@ -9129,7 +9213,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 22px;
   line-height: 45px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9141,7 +9225,7 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-bottom: 46px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tvl_list ul li {
@@ -9151,7 +9235,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 50px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tvl_right_sect {
@@ -9203,7 +9287,7 @@ div.latest-item .hover-shape-bg {
   text-align: center;
   margin-bottom: 0px;
   margin-top: 19px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .tvl_right_card_headings1 {
@@ -9267,7 +9351,7 @@ div.latest-item .hover-shape-bg {
           flex-direction: column;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   font-family: "Russo One", sans-serif;
@@ -9276,18 +9360,18 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 30px;
   text-align: center;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- tokenomics pages style ---*/
 /*--- Tokenomics Page ---*/
 .gamfi_header_content_right_custom h2 {
   font-size: 28px !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #41474b !important;
 }
 
 .tokenomics_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 0px;
   padding-bottom: 105px;
 }
@@ -9349,7 +9433,7 @@ div.latest-item .hover-shape-bg {
   font-weight: normal;
   font-size: 22px;
   line-height: 40px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9402,7 +9486,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9413,7 +9497,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9434,7 +9518,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .tokenomics_list_sect ul li span.farming_pool {
-  background: #A3FF12;
+  background: #00D094;
 }
 
 .tokenomics_list_sect ul li span.staking {
@@ -9450,7 +9534,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .tokenomics_list_sect ul li span.private_Sale {
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .tokenomics_list_sect ul li span.liquidity {
@@ -9499,7 +9583,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .governanc_content_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-bottom: 140px;
   position: relative;
   z-index: 3;
@@ -9529,7 +9613,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9561,7 +9645,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 50px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .governanc_content_right_card ul li strong {
@@ -9571,7 +9655,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 50px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governanc_content_right_card_btns {
@@ -9600,14 +9684,14 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   border: none;
   outline: none;
 }
 
 .governanc_content_right_card_btns button.claim_rewords_btn {
   margin-bottom: 30px;
-  background: #6D4AFE;
+  background: #00D094;
 }
 
 .governanc_content_right_card_btns button.make_proposal_btn {
@@ -9621,7 +9705,7 @@ div.latest-item .hover-shape-bg {
 .governanc_content_left_hash_card {
   min-height: 195px;
   width: 100%;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   margin-top: 30px;
@@ -9634,12 +9718,12 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 18px;
   line-height: 158%;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 24px;
 }
 
 .governanc_content_left_hash_card h2 a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governanc_content_left_hash_card h2 span {
@@ -9653,7 +9737,7 @@ div.latest-item .hover-shape-bg {
   font-size: 12px;
   line-height: 158%;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 8px;
 }
 
@@ -9680,7 +9764,7 @@ div.latest-item .hover-shape-bg {
   font-size: 12px;
   line-height: 158%;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -9694,7 +9778,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .governanc_content_left_hash_card_stutas h4 span.white {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governanc_content_left_hash_card_stutas h4 span.green {
@@ -10267,7 +10351,7 @@ div.latest-item .hover-shape-bg {
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
   margin-top: 7px;
 }
@@ -10291,7 +10375,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .governanc_details_back_btn a span {
@@ -10307,7 +10391,7 @@ div.latest-item .hover-shape-bg {
   font-size: 36px;
   line-height: 158%;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governanc_details_heading h3 {
@@ -10316,7 +10400,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10336,7 +10420,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .governanc_details_heading h3 span {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-right: 5px;
 }
 
@@ -10346,7 +10430,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10424,7 +10508,7 @@ div.latest-item .hover-shape-bg {
   font-size: 18px;
   line-height: 16px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 30px;
   margin-bottom: 0px;
 }
@@ -10477,7 +10561,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 158%;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
   width: 100%;
   height: 100%;
@@ -10536,7 +10620,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .cast_your_vote_card button {
-  background: #6D4AFE;
+  background: #00D094;
   height: 60px;
   width: 170px;
   font-family: "Russo One", sans-serif;
@@ -10546,7 +10630,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   border: none;
   outline: none;
   margin: 30px;
@@ -10562,7 +10646,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 21px;
 }
 
@@ -10572,7 +10656,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 21px;
 }
 
@@ -10597,7 +10681,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -10608,7 +10692,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -10619,7 +10703,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
   width: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10649,7 +10733,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
   text-align: left;
   max-width: 150px;
   width: 100%;
@@ -10662,7 +10746,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #41474b;
   width: 87px;
   text-align: right;
 }
@@ -10678,7 +10762,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .governance_vote_modal_form h3 {
@@ -10688,7 +10772,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 22px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governance_vote_modal_form form {
@@ -10701,7 +10785,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .governance_vote_modal_form form input {
@@ -10715,7 +10799,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 15px;
   padding: 0px 21px;
 }
@@ -10725,7 +10809,7 @@ div.latest-item .hover-shape-bg {
   height: 60px;
   border: none;
   outline: none;
-  background: #6D4AFE;
+  background: #00D094;
   font-family: "Russo One", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -10733,7 +10817,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -10749,7 +10833,7 @@ div.latest-item .hover-shape-bg {
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 10px;
 }
 
@@ -10799,7 +10883,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 50px;
   text-align: right;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .governanc_content_right_card ul li p span {
@@ -10817,7 +10901,7 @@ div.latest-item .hover-shape-bg {
 /*--- connect wallet pages style ---*/
 /*--- Connect Wallet CSS ---*/
 .connect_wallet_section {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 96px;
   padding-bottom: 140px;
   -webkit-backdrop-filter: blur(10px);
@@ -10847,7 +10931,7 @@ div.latest-item .hover-shape-bg {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 23px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .connect_wallet_card_headings p {
@@ -10857,7 +10941,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 29px;
 }
 
@@ -10868,7 +10952,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -10915,7 +10999,7 @@ div.latest-item .hover-shape-bg {
   width: 100%;
   height: 100%;
   padding: 15px 20px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Russo One", sans-serif;
@@ -10924,7 +11008,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .choose_network_sect ul li button span {
@@ -10933,7 +11017,7 @@ div.latest-item .hover-shape-bg {
 
 .choose_network_sect ul li.active button {
   border: 2px solid rgba(163, 255, 18, 0.5);
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .connect_wallet_content {
@@ -10948,7 +11032,7 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .connect_wallet_content p {
@@ -10957,7 +11041,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   max-width: 470px;
   width: 100%;
 }
@@ -10979,7 +11063,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #41474b;
   position: relative;
 }
 
@@ -10992,7 +11076,7 @@ div.latest-item .hover-shape-bg {
   top: 22px;
   right: 30px;
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   position: absolute;
 }
@@ -11020,7 +11104,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-transform: uppercase;
   margin-bottom: 0px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi_header_progress_bar .progress-bar-striped {
@@ -11030,7 +11114,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi_header_progress_bar .progress {
-  background: rgba(255, 255, 255, 0.15);
+  background: #41474b;
   height: 12px;
   border-radius: 0px;
   width: 470px;
@@ -11039,12 +11123,12 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi_header_progress_bar .progress-bar {
-  background-color: #A3FF12;
+  background-color: #00D094;
 }
 
 .kyc_form_sect {
   padding-top: 56px;
-  background: #090A1A;
+  background: var(--body-color);
   padding-bottom: 140px;
 }
 
@@ -11056,7 +11140,7 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-bottom: 0px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .kyc_form p {
@@ -11065,7 +11149,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 18px;
 }
 
@@ -11082,7 +11166,7 @@ div.latest-item .hover-shape-bg {
   height: 60px;
   max-width: 570px;
   width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 17px 20px;
@@ -11097,7 +11181,7 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   top: 24px;
   right: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 7px;
 }
@@ -11110,7 +11194,7 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-left: 14px;
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .Gamfi_Container {
@@ -11167,12 +11251,12 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .kyc_radio_btn.active .container,
 .kyc_radio_btn:hover .container {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .kyc_radio_btn .container input {
@@ -11199,7 +11283,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .kyc_radio_btn .container input:checked ~ .checkmark {
-  background-color: #6D4AFE;
+  background-color: #00D094;
   border: none;
 }
 
@@ -11232,7 +11316,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: right;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11244,7 +11328,7 @@ div.latest-item .hover-shape-bg {
           justify-content: center;
   max-width: 570px;
   width: 100%;
-  background: #6D4AFE;
+  background: #00D094;
   height: 60px;
   border: none;
   outline: none;
@@ -11274,7 +11358,7 @@ div.latest-item .hover-shape-bg {
   font-size: 22px;
   line-height: 40px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 18px;
 }
 
@@ -11291,7 +11375,7 @@ div.latest-item .hover-shape-bg {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 30px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -11321,7 +11405,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   height: 42px;
   padding: 0px 20px;
   display: -webkit-box;
@@ -11337,7 +11421,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .kyc_country_drop_list ul li:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- Kyc Upload Docs ---*/
@@ -11368,7 +11452,7 @@ div.latest-item .hover-shape-bg {
   font-size: 14px;
   line-height: 45px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   max-width: 175px;
   margin: auto;
   margin-bottom: 0px;
@@ -11396,7 +11480,7 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-bottom: 17px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .kyc_form .upload_btn_bg {
@@ -11422,7 +11506,7 @@ div.latest-item .hover-shape-bg {
 
 .kyc_form .upload_docs_sect .upload-btn-wrapper span {
   background: transparent;
-  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border: 2px dashed #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -11447,7 +11531,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .upload_doc_check_list {
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -11462,7 +11546,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 158%;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11484,7 +11568,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .upload_doc_check_list ul li.active {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .upload_doc_check_list ul li.active span {
@@ -11505,13 +11589,13 @@ div.latest-item .hover-shape-bg {
   line-height: 45px;
   margin-bottom: 17px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .nid_number_sect form input {
   width: 100%;
   max-width: 570px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 60px;
@@ -11520,7 +11604,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   padding: 8px 21px;
   background: transparent;
   outline: none;
@@ -11587,7 +11671,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 158%;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-left: 14px;
 }
 
@@ -11597,7 +11681,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 158%;
-  color: #6D4AFE;
+  color: #00D094;
 }
 
 .kyc_term_and_condtion_sect .container input {
@@ -11625,7 +11709,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .kyc_term_and_condtion_sect .container input:checked ~ .checkmark {
-  background-color: #6D4AFE;
+  background-color: #00D094;
   border: none;
 }
 
@@ -11679,7 +11763,7 @@ div.latest-item .hover-shape-bg {
   font-size: 22px;
   line-height: 158%;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .kyc_your_documents_content ul {
@@ -11705,7 +11789,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -11742,7 +11826,7 @@ div.latest-item .hover-shape-bg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(30, 31, 53, 0.7);
+  background: #F5F7FC;
 }
 
 .team_members_info {
@@ -11756,12 +11840,12 @@ div.latest-item .hover-shape-bg {
   font-size: 30px;
   line-height: 1.4;
   margin-bottom: 5px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .team_members_info h3 {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 21px;
 }
 
@@ -11772,7 +11856,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   margin-bottom: 17px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .team_members_contact ul li {
@@ -11793,7 +11877,7 @@ div.latest-item .hover-shape-bg {
   font-weight: normal;
   font-size: 16px;
   line-height: 40px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   width: 150px;
 }
 
@@ -11803,7 +11887,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 40px;
-  color: #FFFFFF;
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11835,7 +11919,7 @@ div.latest-item .hover-shape-bg {
 
 .team_members_contact ul li .social_link a i {
   font-size: 15px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .team_members_contact ul li .social_link a:hover i {
@@ -11851,17 +11935,17 @@ div.latest-item .hover-shape-bg {
   font-size: 28px;
   line-height: 55px;
   text-align: right;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .gamfi_roadmap {
   padding-bottom: 120px;
-  background: #090A1A;
+  background: var(--body-color);
   position: relative;
 }
 
 .roadmap_sect {
-  background: #090A1A;
+  background: var(--body-color);
   padding-top: 40px;
   position: relative;
   display: -webkit-box;
@@ -12046,12 +12130,12 @@ div.latest-item .hover-shape-bg {
   font-weight: normal;
   font-size: 22px;
   line-height: 158%;
-  color: #A3FF12;
+  color: #00D094;
   margin-bottom: 10px;
 }
 
 .roadmap_content_box.disable h3 {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .roadmap_content_box ul li {
@@ -12061,7 +12145,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 158%;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12198,14 +12282,14 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .get_in_touch_form form input {
   height: 60px;
   width: 100%;
   padding: 8px 21px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: Transparent;
@@ -12222,7 +12306,7 @@ div.latest-item .hover-shape-bg {
   height: 130px;
   width: 100%;
   padding: 8px 21px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: Transparent;
@@ -12263,7 +12347,7 @@ div.latest-item .hover-shape-bg {
   font-size: 22px;
   line-height: 40px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .contact_info_content {
@@ -12291,7 +12375,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -12301,7 +12385,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -12311,7 +12395,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: #6D4AFE;
+  color: #00D094;
 }
 
 /*--------------------------------
@@ -12331,7 +12415,7 @@ div.latest-item .hover-shape-bg {
   width: 60px;
   height: 60px;
   border: 10px solid rgba(255, 255, 255, 0.1);
-  border-top: 10px solid #A3FF12;
+  border-top: 10px solid #00D094;
   border-radius: 50%;
   -webkit-animation: pre_rotate 1.5s linear infinite;
           animation: pre_rotate 1.5s linear infinite;
@@ -12522,7 +12606,7 @@ div.latest-item .hover-shape-bg {
 
 .readon {
   padding: 11px 20px 9px;
-  color: #FFFFFF;
+  color: #41474b;
   border: 2px solid #393941;
   overflow: hidden;
 }
@@ -12532,7 +12616,7 @@ div.latest-item .hover-shape-bg {
   top: -2px;
   font-size: 8px;
   line-height: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   padding-left: 16px;
 }
 
@@ -12548,7 +12632,7 @@ div.latest-item .hover-shape-bg {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: "Russo One", sans-serif;
-  color: #FFFFFF;
+  color: #41474b;
   border: 2px solid #2E2F3B;
   padding: 12px 25px 9px;
   -webkit-transition: 0.4s;
@@ -12556,24 +12640,24 @@ div.latest-item .hover-shape-bg {
 }
 
 .readon2:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .readon2 i {
   font-size: 15px;
   margin-right: 10px;
-  color: #FFFFFF;
+  color: #41474b;
   position: relative;
   z-index: 3;
 }
 
 .buy-token a.readon:hover {
-  color: #ffffff;
+  color: #41474b;
 }
 
 .white-bg-btn {
   background: #FFFFFF;
-  color: #090a1a;
+  color: var(--body-color);
   border: 2px solid #FFFFFF;
   padding: 10px 20px;
 }
@@ -12585,17 +12669,17 @@ div.latest-item .hover-shape-bg {
 
 .white-bg-btn:hover {
   background: transparent;
-  color: #FFFFFF;
+  color: #41474b;
   border-color: #393941;
 }
 
 .white-bg-btn:hover i {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .white-btn {
   background: #FFFFFF;
-  color: #090A1A;
+  color: var(--body-color);
   margin-left: 25px;
   padding: 13px 32px 11px;
   border: none;
@@ -12615,8 +12699,8 @@ div.latest-item .hover-shape-bg {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: "Russo One", sans-serif;
-  background: #A3FF12;
-  color: #090A1A;
+  background: #00D094;
+  color: var(--body-color);
   padding: 19px 50px;
 }
 
@@ -12627,7 +12711,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .banner-btn:hover {
-  color: #090A1A;
+  color: var(--body-color);
 }
 
 .banner-btn:hover .hover-shape1 {
@@ -12640,7 +12724,7 @@ div.latest-item .hover-shape-bg {
 
 .view-more {
   border: 2px solid #2E2F3C;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 12px 25px 8px;
   text-transform: uppercase;
   font-family: "Russo One", sans-serif;
@@ -12656,13 +12740,13 @@ div.latest-item .hover-shape-bg {
 }
 
 .view-more:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .view-project-btn {
   width: 200px;
   height: 60px;
-  background: #A3FF12;
+  background: #00D094;
   outline: none;
   margin-right: 15px;
   display: -webkit-box;
@@ -12684,7 +12768,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #090A1A;
+  color: var(--body-color);
 }
 
 .apply-project-btn {
@@ -12692,7 +12776,7 @@ div.latest-item .hover-shape-bg {
   height: 60px;
   margin-left: 15px;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -12714,7 +12798,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .show-more-logo-btn {
@@ -12733,7 +12817,7 @@ div.latest-item .hover-shape-bg {
   background: transparent;
   margin: auto;
   padding: 16px 21px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -12745,7 +12829,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .show-more-logo-btn .btn-text2 {
@@ -12757,7 +12841,7 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   top: 13px;
   right: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 12px;
   -webkit-transform: rotate(90deg);
@@ -12777,7 +12861,7 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   top: 13px;
   right: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 12px;
   -webkit-transform: rotate(270deg);
@@ -12805,17 +12889,17 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .participate-btn {
-  background: #6D4AFE;
+  background: #00D094;
   border: none;
 }
 
 .whitelist-btn {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #41474b;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-left: 30px;
@@ -12823,12 +12907,12 @@ div.latest-item .hover-shape-bg {
 
 .connect-wallet-btn-for-mobile {
   width: 100%;
-  background: #6D4AFE;
+  background: #00D094;
   margin-top: 20px;
 }
 
 .connect-wallet-btn-for-mobile .btn-text {
-  color: #FFFFFF;
+  color: #41474b;
   padding-left: 10px;
 }
 
@@ -12843,7 +12927,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12858,7 +12942,7 @@ div.latest-item .hover-shape-bg {
 /*--- buttons style ---*/
 .theme-btn {
   padding: 20px 50px;
-  background-color: #A3FF12;
+  background-color: #00D094;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12872,7 +12956,7 @@ div.latest-item .hover-shape-bg {
   font-family: "Russo One", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #090a1a;
+  color: var(--body-color);
   position: relative;
   overflow: hidden;
   -webkit-transition: 0.3s;
@@ -12905,7 +12989,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .theme-btn:hover {
-  color: #090a1a;
+  color: var(--body-color);
 }
 
 .theme-btn:hover .hover-shape1 {
@@ -12921,12 +13005,12 @@ div.latest-item .hover-shape-bg {
 }
 
 .theme-btn.blue {
-  background-color: #6D4AFE;
-  color: #FFFFFF;
+  background-color: #00D094;
+  color: #41474b;
 }
 
 .theme-btn.blue:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .theme-btn.blue:hover .hover-shape1 {
@@ -12943,7 +13027,7 @@ div.latest-item .hover-shape-bg {
 
 /*--- Gamfi Header Section CSS ---*/
 .gamfi-header-section {
-  background-color: #090A1A;
+  background-color: var(--body-color);
   padding: 25px 0;
 }
 
@@ -12955,7 +13039,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi-header-section.default-header {
-  background: #090A1A;
+  background: var(--body-color);
   position: relative;
   z-index: 11;
 }
@@ -13035,7 +13119,7 @@ div.latest-item .hover-shape-bg {
 
 .gamfi-header-section .heaader-inner-area ul li ul li a {
   display: block;
-  background: #222231;
+  background: #F5F7FC;
   font-size: 16px;
   font-family: "Russo One", sans-serif;
   background: rgba(19, 20, 44, 0.98);
@@ -13044,19 +13128,19 @@ div.latest-item .hover-shape-bg {
   padding: 15px 24px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .gamfi-header-section .heaader-inner-area ul li ul li a i {
   font-size: 20px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-right: 10px;
   position: relative;
   top: 2px;
 }
 
 .gamfi-header-section .heaader-inner-area ul li ul li a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-header-section .header-menu ul li {
@@ -13077,14 +13161,14 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   top: 18px;
   right: -18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 7px;
 }
 
 .gamfi-header-section .header-menu ul li a {
   display: block;
-  color: #FFFFFF;
+  color: #41474b;
   font-family: "Russo One", sans-serif;
   font-weight: 400;
   padding-top: 10px;
@@ -13131,11 +13215,11 @@ div.latest-item .hover-shape-bg {
 }
 
 .gamfi-header-section .gamfi-btn-area ul li ul li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .gamfi-header-section .gamfi-btn-area ul li ul li a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .gamfi-header-section .gamfi-btn-area ul .nav-expander {
@@ -13343,7 +13427,7 @@ div.latest-item .hover-shape-bg {
 .progress-inner .progress-bar {
   background-color: rgba(255, 255, 255, 0);
   background-size: 14px 32px;
-  background-image: linear-gradient(60deg, rgba(255, 255, 255, 0.15) 26%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 82%, transparent 75%, transparent);
+  background-image: linear-gradient(60deg, #41474b 26%, transparent 25%, transparent 50%, #41474b 54%, #41474b 82%, transparent 75%, transparent);
   height: 12px;
 }
 
@@ -13352,7 +13436,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .progress-inner .progress-bar {
-  background-image: linear-gradient(60deg, #a3ff12 26%, transparent 25%, transparent 50%, #a3ff12 54%, #a3ff12 82%, transparent 75%, transparent);
+  background-image: linear-gradient(60deg, #00D094 26%, transparent 25%, transparent 50%, #00D094 54%, #00D094 82%, transparent 75%, transparent);
 }
 
 .canvas-menu ul li {
@@ -13365,7 +13449,7 @@ div.latest-item .hover-shape-bg {
 
 .canvas-menu ul li a {
   display: block;
-  color: #FFFFFF;
+  color: #41474b;
   font-weight: 600;
 }
 
@@ -13383,7 +13467,7 @@ div.latest-item .hover-shape-bg {
   position: relative;
   width: 100%;
   z-index: 111;
-  border-top: 3px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid #F5F7FC;
   display: block;
 }
 
@@ -13425,7 +13509,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -13505,7 +13589,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px !important;
   line-height: 19px !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #41474b !important;
   background: transparent !important;
   padding: 0px !important;
   border: none !important;
@@ -13573,7 +13657,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   margin-bottom: 0px;
 }
 
@@ -13589,7 +13673,7 @@ div.latest-item .hover-shape-bg {
   font-size: 10px;
   line-height: 24px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 0px 4px;
   border-radius: 23px;
   margin-left: 10px;
@@ -13606,13 +13690,13 @@ div.latest-item .hover-shape-bg {
 }
 
 .menu_column ul li span.new {
-  background: #6D4AFE;
+  background: #00D094;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
 
 .menu_column ul li span.soon {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -13630,11 +13714,11 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 15px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .menu_column ul li a:hover {
-  color: #FFFFFF !important;
+  color: #41474b !important;
 }
 
 .gamfi-header-section .heaader-inner-area ul li.mega_menu_hov {
@@ -13685,7 +13769,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 400;
   font-size: 15px;
   line-height: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #000000;
   padding: 0px;
 }
 
@@ -13767,7 +13851,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .breadcrumbs-link {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: uppercase;
   margin-right: 24px;
   position: relative;
@@ -13785,7 +13869,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .breadcrumbs-link:hover {
-  color: #A3FF12;
+  color: #00D094;
 }
 
 .breadcrumbs-form {
@@ -13824,7 +13908,7 @@ div.latest-item .hover-shape-bg {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 11px 20px;
   width: 380px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .breadcrumbs-form input[type="submit"] {
@@ -13842,7 +13926,7 @@ div.latest-item .hover-shape-bg {
   font-size: 15px;
   cursor: pointer;
   padding: 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   position: relative;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -13858,26 +13942,26 @@ div.latest-item .hover-shape-bg {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   padding: 12px 26px 10px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .breadcrumbs-form .btn-area .readon i {
   font-size: 15px;
   top: 1px;
   margin-right: 10px;
-  color: #FFFFFF;
+  color: #41474b;
   position: relative;
   z-index: 3;
 }
 
 .breadcrumbs-form .btn-area .readon:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- project breadcrumb style ---*/
 .project-clasic-breadcum-sect {
   height: auto;
-  background: #090A1A;
+  background: var(--body-color);
   position: relative;
 }
 
@@ -13934,7 +14018,7 @@ div.latest-item .hover-shape-bg {
 
 /*--- account style ---*/
 .account__area {
-  background: #090A1A;
+  background: var(--body-color);
   position: relative;
   padding: 96px 0px 0px 0px;
 }
@@ -13961,7 +14045,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .account__form {
-  background: rgba(30, 31, 53, 0.8);
+  background: #F5F7FC;
   max-width: 690px;
   width: 100%;
   margin: auto;
@@ -13997,7 +14081,7 @@ div.latest-item .hover-shape-bg {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 23px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .account__title h3 {
@@ -14006,7 +14090,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: none;
   max-width: 430px;
   margin: auto;
@@ -14027,7 +14111,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: none;
   max-width: 356px;
   margin: auto;
@@ -14041,7 +14125,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   text-transform: none;
   max-width: 356px;
   margin: auto;
@@ -14051,7 +14135,7 @@ div.latest-item .hover-shape-bg {
 .account__form form .btn_custom {
   width: 100%;
   height: 60px;
-  background: #6D4AFE;
+  background: #00D094;
   border: none;
   outline: none;
   font-family: Russo One;
@@ -14061,7 +14145,7 @@ div.latest-item .hover-shape-bg {
   line-height: 19px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14079,7 +14163,7 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .item-bottom h4 a {
@@ -14088,13 +14172,13 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  color: #6D4AFE;
+  color: #00D094;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .item-bottom h4 a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .input__group__between {
@@ -14112,6 +14196,7 @@ div.latest-item .hover-shape-bg {
 .input__group__between .input__group {
   width: 48%;
 }
+
 
 @media screen and (max-width: 991px) {
   .input__group__between {
@@ -14132,13 +14217,13 @@ div.latest-item .hover-shape-bg {
   font-size: 16px;
   line-height: 45px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .input__group input,
 .input__group textarea {
   width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #41474b;
   background-color: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -14147,7 +14232,7 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 40px;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 8px 21px;
 }
 
@@ -14175,7 +14260,7 @@ div.latest-item .hover-shape-bg {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   height: calc(100% - 4px);
-  border-right: 2px solid rgba(255, 255, 255, 0.15);
+  border-right: 2px solid #41474b;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14230,12 +14315,12 @@ div.latest-item .hover-shape-bg {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "FontAwesome";
-  color: #FFFFFF;
+  color: #41474b;
   opacity: 0;
 }
 
 .account__form .item-text input:checked::before {
-  background-color: #6D4AFE;
+  background-color: #00D094;
 }
 
 .account__form .item-text input:checked::after {
@@ -14247,17 +14332,17 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .account__form .item-text label a {
-  color: #6D4AFE;
+  color: #00D094;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .account__form .item-text label a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .account__form .item-text a {
@@ -14265,18 +14350,18 @@ div.latest-item .hover-shape-bg {
   font-weight: 500;
   font-size: 16px;
   line-height: 45px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .account__form .item-text a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- Gamfi Form Content Section CSS ---*/
 .apply-section {
-  background-color: #090A1A;
+  background-color: var(--body-color);
 }
 
 .input-list {
@@ -14316,7 +14401,7 @@ div.latest-item .hover-shape-bg {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #a3ff12;
+  background-color: #00D094;
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -14332,7 +14417,7 @@ div.latest-item .hover-shape-bg {
 
 /* --- Gamfi footer Section CSS ---*/
 .gamfi-footer-section {
-  background-color: #090A1A;
+  background-color: var(--body-color);
   position: relative;
 }
 
@@ -14363,12 +14448,12 @@ div.latest-item .hover-shape-bg {
   border: 2px solid #4C4764;
   padding: 15px 15px;
   width: 350px;
-  color: #FFFFFF;
+  color: #41474b;
   margin-right: 15px;
 }
 
 .footer-cta-area .footer-link .subscribe {
-  background: #A3FF12;
+  background: #00D094;
 }
 
 .footer-cta-area .footer-link .subscribe span {
@@ -14434,7 +14519,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .footer-icon-list i {
-  color: #FFFFFF;
+  color: #41474b;
   background: url("../images/icons/icon-image.png");
   width: 60px;
   height: 60px;
@@ -14447,7 +14532,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .footer-icon-list i:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .footer-mainmenu ul {
@@ -14462,21 +14547,21 @@ div.latest-item .hover-shape-bg {
 }
 
 .footer-mainmenu ul li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .footer-mainmenu ul li a:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .copyright-area .gafi {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 .copyright-area .gafi:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .scrollup {
@@ -14487,19 +14572,19 @@ div.latest-item .hover-shape-bg {
 .scrollup i {
   font-weight: 700;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .scrollup i:hover {
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 /*--- home 2 footer ---*/
 .gamfi_footer_btn_sect {
   height: 200px;
-  background: #6D4AFE;
+  background: #00D094;
   position: fixed;
   left: 0;
   top: auto;
@@ -14552,7 +14637,7 @@ div.latest-item .hover-shape-bg {
   line-height: 55px;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #41474b;
   border: none;
   outline: none;
   background: transparent;
@@ -14581,7 +14666,7 @@ div.latest-item .hover-shape-bg {
 
 .modal-content .modal-header i {
   font-size: 15px;
-  color: #FFFFFF;
+  color: #41474b;
 }
 
 .modal-content .heading-list {
@@ -14610,25 +14695,25 @@ div.latest-item .hover-shape-bg {
   position: absolute;
   top: 22px;
   right: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
   font-family: "icomoon";
   font-size: 10px;
 }
 
 .modal-content .heading-list li a {
-  color: #FFFFFF;
+  color: #41474b;
   font-family: "Russo One", sans-serif;
 }
 
 .modal-content .modal-title {
-  color: #FFFFFF;
+  color: #41474b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   font-weight: 600;
 }
 
 .modal-content .modal-title:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 #shareIocns .modal-content {
@@ -14664,7 +14749,7 @@ div.latest-item .hover-shape-bg {
 }
 
 #shareIocns .popup-share-icons li i {
-  color: #FFFFFF;
+  color: #41474b;
   background: url("../images/icons/icon-image.png");
   width: 60px;
   height: 60px;
@@ -14678,7 +14763,7 @@ div.latest-item .hover-shape-bg {
 }
 
 #shareIocns .popup-share-icons li i:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #41474b;
 }
 
 #shareIocns .popup-share-icons li a {
@@ -14727,7 +14812,7 @@ div.latest-item .hover-shape-bg {
 .gamfi-navigation ul li a {
   display: block;
   border: 1px solid #2E2F3C;
-  color: #FFFFFF;
+  color: #41474b;
   padding: 10px 20px;
   font-family: "Russo One", sans-serif;
   text-transform: uppercase;
@@ -14745,7 +14830,7 @@ div.latest-item .hover-shape-bg {
 
 .gamfi-navigation ul li a.active:not(.black-shape), .gamfi-navigation ul li a:hover:not(.black-shape) {
   background: #2E2F3C;
-  color: #A3FF12;
+  color: #00D094;
 }
 
 /*--- breadcrumb gamfi navigation section CSS ---*/
@@ -14795,7 +14880,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .progress-line .progress-done.bg-theme {
-  background-color: #A3FF12;
+  background-color: #00D094;
 }
 
 .progress-line .progress-done.bg-green {
@@ -14823,7 +14908,7 @@ div.latest-item .hover-shape-bg {
 
 .circle-progress-value {
   stroke-width: 6px;
-  stroke: #A3FF12;
+  stroke: #00D094;
 }
 
 .circle-progress-circle {
@@ -14832,7 +14917,7 @@ div.latest-item .hover-shape-bg {
 }
 
 .circle-progress-text {
-  fill: #FFFFFF;
+  fill: #41474b;
   font-family: "Russo One", sans-serif;
   font-weight: 400;
   font-size: 30px;

@@ -5,7 +5,7 @@ $(document).on("submit", ".login-form", function (e) {
     form = $(this)
     data = new FormData(form[0])
   
-    buttonObj = $(this).find("div button")
+    buttonObj = $(this).find(".login-submit-btn")
     origText = buttonObj.html()
     changeToLoading(buttonObj, "Logging on")
  
@@ -48,7 +48,6 @@ $(document).on("submit", ".login-form", function (e) {
 
 $(document).on("submit", ".registration-form", function (e) {
     e.preventDefault()
-    alert("hello")
     buttonObj = $("#signup-btn")
 
     changeToLoading(buttonObj, "Creating Account")

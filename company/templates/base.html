@@ -21,6 +21,7 @@
 
   <link rel="shortcut icon" href="{% static 'main/images/logo/preloader.png' %}" type="image/x-icon">
 
+  
   <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
   <link rel="stylesheet" href="{% static 'main/css/all.min.css' %}">
@@ -100,9 +101,15 @@
           <div class="header-action">
             <div class="menu-area">
               <div class="header-btn">
+                {% if not user.is_authenticated %}
                 <a href="{% url 'register' %}" class="trk-btn trk-btn--border trk-btn--primary">
-                  <span>Join Now</span>
+                  <span>Join Now / Login</span>
                 </a>
+                {% else %}
+                <a href="{% url 'dashboard' %}" class="trk-btn trk-btn--border trk-btn--primary">
+                  <span>My Account</span>
+                </a>
+                {% endif %}
               </div>
 
               <!-- toggle icons -->

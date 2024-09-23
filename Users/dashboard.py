@@ -71,7 +71,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
     def get(self, request, *args, **kwargs):
         # self.get_crypto_price_notification()
         user = request.user
-        user.handle_due_subscriptions()
+        #user.handle_due_subscriptions()
         # if request.user.user_wallet.plan_is_active and request.user.user_wallet.plan_is_due :
         # request.user.user_wallet.on_plan_complete()
 

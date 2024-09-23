@@ -64,7 +64,7 @@ class Plans(LoginRequiredMixin, ListView):
 
 
 class Subscribe(LoginRequiredMixin, View):
-    template_name = 'invest.html'
+    template_name = 'subscribe.html'
     form_class = SubscriptionForm
     model = Plan
     plan = None
@@ -73,12 +73,12 @@ class Subscribe(LoginRequiredMixin, View):
         ctx = {}
         user_balance = self.request.user.user_wallet.available_balance
         # check if balance will permit
-        if user_balance < self.plan.min_cost:
+        if user_balance < self.plan.cost:
             ctx['low_balance'] = True
 
         # max should be user balance of plan max, which ever is larger
-        ctx['max_amount'] = min(self.plan.max_cost or 0.00, user_balance)
-        ctx['default_cost'] = min(self.plan.default_cost, user_balance)
+        ctx['max_amount'] = min(self.plan.cost or 0.00, user_balance)
+        ctx['default_cost'] = min(self.plan.cost, user_balance)
         ctx['plan'] = self.plan
         return ctx
 
@@ -110,21 +110,21 @@ class Subscribe(LoginRequiredMixin, View):
             user = request.user
             form.save(commit=False)
             form.instance.user = user
-            investment = form.save()
+            subscription = form.save()
          
 
             # default
-            msg = "You have succesfully subscribed to the {} investment plan (pending processing), with an initial capital of ${}".format(
+            msg = "You have succesfully subscribed to the {} subscription plan (pending processing), with an initial capital of ${}".format(
                 form.instance.plan.name,
                 form.cleaned_data['amount']
             )
 
-            if not investment.approve_investments():
-                if user.user_wallet.allow_automatic_investment:
-                    investment.on_approve()
+            if not subscription.approve_subscriptions():
+                if user.user_wallet.allow_automatic_subscription:
+                    subscription.on_approve()
                    
                    
-                    msg = "You have succesfully subscribed to the {} investment plan, with an initial capital of ${}".format(
+                    msg = "You have succesfully subscribed to the {} subscription plan, with an initial capital of ${}".format(
                         form.instance.plan.name,
                         form.cleaned_data['amount']
                     )
