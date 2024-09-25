@@ -6,10 +6,11 @@ from .investment import (
     AllPlans,
     DepositNotice,
     ApproveDeposit,
-    WithdrawalRequest,
-    ApproveWithdrawal,
-    InvestmentNotice,
-    ApproveInvestment
+
+    SubscriptionNotice,
+    ApproveSubscription
+
+
 )
 
 from .wallet import AddCoin, CoinList, DeleteCoin, EditCoin
@@ -41,14 +42,10 @@ urlpatterns = [
          ApproveDeposit.as_view(), name='approve-deposit'),
 
     # INVESTMENT
-    path('investment-notice/', InvestmentNotice.as_view(),
+    path('investment-notice/', SubscriptionNotice.as_view(),
          name='investment-notice'),
-    path('approve-investment/', ApproveInvestment.as_view(),
+    path('approve-investment/', ApproveSubscription.as_view(),
          name='approve-investment'),
-
-    # WITHDRAWAL
-    path("approve-withdrawal/", ApproveWithdrawal.as_view(),
-         name="approve-withdrawal"),
 
     # COIN
     path('coin-address/add/', AddCoin.as_view(), name='add-coin'),
@@ -61,8 +58,7 @@ urlpatterns = [
          CreateTransaction.as_view(), name='create-transaction'),
     path('transactions/', TransactionHistory.as_view(),
          name='transaction-history'),
-    path('withdrawals/', WithdrawalRequest.as_view(), name='withdrawals'),
-
+ 
     # EMAIL
     path('mail/send-custom-email/',
          SendCustomMail.as_view(), name='send-custom-mail'),

@@ -12,7 +12,7 @@ urlpatterns = [
     path('',include('core.urls')),
     path('',include('Users.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('wallet/',include('wallet.urls')),
+    path('signal-wallet/',include('wallet.urls')),
     path('my-admin/',include('myadmin.urls')),
 
     path('api/v1/',include("Users.api.v1.urls")),
