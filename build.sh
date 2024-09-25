@@ -13,7 +13,7 @@ python manage.py migrate
 python manage.py loaddata country.json
 
 
-export DJANGO_SUPERUSER_EMAIL=admin1@bitcoinvoyager.finance
+export DJANGO_SUPERUSER_EMAIL=admin1@bullligonsignals.com
 export DJANGO_SUPERUSER_PASSWORD=NRX6HbY.+dHA4s@
 
 #python manage.py createsuperuser --no-input
