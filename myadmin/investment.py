@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.utils import timezone
 from django.conf import settings
 
-from wallet.models import Investment, Plan, Transaction, PendingDeposit, WithdrawalApplication
+from wallet.models import Subscription, Plan, Transaction, PendingDeposit
 from Users.models import Notification
 from .dashboard import AdminBase
 import uuid
@@ -87,74 +87,24 @@ class DeclineDeposit(AdminBase, View):
     pass
 
 
-class WithdrawalRequest(AdminBase, ListView):
-    model = WithdrawalApplication
-    template_name = 'withdrawal_application.html'
-    context_object_name = 'withdrawals'
 
-    def get_queryset(self):
-        return self.model.objects.exclude(status="APPROVED").order_by('-date')
-
-
-class ApproveWithdrawal(AdminBase, View):
-    model = WithdrawalApplication
-
-    def on_approved_withdrawal(self, instance):
-        instance.on_approve()
-        # notify user
-
-        Notification.objects.create(user=instance.user, message=msg)
-
-        # create transaction
-        transact = Transaction.objects.create(
-            user=instance.user,
-            status="Approved",
-            amount=instance.amount,
-            transaction_type='WITHDRAWAL',
-            coin=instance.user.withdrawal_wallet_name,
-            description="Withdrawal Approved"
-
-        )
-
-    def get(self, request, *args, **kwargs):
-        feedback = {}
-        pk = request.GET.get('pk', None)
-        if not pk:
-            feedback['error'] = "Incomplete request Parameters"
-            return JsonResponse(feedback)
-        try:
-            withdrawal_application = self.model.objects.get(pk=pk)
-            if withdrawal_application.status == "APPROVED":
-                feedback['error'] = "This transaction has already been processed"
-                return JsonResponse(feedback)
-
-            self.on_approved_withdrawal(withdrawal_application)
-            feedback['success'] = True
-
-            return JsonResponse(feedback)
-
-        except self.model.DoesNotExist:
-            feedback['error'] = "this withdrawal request no longer exist"
-            return JsonResponse(feedback)
-
-
-class InvestmentNotice(AdminBase, ListView):
-    model = Investment
-    template_name = 'investment-notice.html'
-    context_object_name = 'investments'
+class SubscriptionNotice(AdminBase, ListView):
+    model = Subscription
+    template_name = 'subscription-notice.html'
+    context_object_name = 'subscriptions'
 
     def get_queryset(self):
         return self.model.objects.exclude(is_approved=True).order_by('-date')
 
 
-class ApproveInvestment(View):
-    model = Investment
+class ApproveSubscription(View):
+    model = Subscription
 
-    def on_approved_investment(self):
-        pi = self.pending_investment
+    def on_approved_subscription(self):
+        pi = self.pending_subscription
         instance = pi.on_approve()
         # notify user
-        msg = "Your ${} investment has been processed successfully.".format(
+        msg = "Your ${} subscription has been processed successfully.".format(
             instance.amount)
         Notification.objects.create(user=instance.user, message=msg)
         return
@@ -167,16 +117,16 @@ class ApproveInvestment(View):
             return JsonResponse(feedback)
         try:
 
-            pending_investment = self.model.objects.get(pk=pk)
-            if pending_investment.is_approved:
+            pending_subscription = self.model.objects.get(pk=pk)
+            if pending_subscription.is_approved:
                 feedback['error'] = "This transaction has already been processed"
                 return JsonResponse(feedback)
-            self.pending_investment = pending_investment
-            self.on_approved_investment()
+            self.pending_subscription = pending_subscription
+            self.on_approved_subscription()
             feedback['success'] = True
 
             return JsonResponse(feedback)
 
         except self.model.DoesNotExist:
-            feedback['error'] = "this investment no longer exist"
+            feedback['error'] = "this subscription no longer exist"
             return JsonResponse(feedback)

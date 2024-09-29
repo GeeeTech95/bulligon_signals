@@ -114,14 +114,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def withdrawal_wallet_address(self):
         return self._wallet_address
 
-    def handle_due_investments(self):
-        due_investments = self.investment.filter(
+    def handle_due_subscriptions(self):
+        due_subscriptions = self.subscription.filter(
             is_active=True,
             plan_end__lte=timezone.now()
         )
 
-        for investment in due_investments:
-            investment.on_plan_complete()
+        for subscription in due_subscriptions:
+            subscription.on_plan_complete()
 
     @property
     def unique_id(self):
@@ -144,14 +144,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         return True
 
     @property
-    def active_investments(self):
+    def active_subscriptions(self):
         
-        invs = self.investment.filter(
+        subs = self.subscription.filter(
             is_active=True,
             is_approved=True
         )
         
-        return invs
+        return subs
 
     @property
     def nick_name(self):

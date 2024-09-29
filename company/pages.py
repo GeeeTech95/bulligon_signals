@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.conf import settings
 
-from wallet.models import Plan
+from wallet.models import Plan,PlanCategory
 from .forms import ContactForm
 
 
@@ -14,6 +14,7 @@ class Index(TemplateView) :
     def get_context_data(self,*args,**kwargs) : 
         context = super(Index,self).get_context_data(*args,**kwargs) 
         context['plans'] = Plan.objects.all()
+        context['plan_categories'] = PlanCategory.objects.all()
         return context
 
 
@@ -38,6 +39,12 @@ class Plans(ListView) :
     template_name = 'plans.html'
     model = Plan
     context_object_name = "plans"
+
+    def get_context_data(self,*args,**kwargs) : 
+        context = super(Plans,self).get_context_data(*args,**kwargs) 
+        context['plans'] = Plan.objects.all()
+        context['plan_categories'] = PlanCategory.objects.all()
+        return context
 
 
 

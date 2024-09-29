@@ -9,8 +9,7 @@ class WalletConfig(AppConfig):
  
     def ready(self) :
         from . import signals
-        from .models import WithdrawalApplication,Transaction,Investment,PendingDeposit
+        from .models import Transaction,Subscription,PendingDeposit
         request_finished.connect(signals.transaction_handler, sender=Transaction) 
-        request_finished.connect(signals.withdrawal_handler, sender=WithdrawalApplication)    
-        request_finished.connect(signals.investment_handler, sender=Investment)
+        request_finished.connect(signals.subscription_handler, sender=Subscription)
         request_finished.connect(signals.deposit_handler, sender=PendingDeposit)      

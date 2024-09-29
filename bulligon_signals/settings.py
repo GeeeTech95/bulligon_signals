@@ -128,7 +128,7 @@ else :
     """DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bitcoinvoyager',
+        'NAME': 'bulligonsignals',
         'USER': 'arcticxpress',
         'PASSWORD': 'Wdbtdpe51sbQsroUeLrTFgvVOk3Qe5O1',
         'HOST': 'postgresql://arcticxpress:Wdbtdpe51sbQsroUeLrTFgvVOk3Qe5O1@dpg-cqcne9tumphs73fhfmeg-a/arcticxpress',
@@ -204,11 +204,11 @@ EMAIL_USE_TLS = True
 
 # for other emails
 PRIMARY_EMAIL_ZOHO = "sleykesh22@gmail.com"
-EMAIL_HOST_USER_SUPPORT = "customer.support@bitcoinvoyager.finance"
-EMAIL_HOST_USER_TRANSACTION = "transaction@bitcoinvoyager.finance"
-DEFAULT_FROM_EMAIL = "customer.support@bitcoinvoyager.finance"
+EMAIL_HOST_USER_SUPPORT = "customer.support@bulligonsignals.finance"
+EMAIL_HOST_USER_TRANSACTION = "transaction@bulligonsignals.finance"
+DEFAULT_FROM_EMAIL = "customer.support@bulligonsignals.finance"
 EMAIL_HOST_PASSWORD = 'NRX6HbY.+dHA4s@!'
-EMAIL_HOST_USER_ALERT = "transaction@bitcoinvoyager.finance"
+EMAIL_HOST_USER_ALERT = "transaction@bulligonsignals.finance"
 
 #EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 #EMAIL_FILE_PATH =  os.path.join(BASE_DIR, "sent-emails")
@@ -216,8 +216,8 @@ EMAIL_HOST_USER_ALERT = "transaction@bitcoinvoyager.finance"
 
 EMAIL_USE_TLS = True
 
-SITE_NAME = "Bitcoin Voyager"
-SITE_ADDRESS = "https://www.bitcoinvoyager.finance/"
+SITE_NAME = "Bulligon Signals"
+SITE_ADDRESS = "https://www.bulligonsignals.finance/"
 
 FREE_PLAN_DURATION = 2  # in days
 SUBSCRIPTION_DURATION = 365  # in days
@@ -261,13 +261,13 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Bitcoin Voyager Admin",
+    "site_title": "Bulligon Signals Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Bitcoin Voyager",
+    "site_header": "Bulligon Signals",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Bitcoin Voyager",
+    "site_brand": "Bulligon Signals",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "img/logo/logo-name.png",
@@ -290,5 +290,5 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome Admin!",
 
     # Copyright on the footer
-    "copyright": "Bitcoin Voyager",
+    "copyright": "Bulligon Signals",
 }

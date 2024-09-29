@@ -1,1 +1,159 @@
-[{"model": "wallet.plan", "pk": 1, "fields": {"category": "promo", "name": "Silver", "slug": "silver", "max_cost": "2999.00", "min_cost": "2000.00", "duration": 5, "interest_rate": 20.0, "referral_percentage": 5.0, "date": "2024-06-26"}}, {"model": "wallet.plan", "pk": 2, "fields": {"category": "regular", "name": "Bronze 1", "slug": "bronze-1", "max_cost": "4999.00", "min_cost": "3000.00", "duration": 10, "interest_rate": 22.0, "referral_percentage": 3.0, "date": "2024-06-27"}}, {"model": "wallet.plan", "pk": 3, "fields": {"category": "vip", "name": "Gold 1", "slug": "gold-1", "max_cost": "99999.00", "min_cost": "50000.00", "duration": 30, "interest_rate": 32.0, "referral_percentage": 12.0, "date": "2024-06-27"}}, {"model": "wallet.plan", "pk": 4, "fields": {"category": "regular", "name": "Bronze 2", "slug": "bronze-2", "max_cost": "9999.00", "min_cost": "5000.00", "duration": 15, "interest_rate": 25.0, "referral_percentage": 4.0, "date": "2024-06-28"}}, {"model": "wallet.plan", "pk": 5, "fields": {"category": "regular", "name": "Bronze 3", "slug": "bronze-3", "max_cost": "19999.00", "min_cost": "10000.00", "duration": 20, "interest_rate": 27.0, "referral_percentage": 5.0, "date": "2024-06-28"}}, {"model": "wallet.plan", "pk": 6, "fields": {"category": "regular", "name": "Bronze 4", "slug": "bronze-4", "max_cost": "49999.00", "min_cost": "20000.00", "duration": 25, "interest_rate": 30.0, "referral_percentage": 10.0, "date": "2024-06-28"}}, {"model": "wallet.plan", "pk": 7, "fields": {"category": "vip", "name": "Gold 2", "slug": "gold-2", "max_cost": "1000000.00", "min_cost": "100000.00", "duration": 60, "interest_rate": 35.0, "referral_percentage": 15.0, "date": "2024-06-28"}}]
+[
+    {
+        "model": "wallet.plancategory",
+        "pk": 1,
+        "fields": {
+            "name": "VIP PROFITABLE ZONE",
+            "slug": "vip-profitable-zone"
+        }
+    },
+    {
+        "model": "wallet.plancategory",
+        "pk": 2,
+        "fields": {
+            "name": "VVIP BULLIGON SIGNALS",
+            "slug": "vvip-bulligon-signals"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 8,
+        "fields": {
+            "category": 1,
+            "name": "VIP Yearly",
+            "slug": "vip-yearly",
+            "cost": "3250.00",
+            "duration": 365,
+            "features": "Daily 5-10 profitable signals,Technical analysis",
+            "referral_percentage": 1.0,
+            "date": "2024-09-12"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 9,
+        "fields": {
+            "category": 2,
+            "name": "VVIP Yearly",
+            "slug": "vvip-yearly",
+            "cost": "5999.00",
+            "duration": 365,
+            "features": "Daily 10-15 profitable signals, 85% successful deals, Stable profit, Technical analysis, Entry/Take Profit/Stop Loss Zones, Trading strategies, Instructions for beginners, Support 24/7",
+            "referral_percentage": 2.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 10,
+        "fields": {
+            "category": 1,
+            "name": "VIP Monthly",
+            "slug": "vip-monthly",
+            "cost": "300.00",
+            "duration": 30,
+            "features": "Daily 5-10 profitable signals,Technical analysis",
+            "referral_percentage": 2.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 11,
+        "fields": {
+            "category": 1,
+            "name": "VIP Quaterly",
+            "slug": "vip-quaterly",
+            "cost": "850.00",
+            "duration": 120,
+            "features": "Daily 5-10 profitable signals,Technical analysis",
+            "referral_percentage": 2.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 12,
+        "fields": {
+            "category": 1,
+            "name": "VIP Bi-Annualy",
+            "slug": "vip-bi-annualy",
+            "cost": "1650.00",
+            "duration": 730,
+            "features": "Daily 5-10 profitable signals,Technical analysis",
+            "referral_percentage": 2.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 13,
+        "fields": {
+            "category": 1,
+            "name": "VIP Lifetime",
+            "slug": "vip-lifetime",
+            "cost": "5000.00",
+            "duration": 3650,
+            "features": "Daily 5-10 profitable signals,Technical analysis",
+            "referral_percentage": 2.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 14,
+        "fields": {
+            "category": 2,
+            "name": "VVIP Bi-anually",
+            "slug": "vvip-bi-anually",
+            "cost": "2999.00",
+            "duration": 730,
+            "features": "Daily 10-15 profitable signals, 85% successful deals, Stable profit, Technical analysis, Entry/Take Profit/Stop Loss Zones, Trading strategies, Instructions for beginners, Support 24/7",
+            "referral_percentage": 5.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 15,
+        "fields": {
+            "category": 2,
+            "name": "VVIP Quarterly",
+            "slug": "vvip-quarterly",
+            "cost": "1499.00",
+            "duration": 120,
+            "features": "Daily 10-15 profitable signals, 85% successful deals, Stable profit, Technical analysis, Entry/Take Profit/Stop Loss Zones, Trading strategies, Instructions for beginners, Support 24/7",
+            "referral_percentage": 5.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 16,
+        "fields": {
+            "category": 2,
+            "name": "VVIP Monthly",
+            "slug": "vvip-monthly",
+            "cost": "500.00",
+            "duration": 30,
+            "features": "Daily 10-15 profitable signals, 85% successful deals, Stable profit, Technical analysis, Entry/Take Profit/Stop Loss Zones, Trading strategies, Instructions for beginners, Support 24/7",
+            "referral_percentage": 5.0,
+            "date": "2024-09-22"
+        }
+    },
+    {
+        "model": "wallet.plan",
+        "pk": 17,
+        "fields": {
+            "category": 2,
+            "name": "VVIP Lifetime",
+            "slug": "vvip-lifetime",
+            "cost": "8999.00",
+            "duration": 3650,
+            "features": "Daily 10-15 profitable signals, 85% successful deals, Stable profit, Technical analysis, Entry/Take Profit/Stop Loss Zones, Trading strategies, Instructions for beginners, Support 24/7",
+            "referral_percentage": 5.0,
+            "date": "2024-09-22"
+        }
+    }
+    ]
+    

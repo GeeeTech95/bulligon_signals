@@ -11,56 +11,108 @@ import math
 import uuid
 
 
-class Plan(models.Model):
+class PlanCategory(models.Model) :
     Category_Choices = (
-        ("promo", "promo"),
-        ("regular", "regular"),
-        ("vip", "vip")
+        ("VIP PROFITABLE ZONE", "VIP PROFITABLE ZONE"),
+        ("VVIP BULLIGON SIGNALS", "VVIP BULLIGON SIGNALS")
     )
+     
+    name = models.CharField(max_length=50, choices=Category_Choices )
+    slug = models.CharField(max_length=50)
+    display_order = models.PositiveIntegerField(default=0)
 
-    category = models.CharField(max_length=40, choices=Category_Choices)
+    def __str__(self) :
+        return self.name
+    
+    class Meta() :
+        ordering = ["display_order"]
+
+
+
+
+class Plan(models.Model):
+   
+
+    DURATION_CHOICES = (
+    (30, "Monthly"), # indays 
+    (120, "Quarterly"),
+    (365, "Annually"),
+    (730, "Biannually"),
+    (3650, "Lifetime"),  #life time is more like 10 years for now
+)
+
+
+    category = models.ForeignKey(PlanCategory,related_name='plans',on_delete=models.PROTECT,null = True)
     name = models.CharField(
-        max_length=40, help_text="name you wish to call the investment plan")
+        max_length=40, help_text="name you wish to call the  plan")
     slug = models.SlugField(blank=True)
-    max_cost = models.DecimalField(null=True, max_digits=20, decimal_places=2, blank=True,
-                                   help_text="maximum investment for thie plan,currency is USD")  # in $usd
-    min_cost = models.DecimalField(max_digits=20, decimal_places=2,
-                                   help_text="minimum investment for thie plan,currency is USD")  # in $usd
-    duration = models.PositiveIntegerField(
-        help_text="plan duration in days")  # in days
-    interest_rate = models.FloatField(
-        blank=False, null=False, help_text="in %,e.g 50,100,200")
+    cost = models.DecimalField(null=True, max_digits=20, decimal_places=2, blank=True,
+                                   help_text="cost of the plan, currency is USD")  # in $usd
+    duration =  models.PositiveIntegerField(choices = DURATION_CHOICES)
+    features = models.TextField() #comma seperated features
+
+
     referral_percentage = models.FloatField(
         help_text="determines how much referal bonus a use gets when a referral makes deposit on this plan")
+    
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
-    def get_interest(self, amount):
-        return (self.interest_rate/100) * amount
-
-    @property
-    def max_interest(self):
-        return self.get_interest(float(self.max_cost))
 
     @property
     def duration_verbose(self):
         return "{} hours".format(self.duration * 24)
-
+    
     @property
-    def default_cost(self):
-        if self.max_cost:
-            return int((self.max_cost + self.min_cost) / 2)
-        else:
-            return int(self.min_cost)
+    def duration_slug(self) :
+        return {key: value for key, value in self.DURATION_CHOICES}[self.duration]
+    
+    @property
+    def features_list(self) :
+        return self.features.split(",")
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Plan, self).save(*args, **kwargs)
 
     class Meta():
-        ordering = ['min_cost']
+        ordering = ['cost']
+
+
+class Signal(models.Model):
+    CATEGORY_CHOICES = [
+        ('buy', 'Buy'),
+        ('sell', 'Sell'),
+        ('hold', 'Hold'),
+    ]
+
+    STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('expired', 'Expired'),
+        ('pending', 'Pending'),
+    ]
+
+   
+    asset = models.CharField(max_length=50)  # e.g., BTC/USD, ETH/USDT
+    signal_type = models.CharField(max_length=4, choices=CATEGORY_CHOICES)
+    entry_price = models.DecimalField(max_digits=15, decimal_places=2)
+    take_profit = models.DecimalField(max_digits=15, decimal_places=2)
+    stop_loss = models.DecimalField(max_digits=15, decimal_places=2)
+    status = models.CharField(max_length=7, choices=STATUS_CHOICES, default='pending')
+    issued_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    exclude_for = models.ManyToManyField(PlanCategory, blank=True)
+
+    class Meta:
+        ordering = ['-issued_at']
+
+    def __str__(self):
+        return f"{self.asset} - {self.signal_type} signal"
+
+
 
 
 class Currency(models.Model):
@@ -72,46 +124,52 @@ class Currency(models.Model):
         return self.name
 
 
-class Investment(models.Model):
+
+
+
+
+
+class Subscription(models.Model):
     user = models.ForeignKey(
-        get_user_model(), related_name='investment', on_delete=models.CASCADE)
-    # amount for the plan
-    amount = models.FloatField(default=0.00)
-    plan = models.ForeignKey(Plan, related_name='plan_investment',
+        get_user_model(), related_name='subscription', on_delete=models.CASCADE)
+
+    plan = models.ForeignKey(Plan, related_name='plan_subscription',
                              null=True, blank=True, on_delete=models.SET_NULL)
     plan_start = models.DateTimeField(null=True)
     plan_end = models.DateTimeField(null=True)
 
     # date created
     date = models.DateTimeField(auto_now_add=True)
-    expected_earning = models.FloatField(
-        default=0.00, blank=True)  # at the end of the plan
     is_active = models.BooleanField(default=False)
     is_approved = models.BooleanField(default=False)
+
+    
 
     class Meta():
         ordering = ['-plan_start']
 
+    
+
     def days_to_seconds(self, days):
         return days * 24 * 60 * 60
 
-    def approve_investments(self):
+    def approve_subscription(self):
         # checks the state of admin settings for approving
-        # investments
+        # subscriptions
         try:
             _setting = AdminSetting.objects.all()[0]
-            return _setting.approve_investment
+            return _setting.approve_subscription
         except:
             return False
 
     def save(self, *args, **kwargs):
         if not self.pk:
-            self.expected_earning = self.plan.get_interest(self.amount)
+           
 
             # check if admnin wants to be approving investmets generally or individually
-            if not self.approve_investments():
+            if not self.approve_subscription():
                 # check if individual
-                if self.user.user_wallet.allow_automatic_investment:
+                if self.user.user_wallet.allow_automatic_subscription:
                     self.plan_start = timezone.now()
                     self.plan_end = timezone.now() + timezone.timedelta(days=self.plan.duration)
             else:
@@ -120,7 +178,7 @@ class Investment(models.Model):
             # deduct from balance for the plan
             self.user.user_wallet.debit(self.amount)
 
-        super(Investment, self).save(*args, **kwargs)
+        super(Subscription, self).save(*args, **kwargs)
     
     
     def add_referee_earning(self):
@@ -144,7 +202,7 @@ class Investment(models.Model):
 
 
     def on_approve(self):
-        # when admin approves am investment
+        # when admin approves am subscription
         if not self.is_approved:
             self.plan_start = timezone.now()
             self.plan_end = timezone.now() + timezone.timedelta(days=self.plan.duration)
@@ -197,9 +255,6 @@ class Investment(models.Model):
 
         # deactivate plan
         self.is_active = False
-        # move to wallet
-        self.user.user_wallet.credit(self.amount + self.expected_earning)
-        self.user.user_wallet.save()
         self.save()
 
     def __str__(self):
@@ -207,6 +262,9 @@ class Investment(models.Model):
 
     class Meta():
         ordering = ['date']
+
+
+
 
 
 class Wallet(models.Model):
@@ -224,7 +282,7 @@ class Wallet(models.Model):
     funded_earning = models.FloatField(default=0.00)
     withdrawals = models.FloatField(default=0.00)
     withdrawal_allowed = models.BooleanField(default=False)
-    allow_automatic_investment = models.BooleanField(default=True)
+    allow_automatic_subscription = models.BooleanField(default=True)
 
     def debit(self, amount, bal_type="initial"):
         """ bal type signifies the balance to credit
@@ -249,50 +307,31 @@ class Wallet(models.Model):
         # calculate all accured profit/loss from 12.00 am to the exact point the user
         # is making the request
         total_pnl = 0.00
-        active_investments = self.user.investment.filter(is_active=True)
-        if active_investments:
-            for inv in active_investments:
-                investment_pnl = inv.current_earning % 24
-                total_pnl += investment_pnl
+        active_subscriptions = self.user.subscription.filter(is_active=True)
+        if active_subscriptions:
+            for inv in active_subscriptions:
+                subscription_pnl = inv.current_earning % 24
+                total_pnl += subscription_pnl
         return round(total_pnl, 2)
 
     @property
     def total_past_earning(self):
-        query = self.user.investment.filter(is_active=False)
+        query = self.user.subscription.filter(is_active=False)
         accumulated = query.aggregate(
             expected_earning=Sum("expected_earning")
         )['expected_earning'] or 0
 
         return accumulated
 
-    @property
-    def get_active_investment_balance(self):
-        query = self.user.investment.filter(is_active=True)
-        capitals = query.aggregate(
-            investment_bal=Sum("amount")
-        )['investment_bal'] or 0
-        current_interests = 0
-        for inv in query:
-            current_interests += inv.current_earning
-        return capitals + current_interests
 
-    @property
-    def get_pending_withdrawal_debits(self):
-        return self.user.pending_withdrawal.filter(
-            status="PENDING",
-            balance_type="Main",
-
-        ).aggregate(
-            total_pending_debits=Sum("amount")
-        )['total_pending_debits'] or 0.00
 
     @property
     def current_balance(self):
-        return round(self.initial_balance + self.get_active_investment_balance + self.funded_earning - self.withdrawals, 2)
+        return round(self.initial_balance + self.funded_earning - self.withdrawals, 2)
 
     @property
     def available_balance(self):
-        return round(self.initial_balance + self.funded_earning - self.withdrawals - self.get_pending_withdrawal_debits, 2)
+        return round(self.initial_balance + self.funded_earning - self.withdrawals , 2)
 
     def __str__(self):
         return "{}-wallet".format(self.user.name)
@@ -313,7 +352,7 @@ class Transaction(models.Model):
 
     status = (('Approved', 'Approved'), ('Declined',
               'Declined'), ('Pending', 'Pending'))
-    t_choices = (('WITHDRAWAL', 'WITHDRAWAL'), ('DEPOSIT', 'DEPOSIT'), ("BONUS",
+    t_choices = (('DEPOSIT', 'DEPOSIT'), ("BONUS",
                  "BONUS"), ("AIR DROP", "AIR DROP"), ("REFERAL EARNING", "REFERAL EARNING"))
     transaction_id = models.CharField(max_length=15, editable=False)
     user = models.ForeignKey(
@@ -378,48 +417,3 @@ class PendingDeposit(models.Model):
         ordering = ['-date']
 
 
-
-class WithdrawalApplication(models.Model):
-    wallet_choices = (
-        ("BTC", "BTC"),
-        ("ETH", "ETH"),
-        ("USDT", "USDT"),
-        ("LTC", "LTC")
-    )
-    balance_type_choices = (('Referral', 'Referral'), ('Main', 'Main'))
-    status_choices = (('PENDING', 'PENDING'), ('APPROVED',
-                      'APPROVED'), ('DECLINED', 'DECLINED'))
-    user = models.ForeignKey(
-        get_user_model(), on_delete=models.CASCADE, related_name='pending_withdrawal')
-    amount = models.FloatField()  # in $
-    balance_type = models.CharField(
-        max_length=10, choices=balance_type_choices)
-    status = models.CharField(
-        max_length=20, choices=status_choices, default='PENDING')
-    amount_paid = models.FloatField(blank=True, null=True)
-    is_received = models.BooleanField(default=True)
-    date = models.DateTimeField(auto_now_add=True)
-        # payment wallet
-    wallet_name = models.CharField(
-        max_length=10, null=True, choices=wallet_choices)
-    wallet_address = models.CharField(
-        max_length=100, null=True, help_text="BEP20 address")
-
-
-    def __str__(self):
-        return self.user.nick_name
-
-    def save(self, *args, **kwargs):
-        # debit user balance
-        
-        super(WithdrawalApplication, self).save(*args, **kwargs)
-
-    def on_approve(self):
-        self.status = "APPROVED"
-
-        if self.balance_type == "Referral":
-            self.user.user_wallet.debit(self.amount, bal_type="referral")
-        else:
-            self.user.user_wallet.debit(self.amount)
-
-        self.save()
