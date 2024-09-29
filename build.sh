@@ -14,7 +14,7 @@ python manage.py loaddata country.json
 python manage.py loaddata plans.json
 
 
-export DJANGO_SUPERUSER_EMAIL=admin@bullligonsignals.com
+export DJANGO_SUPERUSER_EMAIL=admin@bulligonsignals.com
 export DJANGO_SUPERUSER_PASSWORD=Y6li9p@Poko
 
 python manage.py createsuperuser --no-input
