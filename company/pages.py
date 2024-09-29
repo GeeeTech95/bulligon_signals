@@ -14,7 +14,8 @@ class Index(TemplateView) :
     def get_context_data(self,*args,**kwargs) : 
         context = super(Index,self).get_context_data(*args,**kwargs) 
         context['plans'] = Plan.objects.all()
-        context['plan_categories'] = PlanCategory.objects.all()
+        context['plan_categories'] = PlanCategory.objects.all().order_by('display_order')
+    
         return context
 
 
