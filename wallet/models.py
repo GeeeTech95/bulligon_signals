@@ -11,66 +11,61 @@ import math
 import uuid
 
 
-class PlanCategory(models.Model) :
+class PlanCategory(models.Model):
     Category_Choices = (
         ("VIP PROFITABLE ZONE", "VIP PROFITABLE ZONE"),
         ("VVIP BULLIGON SIGNALS", "VVIP BULLIGON SIGNALS")
     )
-     
-    name = models.CharField(max_length=50, choices=Category_Choices )
+
+    name = models.CharField(max_length=50, choices=Category_Choices)
     slug = models.CharField(max_length=50)
     display_order = models.PositiveIntegerField(default=0)
 
-    def __str__(self) :
+    def __str__(self):
         return self.name
-    
-    class Meta() :
+
+    class Meta():
         ordering = ["display_order"]
 
 
-
-
 class Plan(models.Model):
-   
 
     DURATION_CHOICES = (
-    (30, "Monthly"), # indays 
-    (120, "Quarterly"),
-    (365, "Annually"),
-    (730, "Biannually"),
-    (3650, "Lifetime"),  #life time is more like 10 years for now
-)
+        (30, "Monthly"),  # indays
+        (120, "Quarterly"),
+        (365, "Annually"),
+        (730, "Biannually"),
+        (3650, "Lifetime"),  # life time is more like 10 years for now
+    )
 
-
-    category = models.ForeignKey(PlanCategory,related_name='plans',on_delete=models.PROTECT,null = True)
+    category = models.ForeignKey(
+        PlanCategory, related_name='plans', on_delete=models.PROTECT, null=True)
     name = models.CharField(
         max_length=40, help_text="name you wish to call the  plan")
     slug = models.SlugField(blank=True)
     cost = models.DecimalField(null=True, max_digits=20, decimal_places=2, blank=True,
-                                   help_text="cost of the plan, currency is USD")  # in $usd
-    duration =  models.PositiveIntegerField(choices = DURATION_CHOICES)
-    features = models.TextField() #comma seperated features
-
+                               help_text="cost of the plan, currency is USD")  # in $usd
+    duration = models.PositiveIntegerField(choices=DURATION_CHOICES)
+    features = models.TextField()  # comma seperated features
 
     referral_percentage = models.FloatField(
         help_text="determines how much referal bonus a use gets when a referral makes deposit on this plan")
-    
+
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
-
     @property
     def duration_verbose(self):
         return "{} hours".format(self.duration * 24)
-    
+
     @property
-    def duration_slug(self) :
+    def duration_slug(self):
         return {key: value for key, value in self.DURATION_CHOICES}[self.duration]
-    
+
     @property
-    def features_list(self) :
+    def features_list(self):
         return self.features.split(",")
 
     def save(self, *args, **kwargs):
@@ -94,13 +89,13 @@ class Signal(models.Model):
         ('pending', 'Pending'),
     ]
 
-   
     asset = models.CharField(max_length=50)  # e.g., BTC/USD, ETH/USDT
     signal_type = models.CharField(max_length=4, choices=CATEGORY_CHOICES)
     entry_price = models.DecimalField(max_digits=15, decimal_places=2)
     take_profit = models.DecimalField(max_digits=15, decimal_places=2)
     stop_loss = models.DecimalField(max_digits=15, decimal_places=2)
-    status = models.CharField(max_length=7, choices=STATUS_CHOICES, default='pending')
+    status = models.CharField(
+        max_length=7, choices=STATUS_CHOICES, default='pending')
     issued_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -113,8 +108,6 @@ class Signal(models.Model):
         return f"{self.asset} - {self.signal_type} signal"
 
 
-
-
 class Currency(models.Model):
 
     name = models.CharField(max_length=10)
@@ -122,11 +115,6 @@ class Currency(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-
-
 
 
 class Subscription(models.Model):
@@ -143,12 +131,8 @@ class Subscription(models.Model):
     is_active = models.BooleanField(default=False)
     is_approved = models.BooleanField(default=False)
 
-    
-
     class Meta():
         ordering = ['-plan_start']
-
-    
 
     def days_to_seconds(self, days):
         return days * 24 * 60 * 60
@@ -164,7 +148,6 @@ class Subscription(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.pk:
-           
 
             # check if admnin wants to be approving investmets generally or individually
             if not self.approve_subscription():
@@ -176,15 +159,14 @@ class Subscription(models.Model):
                 # dont start the plan, start on approval
                 pass
             # deduct from balance for the plan
-            self.user.user_wallet.debit(self.amount)
+            self.user.user_wallet.debit(self.plan.cost)
 
         super(Subscription, self).save(*args, **kwargs)
-    
-    
+
     def add_referee_earning(self):
-        
+
         if self.user.referee:
-            earning = (self.plan.referral_percentage/100) * self.amount
+            earning = (self.plan.referral_percentage/100) * self.plan.cost
             referee_wallet = self.user.referee.user_wallet
             referee_wallet.referral_earning += earning
             referee_wallet.save()
@@ -197,9 +179,7 @@ class Subscription(models.Model):
                 user=self.user.referee,
                 message=msg
             )
-            #seld mail
-           
-
+            # seld mail
 
     def on_approve(self):
         # when admin approves am subscription
@@ -264,9 +244,6 @@ class Subscription(models.Model):
         ordering = ['date']
 
 
-
-
-
 class Wallet(models.Model):
 
     wallet_id = models.UUIDField(
@@ -289,10 +266,10 @@ class Wallet(models.Model):
         defaults to intial balance
         """
         if bal_type == "initial":
-            self.initial_balance -= amount
+            self.initial_balance -= float(amount)
 
         elif bal_type == "referral":
-            self.referral_earning -= amount
+            self.referral_earning -= float(amount)
 
         # send mail
         self.save()
@@ -323,15 +300,13 @@ class Wallet(models.Model):
 
         return accumulated
 
-
-
     @property
     def current_balance(self):
         return round(self.initial_balance + self.funded_earning - self.withdrawals, 2)
 
     @property
     def available_balance(self):
-        return round(self.initial_balance + self.funded_earning - self.withdrawals , 2)
+        return round(self.initial_balance + self.funded_earning - self.withdrawals, 2)
 
     def __str__(self):
         return "{}-wallet".format(self.user.name)
@@ -362,12 +337,13 @@ class Transaction(models.Model):
     status = models.CharField(max_length=10, choices=status, default='Pending')
     date = models.DateTimeField(auto_now_add=True)
     amount = models.FloatField(null=False)
-    coin = models.CharField(blank=True, null=True, max_length=10,default="USDT(BEP20)")
-    
+    coin = models.CharField(blank=True, null=True,
+                            max_length=10, default="USDT(BEP20)")
+
     @property
-    def batch(self) :
-        return  str(uuid.uuid1()).replace("-","") +  str(uuid.uuid1()).replace("-","")[:10]
-    
+    def batch(self):
+        return str(uuid.uuid1()).replace("-", "") + str(uuid.uuid1()).replace("-", "")[:10]
+
     def __str__(self):
         return self.transaction_id
 
@@ -397,7 +373,7 @@ class PendingDeposit(models.Model):
     # reason for declining
     decline_reason = models.TextField(null=True)
     payment_method = models.CharField(max_length=20, choices=method_choices)
-    #payment_proof = models.FileField(upload_to=get_path)
+    # payment_proof = models.FileField(upload_to=get_path)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -415,5 +391,3 @@ class PendingDeposit(models.Model):
 
     class Meta():
         ordering = ['-date']
-
-

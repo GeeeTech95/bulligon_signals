@@ -26,6 +26,7 @@
 
     .timer ul li {
         font-size: 22px !important;
+        color: white;
     }
 </style>
 
@@ -34,20 +35,21 @@
 {% block content %}
 
 <div class="action-navs">
-    <div class="project-item project-value-inner d-flex justify-content-between  mb-30 " style="border-radius: 20px;background-color: #F5F7FC;color: #6b777f;">
+    <div class="project-item project-value-inner d-flex justify-content-between  mb-30 "
+        style="border-radius: 20px;background-color: #F5F7FC;color: #6b777f;">
         <div class="project-value">
             <span>Available Balance</span>
             <h3 class="mb-20 mt-10" style="color: #2b2828e7;">{{user.user_wallet.available_balance|intcomma}} <span
                     style="font-size: 18px;">USD</span></h3>
-           
+
         </div>
         <div class="project-value">
-       
+
 
             {% if pending_deposit %}
             <span>Pending Deposit <b style="color: green;">+{{pending_deposit|intcomma}} USD</b></span>
             {% endif %}<br><br>
-         
+
 
         </div>
         <div class="project-value-image" hidden>
@@ -59,8 +61,8 @@
 
     <div class="container">
         <div class="row text-center " style="padding: 20px;">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-6 mb-3" >
-                <div class="wallet-actions project-value align-items-center text-center" >
+            <div class="col-xl-4 col-lg-4 col-md-4 col-6 mb-3">
+                <div class="wallet-actions project-value align-items-center text-center">
                     <a href="{% url 'deposit' %}">
                         <i class="fa fa-arrow-right"></i><br>
                         <span>Deposit</span>
@@ -92,7 +94,7 @@
                 </div>
 
             </div>
-            
+
 
         </div>
     </div>
@@ -135,46 +137,52 @@
                         <div class="game-price-inner">
                             <div class="total-price">
                                 <div class="price-inner d-flex mb-45 md-mb-20 pt-80">
-
                                     <div class="price-details">
                                         <h3 class="mb-15">
                                             <a href="#0">
-                                                {{subscription.plan}}
+                                                {{ subscription.plan }}
+                                                <!-- Display the plan name -->
                                             </a>
                                         </h3>
-
                                     </div>
                                 </div>
                                 <div class="all-raise mb-10">
-                                    Earned {{subscription.current_earning|intcomma}} USD ({{subscription.plan_progress}} %)
+                                    <!-- You can add additional details here if needed -->
                                 </div>
                             </div>
                             <div class="allocation-max text-center">
                                 <img hidden src="{% static 'dashboard-main/images/project/icon-2.png' %}" />
-                                <div class="allocation">Stake: <span
-                                        style="font-size: 20px;">${{subscription.amount|intcomma}}</span></div>
+                                <div class="allocation" style="color: #F5F7FC;">Cost:
+                                    <span style="font-size: 20px; color: #F5F7FC;">
+                                        ${{ subscription.plan.cost|intcomma }}
+                                        <!-- Display the subscription cost -->
+                                    </span>
+                                </div>
                             </div>
-                            <div class="targeted-raise  pt-40">
-                                <div class="all-raise mb-10">Completes In</div>
-                                <div class="timer timer_{{forloop.counter}} " id="{{forloop.counter}}"
-                                    toDate="{{subscription.plan_end|date:'F j, Y H:i:s'}}"
-                                    nowDate="{{time_now|date:'F j, Y H:i:s'}}">
+                            <div class="targeted-raise pt-40">
+                                <div class="all-raise mb-10" style="color: #F5F7FC;">Subscription Ends In </div>
+                                <div class="timer timer_{{ forloop.counter }}" id="{{ forloop.counter }}"
+                                    toDate="{{ subscription.plan_end|date:'M d, Y H:i:s' }}"
+                                    nowDate="{{ time_now|date:'M d, Y H:i:s' }}">
+                                    
                                     <ul>
                                         <li class="days"></li>
                                         <li class="hours"></li>
                                         <li class="minutes"></li>
                                         <li class="seconds"></li>
                                     </ul>
+
                                 </div>
                                 <div class="targeted-raise text-end">
-                                    Expected {{subscription.expected_earning|intcomma}} USD
+                                    <!-- Additional information can go here -->
                                 </div>
                             </div>
                         </div>
-                        <div class="progress-inner">
+                        <div class="progress-inner" hidden>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="43"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: {{subscription.plan_progress}}%">
+                                <div class="progress-bar progress-bar-striped" style="background-color: #F5F7FC;"
+                                    role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                    style="width: 40%">
                                 </div>
                             </div>
                         </div>
@@ -187,6 +195,7 @@
                         <span class="hover-shape-bg hover_shape3"></span>
                     </div>
                     {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -201,7 +210,7 @@
 
     </div>
 
-    <div id="transactions">
+    <div id="transactions" hidden>
         <div class="breadcrumbs-area sec-heading">
             <div class="sub-inner  mt-40">
 

@@ -114,19 +114,19 @@ class Subscribe(LoginRequiredMixin, View):
          
 
             # default
-            msg = "You have succesfully subscribed to the {} subscription plan (pending processing), with an initial capital of ${}".format(
+            msg = "You have succesfully subscribed to the {} subscription plan (pending processing), and  ${} deducted from your wallet balamce.".format(
                 form.instance.plan.name,
-                form.cleaned_data['amount']
+                subscription.plan.cost
             )
 
-            if not subscription.approve_subscriptions():
+            if not subscription.approve_subscription():
                 if user.user_wallet.allow_automatic_subscription:
                     subscription.on_approve()
                    
                    
-                    msg = "You have succesfully subscribed to the {} subscription plan, with an initial capital of ${}".format(
-                        form.instance.plan.name,
-                        form.cleaned_data['amount']
+                    msg = "You have succesfully subscribed to the {} subscription plan, and  ${} deducted from your wallet balamce.".format(
+                        subscription.plan.name,
+                        subscription.plan.cost
                     )
 
             messages.success(request, msg)

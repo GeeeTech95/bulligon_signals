@@ -17,7 +17,7 @@ class LoginRedirect(RedirectView):
 
 
 class TestTemplate(TemplateView):
-    template_name = "registration/referral-mail.html"
+    template_name = "403.html"  #registration/registration-mail.html
 
     def get_context_data(self, **kwargs):
         from Users.models import User

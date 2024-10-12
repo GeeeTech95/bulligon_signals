@@ -4,36 +4,48 @@
 
 {% block content %}
 
-
- <!-- account section start -->
- <div class="account__area " style="margin-top: 50px;"> 
-    <div class="account-bg"></div>
+ <!-- ================> Page header start here <================== -->
+ <section class="page-header bg--cover"  style="background-image: url('{% static 'main/images/header/1.png' %}')">
     <div class="container">
-        <div class="account__content">
-            <div class="account__form">
-                <div class="account__title mb-29">
-                    <h2>Error 403! </h2>
-                    <h3> You are not authorized to view this page because you don't have the required permisions.</h3>
-            
-                </div>
-
-                <div class="item-button">
-               
-                  
-                    <a  href="{% url 'index' %}" class="theme-btn blue" style="width: 100%;">
-                        <span>Back To Home</span>
-                        <div class="hover-shape1"></div>
-                        <div class="hover-shape2"></div>
-                        <div class="hover-shape3"></div>
-                    </a >
-                </div>
-               
-            </div>
-            <div class="account-shadow"></div>
-        </div>
+      <div class="page-header__content" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Access Forbidden</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Error 403</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="page-header__shape">
+        <span class="page-header__shape-item page-header__shape-item--1"><img src="{% static 'main/images/header/2.png' %}" alt="shape-icon"></span>
+      </div>
     </div>
-</div>		
-<!-- account section END -->
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+  <!-- ================> 403 section start here <================== -->
+  <div class="error padding-top padding-bottom sec-bg-color2">
+    <div class="container">
+      <div class="error__wrapper">
+        <div class="error__inner" data-aos="fade-up" data-aos-duration="800">
+          <div class="error__thumb text-center">
+            <img src="{% static 'main/images/others/403-error.png' %}" alt="403 image">
+          </div>
+          <div class="error__content text-center">
+            <h2><span>Oops!</span> Access Denied</h2>
+            <p>It seems you don't have permission to access this page. Please check the URL or contact the administrator if you believe this is a mistake.</p>
+            <a href="{% url 'index' %}" class="trk-btn trk-btn--border trk-btn--primary">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================> 403 section end here <================== -->
+
 {% endblock %}
 
 
+{% block js %}
+<script src="{% static 'main/js/core/account.js' %}"></script> 
+{% endblock %}

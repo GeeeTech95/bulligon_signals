@@ -4,112 +4,73 @@
 {% load humanize %}
 {% load vocabulary %}
 
-
-
 {% block content %}
 <tr>
   <td>
-    <h2 style="text-align:left"><b>Investment Proccessed Successfully</b></h2>
+    <h2 style="text-align:left"><b>Subscription Activated Successfully</b></h2>
     <strong>
-      <h4>Dear {{instance.user.name}},</h4>
+      <h4>Dear {{user.name}},</h4>
     </strong>
 
-
-
     <p>
-      We are pleased to inform you that your recent investment on {{site_name}} has been successfully processed and
-      confirmed.
-
-    </p>
-    <p>
-
+      We're excited to let you know that your subscription to the {{site_name}} crypto signals service has been successfully activated!
     </p>
 
     <p>
-      if you did not authorize this activity please contact
+      If you did not authorize this subscription, please contact
       <a href="#">support</a> immediately.
     </p>
 
-
     <p>
-      Here are the details of your investment:
+      Here are the details of your subscription:
     </p>
 
-    <h2 style="margin-top: 20px;font-size: 18px;">Investment Details</h2>
+    <h2 style="margin-top: 20px; font-size: 18px;">Subscription Details</h2>
 
-
-
-    <table style="background-color: #090a1ade; margin-bottom:30px;padding:10px">
+    <table style="background-color: #0a674d; margin-bottom:30px;padding:10px">
       <tbody style="color: white;">
-
-
         <tr>
-          <td>Investment Plan</td>
-          <td>{{instance.plan.name}} </td>
+          <td>Subscription Plan</td>
+          <td>{{plan.name}} </td>
         </tr>
         <hr>
 
         <tr>
-          <td>Investment Amount</td>
-          <td>USD {{instance.amount|intcomma}}</td>
+          <td>Subscription Amount</td>
+          <td>USD {{plan.price|intcomma}}</td>
         </tr>
         <hr>
-
-        <tr>
-          <td>Date Initiated</td>
-          <td>{{instance.date|date:"j M, Y"}} {{instance.date.time}}</td>
-        </tr>
-        <hr>
-
-
-
 
         <tr>
           <td>Start Date</td>
-          <td>{{instance.plan_start|date:"j M, Y"}} {{instance.plan_start.time}}</td>
+          <td>{{subscription.start_date|date:"j M, Y"}} {{subscription.start_date.time}}</td>
         </tr>
         <hr>
-        <tr>
-          <td>Due Date</td>
-          <td>{{instance.plan_end|date:"j M, Y"}} {{instance.plan_end.time}}</td>
-        </tr>
-        <hr>
-        <tr>
-          <td>Expected Earning</td>
-          <td>USD {{instance.expected_earning|intcomma}}</td>
-        </tr>
 
-
+        <tr>
+          <td>End Date</td>
+          <td>{{subscription.end_date|date:"j M, Y"}} {{subscription.end_date.time}}</td>
+        </tr>
       </tbody>
-
     </table>
 
     <p><strong>What Happens Next:</strong></p>
     <ol>
-      <li><strong>Investment Tracking:</strong> You can track the performance of your investment through your
-        {{site_name}} account dashboard.</li>
-      <li><strong>Earnings:</strong> Based on the plan you have selected, your earnings will be calculated and credited
-        to your account as per the specified intervals.</li>
+      <li><strong>Receive Signals:</strong> You will begin receiving crypto trading signals based on your subscription plan directly to your dashboard and via email.</li>
+      <li><strong>Signal Analysis:</strong> Use the signals to make informed trading decisions and maximize your opportunities in the crypto market.</li>
     </ol>
 
-
-
     <a class="button-a button-a-primary" href="{{site_url}}{% url 'dashboard' %}" target="_blank"
-      style="background: #6d4afe; text-align: center; border: 2px solid #6d4afe; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 10px 20px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;margin: 20px 140px;">
-      Track Investment
+      style="background: #00d094; text-align: center; border: 2px solid #00d094; font-family: sans-serif; font-size: 16px; line-height: 15px; text-decoration: none; padding: 10px 20px; color: #ffffff; display: block; border-radius: 4px; letter-spacing: .4px; font-weight: 100;margin: 20px 140px;">
+      Access Your Dashboard
     </a>
+
     <p><strong>Important Information:</strong></p>
-    <p>If you have any questions about your investment or need further assistance, please contact our support team at
-      [support email].</p>
-    <p>Please keep your account details secure and do not share your login credentials with anyone.</p>
+    <p>If you have any questions about your subscription or need further assistance, please contact our support team at [support email].</p>
+    <p>We recommend keeping your account details secure and not sharing your login credentials with anyone.</p>
 
     <br>
-    <i>This is an automatically generated message, it does not accept replies.</i>
-
-
-
-
-
+    <i>This is an automatically generated message, please do not reply.</i>
   </td>
 </tr>
 {% endblock %}

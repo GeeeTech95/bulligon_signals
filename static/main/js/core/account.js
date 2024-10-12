@@ -168,7 +168,7 @@ $(document).on("submit", ".verify-email-form", function (e) {
             normalizeLoadingButton(buttonObj, "Verify")
              if(response.success){
                 Swal.fire({
-                    //title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#6d4afe' ></i>",
+                    //title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#00d094' ></i>",
                     icon: 'success',
                     html:"Your email address has been verified successfully!",
                     showCloseButton: true,
@@ -186,7 +186,7 @@ $(document).on("submit", ".verify-email-form", function (e) {
              }
              else {
                 Swal.fire({
-                    //title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#6d4afe' ></i>",
+                    //title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#00d094' ></i>",
                     icon: 'error',
                     html:response.error,
                     showCloseButton: true,
@@ -238,7 +238,7 @@ $(document).on("submit", ".kyc-form", function (e) {
         
                 Swal.fire({
                   
-                    title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#6d4afe' ></i>",
+                    title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#00d094' ></i>",
                     html:"Your KYC request was submitted successfully. It's currently in review!, you will be notified when it's completed.",
                     showCloseButton: true,
                     showCancelButton: false,

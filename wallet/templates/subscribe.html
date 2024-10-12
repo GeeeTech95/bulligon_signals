@@ -26,7 +26,7 @@
         <div class="account__content">
             <div class="account__form">
                 <div class="account__title mb-29">
-                    <h2>STAKE</h2>
+                    <h2>SUBSCRIBE</h2>
                     
                   
                 </div>
@@ -36,7 +36,7 @@
                     <div class="input__group mb-23">
                         <span input-name="amount" class="field-error"></span>
                         <label>AMOUNT</label>
-                        <input type="number" name="amount" id="amount" placeholder="Enter an amount you wish to stake">
+                        <input readonly value="{{plan.cost}}" type="number" name="amount" id="amount" >
                     </div> 
                     <input required name="plan" hidden readonly value="{{plan.pk}}">
                     <p>{{form.amount.errors}}</p>

@@ -5,37 +5,50 @@
 {% block content %}
 
 
- <!-- account section start -->
- <div class="account__area " style="margin-top: 50px;"> 
-    <div class="account-bg"></div>
+ <!-- ================> Page header start here <================== -->
+ <section class="page-header bg--cover"  style="background-image: url('{% static 'main/images/header/1.png' %}')"
+ >
     <div class="container">
-        <div class="account__content">
-            <div class="account__form">
-                <div class="account__title mb-29">
-                    <h2>Error 500! </h2>
-                    <h3>This is a server error, most likely from our own end. We do apologize </h3>
-            
-                </div>
-
-                <div class="item-button">
-                    <center>
-                        <h5>Please </h5>
-                    </center>
-                  
-                    <a  href="{% url 'index' %}" class="theme-btn blue" style="width: 100%;">
-                        <span>Go Home</span>
-                        <div class="hover-shape1"></div>
-                        <div class="hover-shape2"></div>
-                        <div class="hover-shape3"></div>
-                    </a >
-                </div>
-               
-            </div>
-            <div class="account-shadow"></div>
-        </div>
+      <div class="page-header__content" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Server Error</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item "><a href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Error 500</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="page-header__shape">
+        <span class="page-header__shape-item page-header__shape-item--1"><img src="{% static 'main/images/header/2.png' %}"
+            alt="shape-icon"></span>
+      </div>
     </div>
-</div>		
-<!-- account section END -->
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+  <!-- ================> 404 section start here <================== -->
+  <div class="error padding-top padding-bottom sec-bg-color2">
+    <div class="container">
+      <div class="error__wrapper">
+        <div class="error__inner" data-aos="fade-up" data-aos-duration="800">
+          <div class="error__thumb text-center">
+            <img src="{% static 'main/images/others/500-error.png' %}" alt="404 image">
+          </div>
+          <div class="error__content text-center">
+            <h2><span>Oops!</span> An Error Occurred</h2>
+            <p>Oops! It seems we are experiencing high traffic at the moment.</p>
+            <p>We apologize for the inconvenience. Please try the following:</p>
+            <a href="{% url 'index' %}" class="trk-btn trk-btn--border trk-btn--primary">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================> 404 section end here <================== -->
+
+
+
 {% endblock %}
 
 

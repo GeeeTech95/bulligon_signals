@@ -24,8 +24,9 @@ def subscription_handler(sender, instance, created, **kwargs):
     #send mail on creation and approval
     if  instance.is_approved  :
         #send mail
-        mail = TransactionMail(instance)
-        mail.send_subscription_mail()
+        #mail = TransactionMail(instance)
+        #mail.send_subscription_mail()
+        pass
 
 
 

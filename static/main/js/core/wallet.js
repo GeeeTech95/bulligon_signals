@@ -29,7 +29,7 @@ $(document).on("submit", ".deposit-form", function (e) {
               
                 Swal.fire({
                   
-                    title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#6d4afe' ></i>",
+                    title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#00d094' ></i>",
                     html:"Deposit Processing!, you will be notified when it's completed.",
                     showCloseButton: true,
                     showCancelButton: false,
@@ -39,6 +39,9 @@ $(document).on("submit", ".deposit-form", function (e) {
                         window.location.href = url
                     },
                     confirmButtonAriaLabel: 'OK!',
+                    customClass: {
+                        confirmButton: 'my-confirm-button' // Add your custom class here
+                    }
                 
                 });
            
@@ -161,7 +164,7 @@ $(document).on("submit", ".withdrawal-form", function (e) {
                 normalizeLoadingButton(buttonObj, "WIthdraw")
                  if(response.success){
                     Swal.fire({
-                        title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#6d4afe' ></i>",
+                        title:"<i class='fas fa-hourglass-half' style='font-size:50px;color:#00d094' ></i>",
                         icon: 'primary',
                         html:"WIthdrawal Processing.",
                         showCloseButton: true,

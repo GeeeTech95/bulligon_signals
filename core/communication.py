@@ -61,7 +61,7 @@ class TransactionMail():
             ctx={"instance": self.instance}
         )
 
-    def send_investment_mail(self):
+    def send_subscription_mail(self):
 
         template_name = "transaction/investment-mail.html"
         self.mail.send_html_email(

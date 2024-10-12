@@ -203,11 +203,11 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # for other emails
-PRIMARY_EMAIL_ZOHO = "sleykesh22@gmail.com"
+PRIMARY_EMAIL_ZOHO = "bulligonsignals@gmail.com"
 EMAIL_HOST_USER_SUPPORT = "customer.support@bulligonsignals.com"
 EMAIL_HOST_USER_TRANSACTION = "transaction@bulligonsignals.com"
 DEFAULT_FROM_EMAIL = "support@bulligonsignals.com"
-EMAIL_HOST_PASSWORD = 'Y6li9p@Poko!'
+EMAIL_HOST_PASSWORD = 'Y6li9p@Poko'
 EMAIL_HOST_USER_ALERT = "transaction@bulligonsignals.com"
 
 #EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"

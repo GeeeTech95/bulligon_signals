@@ -543,7 +543,7 @@ body .modal-backdrop {
 .price-counter .timer ul li,
 .banner-slider-inner .timer ul li {
   font-size: 30px;
-  color: #41474b;
+  color: #ffffff;
 }
 
 .price-counter .timer ul li span,
@@ -2052,7 +2052,7 @@ body .modal-backdrop {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #41474b;
+  color: #ffffff;
   margin-right: 10px;
   text-transform: lowercase;
 }
@@ -4665,7 +4665,7 @@ body .gamfi-explore-content .project-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #41474b;
+  color: #ffff;
   padding: 0px;
   margin: 0px;
 }
